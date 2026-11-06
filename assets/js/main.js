@@ -123,51 +123,71 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Animated counters on scroll
+  // Scroll Direction Tracker
+  let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+  let scrollDirection = 'down';
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    if (Math.abs(currentScrollY - lastScrollY) > 4) {
+      scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+      document.documentElement.setAttribute('data-scroll-direction', scrollDirection);
+      lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+    }
+  }, { passive: true });
+
+  // Bi-directional Animated counters on scroll & reverse
   const counters = document.querySelectorAll('.counter-val');
   if ('IntersectionObserver' in window && counters.length > 0) {
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        const target = entry.target;
         if (entry.isIntersecting) {
-          const target = entry.target;
           const endValue = parseInt(target.getAttribute('data-target') || '0', 10);
           const duration = 1200;
           const start = 0;
           const startTime = performance.now();
 
+          if (target._counterRaf) cancelAnimationFrame(target._counterRaf);
+
           function updateCounter(currentTime) {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
             const current = Math.floor(progress * (endValue - start) + start);
-            target.textContent = current.toLocaleString();
+            target.textContent = current.toLocaleString() + (progress >= 1 ? (target.getAttribute('data-suffix') || '') : '');
             if (progress < 1) {
-              requestAnimationFrame(updateCounter);
-            } else {
-              target.textContent = endValue.toLocaleString() + (target.getAttribute('data-suffix') || '');
+              target._counterRaf = requestAnimationFrame(updateCounter);
             }
           }
-          requestAnimationFrame(updateCounter);
-          counterObserver.unobserve(target);
+          target._counterRaf = requestAnimationFrame(updateCounter);
+        } else {
+          // Reset counter when scrolled away so it animates cleanly on reverse/re-entry
+          if (target._counterRaf) cancelAnimationFrame(target._counterRaf);
+          target.textContent = '0' + (target.getAttribute('data-suffix') || '');
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.15 });
 
     counters.forEach(c => counterObserver.observe(c));
   }
 
-  // Scroll-Triggered Reveal Animations (Intersection Observer)
+  // Bi-directional Scroll-Triggered Reveal & Reverse Animations
   const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
   if ('IntersectionObserver' in window && revealElements.length > 0) {
-    const revealObserver = new IntersectionObserver((entries, obs) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        const el = entry.target;
         if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          obs.unobserve(entry.target);
+          // Entering viewport: trigger forward animation
+          el.classList.add('revealed');
+        } else {
+          // Exiting viewport: trigger reverse animation
+          el.classList.remove('revealed');
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.08,
+      rootMargin: '0px 0px -30px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
