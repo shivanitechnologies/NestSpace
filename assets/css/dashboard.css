@@ -41,6 +41,31 @@
   }
 }
 
+/* RTL Dashboard Layout Support */
+[dir="rtl"] .dashboard-sidebar {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid var(--color-border);
+}
+
+[dir="rtl"] .dashboard-main {
+  margin-left: 0;
+  margin-right: 260px;
+}
+
+@media (max-width: 1024px) {
+  [dir="rtl"] .dashboard-sidebar {
+    transform: translateX(100%);
+  }
+  [dir="rtl"] .dashboard-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+  [dir="rtl"] .dashboard-main {
+    margin-right: 0;
+  }
+}
+
 .dashboard-header {
   height: 72px;
   background-color: var(--color-surface);
