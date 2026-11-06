@@ -200,6 +200,38 @@
           </div>
         </div>
 
+        <!-- Live Campus Acoustic Telemetry Strip -->
+        <div class="p-4 rounded-2xl bg-white dark:bg-[#242D28] border border-[#E8E8E1] dark:border-[#313B35] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+            </span>
+            <div>
+              <strong class="font-heading font-bold text-xs text-[#173C35] dark:text-white block">Campus Telemetry (Real-Time)</strong>
+              <span class="text-[11px] text-[#777F79] dark:text-gray-400">Sensors calibrated across all 3 architectural tiers</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
+              <span class="text-gray-400">Level 1 (Library):</span>
+              <strong class="text-emerald-600 dark:text-emerald-400 font-mono">24 dB</strong>
+              <span class="text-[10px] text-gray-400">Whisper-Free</span>
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
+              <span class="text-gray-400">Level 2 (Atrium):</span>
+              <strong class="text-amber-600 dark:text-amber-400 font-mono">41 dB</strong>
+              <span class="text-[10px] text-gray-400">Moderate Hum</span>
+            </div>
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
+              <span class="text-gray-400">Level 3 (Cabins):</span>
+              <strong class="text-[#173C35] dark:text-[#D9A66F] font-mono">28 dB</strong>
+              <span class="text-[10px] text-gray-400">Acoustic Shield</span>
+            </div>
+          </div>
+        </div>
+
         <!-- 4 Metric Cards -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           
@@ -208,8 +240,9 @@
               <span class="text-xs text-gray-400 font-semibold uppercase">Upcoming</span>
               <span class="text-base">📅</span>
             </div>
-            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3">
-              03
+            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3 flex items-baseline justify-between">
+              <span>03</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 font-bold font-sans">Active</span>
             </div>
             <p class="text-[11px] text-[#777F79] dark:text-[#B9C2BC] mt-1">Bookings this week</p>
           </div>
@@ -219,8 +252,9 @@
               <span class="text-xs text-gray-400 font-semibold uppercase">Hours Used</span>
               <span class="text-base">⏱️</span>
             </div>
-            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3">
-              24 <span class="text-sm font-normal text-gray-400">/ 40 hrs</span>
+            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3 flex items-baseline justify-between">
+              <span>24 <span class="text-sm font-normal text-gray-400">/ 40h</span></span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 font-bold font-sans">60%</span>
             </div>
             <p class="text-[11px] text-emerald-600 font-semibold mt-1">16 hrs remaining</p>
           </div>
@@ -230,8 +264,9 @@
               <span class="text-xs text-gray-400 font-semibold uppercase">Current Plan</span>
               <span class="text-base">⭐</span>
             </div>
-            <div class="font-heading font-extrabold text-3xl text-[#D9A66F] mt-3">
-              Pro
+            <div class="font-heading font-extrabold text-3xl text-[#D9A66F] mt-3 flex items-baseline justify-between">
+              <span>Pro</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 font-bold font-sans">Auto-Renew</span>
             </div>
             <p class="text-[11px] text-[#777F79] dark:text-[#B9C2BC] mt-1">Renews in 18 days</p>
           </div>
@@ -241,8 +276,9 @@
               <span class="text-xs text-gray-400 font-semibold uppercase">Invoices</span>
               <span class="text-base">🧾</span>
             </div>
-            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3">
-              05
+            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3 flex items-baseline justify-between">
+              <span>05</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 font-bold font-sans">Settled</span>
             </div>
             <p class="text-[11px] text-gray-400 mt-1">All accounts settled</p>
           </div>
@@ -366,6 +402,63 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- Upcoming Community Events & Masterclasses -->
+        <div class="bg-white dark:bg-[#242D28] rounded-2xl p-6 border border-[#E8E8E1] dark:border-[#313B35] shadow-sm">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <h3 class="font-heading font-bold text-lg text-[#173C35] dark:text-white">Upcoming Community Sessions</h3>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">Free masterclasses and networking for NESTSPACE members</p>
+            </div>
+            <span class="text-xs font-bold text-[#D9A66F]">Member Access Included</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            <div class="p-4 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A] border border-[#E8E8E1] dark:border-[#313B35] flex items-start gap-3">
+              <span class="w-10 h-10 rounded-lg bg-[#173C35] dark:bg-white/10 text-[#D9A66F] font-bold text-xs flex flex-col items-center justify-center shrink-0">
+                <span class="text-[9px] uppercase font-sans">NOV</span>
+                <span class="text-xs font-mono font-extrabold leading-none">12</span>
+              </span>
+              <div>
+                <strong class="font-heading font-bold text-xs text-[#173C35] dark:text-white block">Deep Work & Focus Psychology</strong>
+                <span class="text-[11px] text-[#777F79] dark:text-gray-400 block mt-0.5">05:30 PM • Level 2 Atrium Amphitheater</span>
+                <button type="button" onclick="showToast('You are RSVPed for Deep Work Psychology!')" class="mt-2 text-[10px] font-bold text-[#173C35] dark:text-[#D9A66F] hover:underline">
+                  RSVP Free Spot &rarr;
+                </button>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A] border border-[#E8E8E1] dark:border-[#313B35] flex items-start gap-3">
+              <span class="w-10 h-10 rounded-lg bg-[#173C35] dark:bg-white/10 text-[#D9A66F] font-bold text-xs flex flex-col items-center justify-center shrink-0">
+                <span class="text-[9px] uppercase font-sans">NOV</span>
+                <span class="text-xs font-mono font-extrabold leading-none">15</span>
+              </span>
+              <div>
+                <strong class="font-heading font-bold text-xs text-[#173C35] dark:text-white block">Fireside Talk: AI Architectures</strong>
+                <span class="text-[11px] text-[#777F79] dark:text-gray-400 block mt-0.5">06:00 PM • Studio Boardroom B</span>
+                <button type="button" onclick="showToast('You are RSVPed for Fireside Talk: AI Architectures!')" class="mt-2 text-[10px] font-bold text-[#173C35] dark:text-[#D9A66F] hover:underline">
+                  RSVP Free Spot &rarr;
+                </button>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A] border border-[#E8E8E1] dark:border-[#313B35] flex items-start gap-3">
+              <span class="w-10 h-10 rounded-lg bg-[#173C35] dark:bg-white/10 text-[#D9A66F] font-bold text-xs flex flex-col items-center justify-center shrink-0">
+                <span class="text-[9px] uppercase font-sans">NOV</span>
+                <span class="text-xs font-mono font-extrabold leading-none">19</span>
+              </span>
+              <div>
+                <strong class="font-heading font-bold text-xs text-[#173C35] dark:text-white block">Pour-Over Coffee Cupping Masterclass</strong>
+                <span class="text-[11px] text-[#777F79] dark:text-gray-400 block mt-0.5">04:00 PM • Terrace Espresso Bar</span>
+                <button type="button" onclick="showToast('You are RSVPed for Coffee Cupping Masterclass!')" class="mt-2 text-[10px] font-bold text-[#173C35] dark:text-[#D9A66F] hover:underline">
+                  RSVP Free Spot &rarr;
+                </button>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>

@@ -148,20 +148,68 @@
 
       <div class="p-6 sm:p-8 max-w-7xl w-full mx-auto space-y-6">
         
-        <!-- Filter Tabs -->
-        <div class="flex items-center gap-6 border-b border-[#E8E8E1] dark:border-[#313B35] text-sm overflow-x-auto pb-1">
-          <button class="booking-filter-tab pb-3 border-b-2 border-[#173C35] text-[#173C35] dark:text-[#D9A66F] font-semibold transition-all" data-filter="all">
-            All Bookings (4)
-          </button>
-          <button class="booking-filter-tab pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-700 transition-all" data-filter="upcoming">
-            Upcoming (2)
-          </button>
-          <button class="booking-filter-tab pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-700 transition-all" data-filter="completed">
-            Completed (1)
-          </button>
-          <button class="booking-filter-tab pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-700 transition-all" data-filter="cancelled">
-            Cancelled (1)
-          </button>
+        <!-- Weekly Interactive Schedule Ribbon -->
+        <div class="bg-white dark:bg-[#242D28] rounded-2xl p-4 sm:p-5 border border-[#E8E8E1] dark:border-[#313B35] shadow-sm">
+          <div class="flex items-center justify-between mb-3 text-xs">
+            <span class="font-bold text-[#173C35] dark:text-white uppercase tracking-wider">November 2026 • Week 45</span>
+            <span class="text-[#D9A66F] font-semibold">2 Active Sessions This Week</span>
+          </div>
+          <div class="grid grid-cols-7 gap-2 text-center text-xs">
+            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[10px] block">MON</span>
+              <strong class="font-bold text-sm text-[#173C35] dark:text-white">02</strong>
+            </div>
+            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[10px] block">TUE</span>
+              <strong class="font-bold text-sm text-[#173C35] dark:text-white">03</strong>
+            </div>
+            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[10px] block">WED</span>
+              <strong class="font-bold text-sm text-[#173C35] dark:text-white">04</strong>
+            </div>
+            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[10px] block">THU</span>
+              <strong class="font-bold text-sm text-[#173C35] dark:text-white">05</strong>
+            </div>
+            <div class="p-2.5 rounded-xl bg-[#173C35] text-white font-bold shadow-md cursor-pointer relative">
+              <span class="text-[10px] block text-[#D9A66F]">FRI</span>
+              <strong class="font-bold text-sm">06</strong>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#D9A66F] mx-auto mt-1 block"></span>
+            </div>
+            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[10px] block">SAT</span>
+              <strong class="font-bold text-sm text-[#173C35] dark:text-white">07</strong>
+            </div>
+            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[10px] block">SUN</span>
+              <strong class="font-bold text-sm text-[#173C35] dark:text-white">08</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <!-- Filter Tabs -->
+          <div class="flex items-center gap-6 border-b sm:border-b-0 border-[#E8E8E1] dark:border-[#313B35] text-sm overflow-x-auto pb-1 sm:pb-0">
+            <button class="booking-filter-tab pb-3 sm:pb-1 border-b-2 border-[#173C35] text-[#173C35] dark:text-[#D9A66F] font-semibold transition-all" data-filter="all">
+              All Bookings (4)
+            </button>
+            <button class="booking-filter-tab pb-3 sm:pb-1 border-b-2 border-transparent text-gray-400 hover:text-gray-700 transition-all" data-filter="upcoming">
+              Upcoming (2)
+            </button>
+            <button class="booking-filter-tab pb-3 sm:pb-1 border-b-2 border-transparent text-gray-400 hover:text-gray-700 transition-all" data-filter="completed">
+              Completed (1)
+            </button>
+            <button class="booking-filter-tab pb-3 sm:pb-1 border-b-2 border-transparent text-gray-400 hover:text-gray-700 transition-all" data-filter="cancelled">
+              Cancelled (1)
+            </button>
+          </div>
+
+          <!-- Instant Search -->
+          <div class="relative w-full sm:w-64">
+            <input type="text" id="booking-search-input" placeholder="Search by ID or space..." class="w-full h-9 pl-8 pr-3 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-white dark:bg-[#242D28] text-xs focus:outline-none focus:border-[#173C35]">
+            <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs">🔍</span>
+          </div>
         </div>
 
         <!-- Bookings List -->
@@ -382,6 +430,19 @@
       modal.classList.add('hidden');
       modal.classList.remove('flex');
     }
+
+    // Instant Search for Bookings
+    document.getElementById('booking-search-input')?.addEventListener('input', function(e) {
+      const query = e.target.value.toLowerCase().trim();
+      document.querySelectorAll('.booking-card-item').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
   </script>
 </body>
 </html>

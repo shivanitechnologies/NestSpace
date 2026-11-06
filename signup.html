@@ -118,6 +118,17 @@
           </p>
         </div>
 
+        <!-- Quick Demo Fill -->
+        <div class="p-3 rounded-2xl bg-[#F7F6F1] dark:bg-[#171D1A] border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between text-xs">
+          <div>
+            <strong class="font-bold text-[#173C35] dark:text-white block">Rapid Demo Testing</strong>
+            <span class="text-[11px] text-[#777F79] dark:text-gray-400">Fill test scholar credentials with 1 click</span>
+          </div>
+          <button type="button" onclick="fillDemoSignup()" class="py-1.5 px-3 rounded-lg bg-[#173C35] text-white text-[11px] font-bold hover:bg-[#0f2722] transition-colors shadow-sm">
+            ⚡ Autofill Form
+          </button>
+        </div>
+
         <!-- Social Buttons -->
         <div class="grid grid-cols-2 gap-3">
           <button type="button" class="flex items-center justify-center gap-2 h-11 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-white dark:bg-[#242D28] text-xs font-semibold text-[#173C35] dark:text-white hover:bg-gray-50 transition-colors">
@@ -136,43 +147,67 @@
         </div>
 
         <!-- Form -->
-        <form action="dashboard/overview.html" method="GET" class="space-y-3.5">
+        <form id="signup-form" action="dashboard/overview.html" method="GET" class="space-y-3.5">
           
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-1">Full Name</label>
-            <input type="text" required placeholder="Pravin Kumar" class="w-full input-nest text-sm font-medium">
+            <input type="text" id="signup-name" required placeholder="Pravin Kumar" class="w-full input-nest text-sm font-medium">
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-1">Email Address</label>
-              <input type="email" required placeholder="pravin@example.com" class="w-full input-nest text-sm font-medium">
+              <input type="email" id="signup-email" required placeholder="pravin@example.com" class="w-full input-nest text-sm font-medium">
             </div>
             <div>
               <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-1">Phone Number</label>
-              <input type="tel" required placeholder="+91 98765 43210" class="w-full input-nest text-sm font-medium">
+              <input type="tel" id="signup-phone" required placeholder="+91 98765 43210" class="w-full input-nest text-sm font-medium">
             </div>
           </div>
 
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-1">Create Password</label>
-            <input type="password" required placeholder="Minimum 8 characters" class="w-full input-nest text-sm font-medium">
+            <div class="relative">
+              <input type="password" id="signup-pwd" required placeholder="Minimum 8 characters" oninput="checkPasswordStrength(this.value)" class="w-full input-nest text-sm font-medium pr-10">
+              <button type="button" onclick="togglePasswordVisibility('signup-pwd')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none" title="Toggle password">
+                👁️
+              </button>
+            </div>
+            <!-- Password Strength Bar -->
+            <div class="mt-2 space-y-1">
+              <div class="flex gap-1.5 h-1.5">
+                <div id="str-bar-1" class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full transition-all duration-300"></div>
+                <div id="str-bar-2" class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full transition-all duration-300"></div>
+                <div id="str-bar-3" class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full transition-all duration-300"></div>
+                <div id="str-bar-4" class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-full transition-all duration-300"></div>
+              </div>
+              <div class="flex justify-between items-center text-[10px] text-gray-400">
+                <span>Strength: <strong id="str-label" class="text-gray-400">Too Short</strong></span>
+                <span>Use 8+ chars & numbers</span>
+              </div>
+            </div>
           </div>
 
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-1">Confirm Password</label>
-            <input type="password" required placeholder="Repeat password" class="w-full input-nest text-sm font-medium">
+            <div class="relative">
+              <input type="password" id="signup-pwd-confirm" required placeholder="Repeat password" class="w-full input-nest text-sm font-medium pr-10">
+              <button type="button" onclick="togglePasswordVisibility('signup-pwd-confirm')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none" title="Toggle password">
+                👁️
+              </button>
+            </div>
           </div>
 
           <div class="flex items-start gap-2 text-xs pt-1">
-            <input type="checkbox" required class="mt-0.5 rounded border-[#E8E8E1] text-[#173C35] focus:ring-[#173C35]">
+            <input type="checkbox" id="signup-terms" required class="mt-0.5 rounded border-[#E8E8E1] text-[#173C35] focus:ring-[#173C35]">
             <span class="text-[#777F79] dark:text-[#B9C2BC]">
-              I agree to the <a href="#" class="underline text-[#173C35] dark:text-white">Terms of Membership</a> and acknowledge the <a href="#" class="underline text-[#173C35] dark:text-white">Quiet Conduct Policy</a>.
+              I agree to the <a href="#" class="underline text-[#173C35] dark:text-white font-medium">Terms of Membership</a> and acknowledge the <a href="#" class="underline text-[#173C35] dark:text-white font-medium">Quiet Conduct Policy</a>.
             </span>
           </div>
 
-          <button type="submit" class="w-full btn-primary py-3.5 text-sm font-bold shadow-md hover:shadow-lg mt-2">
-            Create Account & Join &rarr;
+          <button type="submit" id="signup-submit-btn" class="w-full btn-primary py-3.5 text-sm font-bold shadow-md hover:shadow-lg mt-2 flex items-center justify-center gap-2">
+            <span>Create Account & Join</span>
+            <span>&rarr;</span>
           </button>
 
         </form>
@@ -187,6 +222,75 @@
 
   </div>
 
+  <script>
+    function togglePasswordVisibility(id) {
+      const input = document.getElementById(id);
+      if (input) {
+        input.type = input.type === 'password' ? 'text' : 'password';
+      }
+    }
+
+    function fillDemoSignup() {
+      document.getElementById('signup-name').value = 'Pravin Kumar';
+      document.getElementById('signup-email').value = 'pravin.scholar@nestspace.work';
+      document.getElementById('signup-phone').value = '+91 98765 43210';
+      document.getElementById('signup-pwd').value = 'NestSpace2026!#';
+      document.getElementById('signup-pwd-confirm').value = 'NestSpace2026!#';
+      document.getElementById('signup-terms').checked = true;
+      checkPasswordStrength('NestSpace2026!#');
+    }
+
+    function checkPasswordStrength(val) {
+      const b1 = document.getElementById('str-bar-1');
+      const b2 = document.getElementById('str-bar-2');
+      const b3 = document.getElementById('str-bar-3');
+      const b4 = document.getElementById('str-bar-4');
+      const label = document.getElementById('str-label');
+
+      // Reset
+      [b1, b2, b3, b4].forEach(b => b.className = 'flex-1 bg-gray-200 dark:bg-gray-700 rounded-full transition-all duration-300');
+
+      let score = 0;
+      if (val.length >= 6) score++;
+      if (val.length >= 8) score++;
+      if (/[A-Z]/.test(val) && /[0-9]/.test(val)) score++;
+      if (/[^A-Za-z0-9]/.test(val)) score++;
+
+      if (score === 0) {
+        label.textContent = 'Too Short';
+        label.className = 'text-gray-400 font-bold';
+      } else if (score === 1) {
+        b1.className = 'flex-1 bg-red-500 rounded-full transition-all duration-300';
+        label.textContent = 'Weak';
+        label.className = 'text-red-500 font-bold';
+      } else if (score === 2) {
+        b1.className = 'flex-1 bg-amber-500 rounded-full transition-all duration-300';
+        b2.className = 'flex-1 bg-amber-500 rounded-full transition-all duration-300';
+        label.textContent = 'Fair';
+        label.className = 'text-amber-500 font-bold';
+      } else if (score === 3) {
+        b1.className = 'flex-1 bg-blue-500 rounded-full transition-all duration-300';
+        b2.className = 'flex-1 bg-blue-500 rounded-full transition-all duration-300';
+        b3.className = 'flex-1 bg-blue-500 rounded-full transition-all duration-300';
+        label.textContent = 'Good';
+        label.className = 'text-blue-500 font-bold';
+      } else {
+        b1.className = 'flex-1 bg-emerald-500 rounded-full transition-all duration-300';
+        b2.className = 'flex-1 bg-emerald-500 rounded-full transition-all duration-300';
+        b3.className = 'flex-1 bg-emerald-500 rounded-full transition-all duration-300';
+        b4.className = 'flex-1 bg-emerald-500 rounded-full transition-all duration-300';
+        label.textContent = 'Very Strong';
+        label.className = 'text-emerald-500 font-bold';
+      }
+    }
+
+    document.getElementById('signup-form')?.addEventListener('submit', function(e) {
+      const btn = document.getElementById('signup-submit-btn');
+      if (btn) {
+        btn.innerHTML = `<svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg> Generating Digital Keycard...`;
+      }
+    });
+  </script>
 </body>
 </html>
 

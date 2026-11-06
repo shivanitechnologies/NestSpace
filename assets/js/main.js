@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Animated counters on scroll
   const counters = document.querySelectorAll('.counter-val');
   if ('IntersectionObserver' in window && counters.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
+    const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const target = entry.target;
@@ -147,12 +147,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
           requestAnimationFrame(updateCounter);
-          observer.unobserve(target);
+          counterObserver.unobserve(target);
         }
       });
     }, { threshold: 0.3 });
 
-    counters.forEach(c => observer.observe(c));
+    counters.forEach(c => counterObserver.observe(c));
   }
+
+  // Scroll-Triggered Reveal Animations (Intersection Observer)
+  const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  if ('IntersectionObserver' in window && revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    // Fallback if browser doesn't support IntersectionObserver
+    revealElements.forEach(el => el.classList.add('revealed'));
+  }
+
+  // Smooth scroll for in-page anchors
+  document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      const targetElem = document.querySelector(targetId);
+      if (targetElem) {
+        e.preventDefault();
+        targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 });
+
 
