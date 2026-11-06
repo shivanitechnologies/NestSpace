@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications – NESTSPACE Member Dashboard</title>
+  <meta name="description" content="Stay updated on booking confirmations, invoice receipts, and community alerts.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23173C35'><path d='M6 6h4v20H6V6zm16 0h4v20h-4V6zM10 6l12 20h-4L6 6h4z' fill='%23D9A66F'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#173C35',
+            'primary-dark': '#0f2722',
+            secondary: '#D9A66F',
+            'nest-bg': '#F7F6F1',
+            'nest-dark-bg': '#171D1A',
+            'nest-surface': '#FFFFFF',
+            'nest-dark-surface': '#242D28',
+            'nest-heading': '#202824',
+            'nest-muted': '#777F79',
+            'nest-border': '#E8E8E1',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-[#FFFFFF] antialiased">
+
+  <div class="dashboard-layout">
+    
+    <div id="dash-sidebar-backdrop" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+    <!-- SIDEBAR -->
+    <aside id="dash-sidebar" class="dashboard-sidebar">
+      <div class="p-6 border-b border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#173C35] flex items-center justify-center text-[#D9A66F] font-bold shadow-sm">
+            N
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white block leading-none">NESTSPACE</span>
+            <span class="text-[10px] tracking-wider uppercase font-semibold text-[#D9A66F] block mt-0.5">Member Portal</span>
+          </div>
+        </a>
+        <button id="dash-sidebar-close" class="lg:hidden text-gray-400">✕</button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Workspace</span>
+          <nav class="space-y-1">
+            <a href="overview.html" class="nav-link-dash">
+              <span class="text-base">📊</span>
+              <span>Overview</span>
+            </a>
+            <a href="bookings.html" class="nav-link-dash">
+              <span class="text-base">📅</span>
+              <span>My Bookings</span>
+            </a>
+            <a href="book-space.html" class="nav-link-dash">
+              <span class="text-base">✨</span>
+              <span>Book a Space</span>
+            </a>
+            <a href="explore-spaces.html" class="nav-link-dash">
+              <span class="text-base">🔍</span>
+              <span>Explore Spaces</span>
+            </a>
+          </nav>
+        </div>
+
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Account</span>
+          <nav class="space-y-1">
+            <a href="membership.html" class="nav-link-dash">
+              <span class="text-base">💳</span>
+              <span>Membership Plan</span>
+            </a>
+            <a href="invoices.html" class="nav-link-dash">
+              <span class="text-base">🧾</span>
+              <span>Invoices</span>
+            </a>
+            <a href="profile.html" class="nav-link-dash">
+              <span class="text-base">👤</span>
+              <span>My Profile</span>
+            </a>
+            <a href="notifications.html" class="nav-link-dash active">
+              <span class="text-base">🔔</span>
+              <span>Notifications</span>
+            </a>
+            <a href="settings.html" class="nav-link-dash">
+              <span class="text-base">⚙️</span>
+              <span>Settings</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img class="w-9 h-9 rounded-full object-cover border border-[#D9A66F]" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Pravin">
+          <div class="text-xs">
+            <strong class="block text-[#173C35] dark:text-white leading-tight">Pravin Kumar</strong>
+            <span class="text-gray-400 text-[10px]">Pro Member</span>
+          </div>
+        </div>
+        <a href="../login.html" title="Logout" class="text-gray-400 hover:text-red-600 text-sm p-1.5 rounded-lg">
+          🚪
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="flex items-center gap-3">
+          <button id="dash-sidebar-toggle" class="lg:hidden w-9 h-9 rounded-lg border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[#173C35] dark:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <h2 class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white">Notifications</h2>
+        </div>
+
+        <button type="button" id="mark-all-notifications-read" class="btn-secondary text-xs py-2 px-3.5">
+          ✓ Mark All as Read
+        </button>
+      </header>
+
+      <div class="p-6 sm:p-8 max-w-4xl w-full mx-auto space-y-6">
+        
+        <div class="space-y-3" id="notif-list-container">
+          
+          <!-- Notif 1 -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#242D28] border border-[#E8E8E1] dark:border-[#313B35] flex items-start gap-4 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-sm shrink-0">
+              ✓
+            </div>
+            <div class="flex-1 space-y-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-xs sm:text-sm font-bold text-[#173C35] dark:text-white">Reservation Confirmed: Cabin A-02</strong>
+                <span class="text-[11px] text-gray-400">10m ago</span>
+              </div>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">
+                Your booking NS-1024 for Friday 10:00 AM is locked. Your smartphone NFC key is ready.
+              </p>
+            </div>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#D9A66F] notif-unread-dot shrink-0 mt-2"></span>
+          </div>
+
+          <!-- Notif 2 -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#242D28] border border-[#E8E8E1] dark:border-[#313B35] flex items-start gap-4 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-sm shrink-0">
+              🧾
+            </div>
+            <div class="flex-1 space-y-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-xs sm:text-sm font-bold text-[#173C35] dark:text-white">Invoice INV-2026-881 Generated</strong>
+                <span class="text-[11px] text-gray-400">5 days ago</span>
+              </div>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">
+                Pro Monthly Membership renewed successfully for ₹1,999.
+              </p>
+            </div>
+          </div>
+
+          <!-- Notif 3 -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#242D28] border border-[#E8E8E1] dark:border-[#313B35] flex items-start gap-4 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-sm shrink-0">
+              ☕
+            </div>
+            <div class="flex-1 space-y-1">
+              <div class="flex items-center justify-between">
+                <strong class="text-xs sm:text-sm font-bold text-[#173C35] dark:text-white">Community Cupping & Tasting Event</strong>
+                <span class="text-[11px] text-gray-400">1 week ago</span>
+              </div>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">
+                Join fellow members at the Level 2 Café on Thursday at 4 PM for single-origin Ethiopian coffee tasting.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership & Credits – NESTSPACE Member Dashboard</title>
+  <meta name="description" content="View your active NESTSPACE membership plan, check remaining hours/credits, and upgrade seamlessly.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23173C35'><path d='M6 6h4v20H6V6zm16 0h4v20h-4V6zM10 6l12 20h-4L6 6h4z' fill='%23D9A66F'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#173C35',
+            'primary-dark': '#0f2722',
+            secondary: '#D9A66F',
+            'nest-bg': '#F7F6F1',
+            'nest-dark-bg': '#171D1A',
+            'nest-surface': '#FFFFFF',
+            'nest-dark-surface': '#242D28',
+            'nest-heading': '#202824',
+            'nest-muted': '#777F79',
+            'nest-border': '#E8E8E1',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-[#FFFFFF] antialiased">
+
+  <div class="dashboard-layout">
+    
+    <div id="dash-sidebar-backdrop" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+    <!-- SIDEBAR -->
+    <aside id="dash-sidebar" class="dashboard-sidebar">
+      <div class="p-6 border-b border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#173C35] flex items-center justify-center text-[#D9A66F] font-bold shadow-sm">
+            N
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white block leading-none">NESTSPACE</span>
+            <span class="text-[10px] tracking-wider uppercase font-semibold text-[#D9A66F] block mt-0.5">Member Portal</span>
+          </div>
+        </a>
+        <button id="dash-sidebar-close" class="lg:hidden text-gray-400">✕</button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Workspace</span>
+          <nav class="space-y-1">
+            <a href="overview.html" class="nav-link-dash">
+              <span class="text-base">📊</span>
+              <span>Overview</span>
+            </a>
+            <a href="bookings.html" class="nav-link-dash">
+              <span class="text-base">📅</span>
+              <span>My Bookings</span>
+            </a>
+            <a href="book-space.html" class="nav-link-dash">
+              <span class="text-base">✨</span>
+              <span>Book a Space</span>
+            </a>
+            <a href="explore-spaces.html" class="nav-link-dash">
+              <span class="text-base">🔍</span>
+              <span>Explore Spaces</span>
+            </a>
+          </nav>
+        </div>
+
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Account</span>
+          <nav class="space-y-1">
+            <a href="membership.html" class="nav-link-dash active">
+              <span class="text-base">💳</span>
+              <span>Membership Plan</span>
+            </a>
+            <a href="invoices.html" class="nav-link-dash">
+              <span class="text-base">🧾</span>
+              <span>Invoices</span>
+            </a>
+            <a href="profile.html" class="nav-link-dash">
+              <span class="text-base">👤</span>
+              <span>My Profile</span>
+            </a>
+            <a href="notifications.html" class="nav-link-dash">
+              <span class="text-base">🔔</span>
+              <span>Notifications</span>
+            </a>
+            <a href="settings.html" class="nav-link-dash">
+              <span class="text-base">⚙️</span>
+              <span>Settings</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img class="w-9 h-9 rounded-full object-cover border border-[#D9A66F]" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Pravin">
+          <div class="text-xs">
+            <strong class="block text-[#173C35] dark:text-white leading-tight">Pravin Kumar</strong>
+            <span class="text-gray-400 text-[10px]">Pro Member</span>
+          </div>
+        </div>
+        <a href="../login.html" title="Logout" class="text-gray-400 hover:text-red-600 text-sm p-1.5 rounded-lg">
+          🚪
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="flex items-center gap-3">
+          <button id="dash-sidebar-toggle" class="lg:hidden w-9 h-9 rounded-lg border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[#173C35] dark:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <h2 class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white">Active Membership</h2>
+        </div>
+      </header>
+
+      <div class="p-6 sm:p-8 max-w-7xl w-full mx-auto space-y-8">
+        
+        <!-- Current Active Plan Card -->
+        <div class="bg-gradient-to-br from-[#F5EFE6] via-white to-[#ECE5D8] dark:from-[#173C35] dark:to-[#0f2722] rounded-3xl p-6 sm:p-8 text-[#202824] dark:text-white border border-[#D9A66F]/40 dark:border-transparent shadow-md relative overflow-hidden">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-[#D9A66F] text-[#171D1A] text-xs font-bold uppercase tracking-wider">
+                  Active Tier
+                </span>
+                <span class="text-xs text-[#777F79] dark:text-gray-300">Renews Dec 1, 2026</span>
+              </div>
+              <h1 class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white">Pro Membership Pass</h1>
+              <p class="text-xs text-[#777F79] dark:text-gray-200">
+                ₹1,999 / month • Unlimited Hot Desking • 24/7 Smart Access
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <button type="button" onclick="openUpgradeModal()" class="btn-primary dark:btn-accent text-xs py-3 px-6 font-bold shadow-md">
+                Upgrade to Elite Pass &rarr;
+              </button>
+              <button type="button" onclick="showToast('Your subscription is set to renew automatically.')" class="px-4 py-3 rounded-full border border-[#173C35] text-[#173C35] hover:bg-[#173C35] hover:text-white dark:border-white/30 dark:text-white dark:hover:bg-white/10 text-xs font-semibold transition-colors">
+                Manage Renewal
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Usage Meters -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <div class="bg-white dark:bg-[#242D28] rounded-2xl p-6 border border-[#E8E8E1] dark:border-[#313B35] space-y-4">
+            <div class="flex justify-between items-center text-xs">
+              <strong class="font-bold text-[#173C35] dark:text-white">Desk Hours Allowance</strong>
+              <span class="text-gray-400">24 / 40 hrs consumed</span>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full h-3 rounded-full bg-gray-100 dark:bg-gray-800 overflow-hidden">
+              <div class="h-full bg-[#173C35] dark:bg-[#D9A66F] rounded-full" style="width: 60%;"></div>
+            </div>
+            <p class="text-[11px] text-[#777F79] dark:text-[#B9C2BC]">
+              16 hours remaining this billing period. Resets automatically on Dec 1, 2026.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-[#242D28] rounded-2xl p-6 border border-[#E8E8E1] dark:border-[#313B35] space-y-4">
+            <div class="flex justify-between items-center text-xs">
+              <strong class="font-bold text-[#173C35] dark:text-white">Meeting Room Credits</strong>
+              <span class="text-gray-400">4 / 6 credits used</span>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full h-3 rounded-full bg-gray-100 dark:bg-gray-800 overflow-hidden">
+              <div class="h-full bg-[#D9A66F] rounded-full" style="width: 66%;"></div>
+            </div>
+            <p class="text-[11px] text-[#777F79] dark:text-[#B9C2BC]">
+              2 hours remaining for Executive Boardrooms or Innovation Studios.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Add-on Credit Bundles -->
+        <div class="bg-white dark:bg-[#242D28] rounded-2xl p-6 border border-[#E8E8E1] dark:border-[#313B35] space-y-4">
+          <h3 class="font-heading font-bold text-lg text-[#173C35] dark:text-white">Top-Up Credit Packs</h3>
+          <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">Instant member-discounted credit boosters.</p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div class="p-4 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-[#F7F6F1] dark:bg-[#171D1A] flex flex-col justify-between">
+              <div>
+                <strong class="text-xs font-bold text-[#173C35] dark:text-white block">+5 Meeting Room Credits</strong>
+                <span class="text-xs text-gray-500">Valid for 60 days</span>
+                <div class="text-base font-extrabold text-[#D9A66F] mt-2">₹450</div>
+              </div>
+              <button type="button" onclick="showToast('Pack added to account balance!')" class="mt-3 btn-secondary text-xs py-1.5 w-full">Buy Pack</button>
+            </div>
+
+            <div class="p-4 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-[#F7F6F1] dark:bg-[#171D1A] flex flex-col justify-between">
+              <div>
+                <strong class="text-xs font-bold text-[#173C35] dark:text-white block">Dedicated Locker Monthly</strong>
+                <span class="text-xs text-gray-500">Keypad electronic lock</span>
+                <div class="text-base font-extrabold text-[#D9A66F] mt-2">₹500 / mo</div>
+              </div>
+              <button type="button" onclick="showToast('Locker allocated: Locker #28')" class="mt-3 btn-secondary text-xs py-1.5 w-full">Assign Locker</button>
+            </div>
+
+            <div class="p-4 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-[#F7F6F1] dark:bg-[#171D1A] flex flex-col justify-between">
+              <div>
+                <strong class="text-xs font-bold text-[#173C35] dark:text-white block">Guest Day Pass Bundle</strong>
+                <span class="text-xs text-gray-500">3 single-day passes</span>
+                <div class="text-base font-extrabold text-[#D9A66F] mt-2">₹600</div>
+              </div>
+              <button type="button" onclick="showToast('3 Guest passes credited!')" class="mt-3 btn-secondary text-xs py-1.5 w-full">Add Passes</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Upgrade Modal -->
+  <div id="upgrade-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#242D28] rounded-3xl p-8 max-w-md w-full shadow-2xl border border-[#E8E8E1] dark:border-[#313B35] space-y-4">
+      <h3 class="font-heading font-extrabold text-2xl text-[#173C35] dark:text-white">Upgrade to Elite Pass</h3>
+      <p class="text-xs text-gray-400">Unlock private cedar pod allocations, 15 boardroom credits, and personal locker.</p>
+
+      <div class="p-4 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A] text-xs space-y-2 border border-[#E8E8E1] dark:border-[#313B35]">
+        <div class="flex justify-between">
+          <span>Elite Plan:</span>
+          <strong>₹3,999 / mo</strong>
+        </div>
+        <div class="flex justify-between text-emerald-600">
+          <span>Prorated Credit for Remaining Pro Days:</span>
+          <strong>-₹860</strong>
+        </div>
+        <div class="pt-2 border-t border-gray-200 dark:border-gray-700 flex justify-between font-bold text-sm text-[#173C35] dark:text-white">
+          <span>Due Today:</span>
+          <span class="text-[#D9A66F]">₹3,139</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2 pt-2">
+        <button type="button" onclick="confirmUpgrade()" class="w-full btn-primary py-3 text-xs font-bold">
+          Confirm & Charge Saved Card ↗
+        </button>
+        <button type="button" onclick="closeUpgradeModal()" class="text-xs text-gray-400 hover:text-gray-600 py-1">
+          Never mind
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script>
+    function openUpgradeModal() {
+      const modal = document.getElementById('upgrade-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+    function closeUpgradeModal() {
+      const modal = document.getElementById('upgrade-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    function confirmUpgrade() {
+      closeUpgradeModal();
+      showToast('Congratulations! Upgraded to Elite Pass.');
+    }
+  </script>
+</body>
+</html>
+

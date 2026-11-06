@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NESTSPACE – Work • Study • Grow | Modern Workspace Booking</title>
+  <meta name="description" content="Premium modern workspace booking platform combining professional coworking with peaceful study library environments.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23173C35'><path d='M6 6h4v20H6V6zm16 0h4v20h-4V6zM10 6l12 20h-4L6 6h4z' fill='%23D9A66F'/><path d='M6 6h4v20H6zm16 0h4v20h-4z'/></svg>">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#173C35',
+            'primary-dark': '#0f2722',
+            secondary: '#D9A66F',
+            'nest-bg': '#F7F6F1',
+            'nest-dark-bg': '#171D1A',
+            'nest-surface': '#FFFFFF',
+            'nest-dark-surface': '#242D28',
+            'nest-heading': '#202824',
+            'nest-muted': '#777F79',
+            'nest-border': '#E8E8E1',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/theme.js"></script>
+</head>
+<body class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-[#FFFFFF] antialiased transition-colors duration-300">
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header id="main-header" class="sticky top-0 z-50 bg-[#F7F6F1]/90 dark:bg-[#171D1A]/90 backdrop-blur-md border-b border-[#E8E8E1] dark:border-[#2E3832] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-[#173C35] dark:bg-[#242D28] border border-[#D9A66F]/40 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+          <svg class="w-6 h-6 text-[#D9A66F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 21V4l8 12V4" />
+            <path d="M12 20h8V4" stroke="#D9A66F" />
+            <line x1="4" y1="12" x2="20" y2="12" stroke-dasharray="2 2" stroke="white" opacity="0.6"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl tracking-tight text-[#173C35] dark:text-white block leading-none">NESTSPACE</span>
+          <span class="text-[10px] tracking-widest uppercase font-semibold text-[#D9A66F] block mt-0.5">WORK • STUDY • GROW</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Center -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm font-semibold text-[#173C35] dark:text-[#D9A66F] border-b-2 border-[#173C35] dark:border-[#D9A66F] pb-1">HOME</a>
+        <a href="home-2.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors">HOME 2</a>
+        <a href="spaces.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors">SPACES</a>
+        <a href="membership.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors">PLANS</a>
+        <a href="gallery.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors">GALLERY</a>
+        <a href="dashboard/overview.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors">DASHBOARD</a>
+      </nav>
+
+      <!-- Right CTAs & Theme Toggle -->
+      <div class="hidden md:flex items-center gap-4">
+        <!-- Theme Toggle Button -->
+        <button type="button" class="theme-toggle-btn w-10 h-10 rounded-full border border-[#E8E8E1] dark:border-[#2E3832] flex items-center justify-center text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors bg-white/60 dark:bg-[#242D28]" aria-label="Toggle dark mode">
+          <svg class="icon-sun w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+          <svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+
+        <a href="login.html" class="text-sm font-semibold text-[#173C35] dark:text-white hover:text-[#D9A66F] px-3 py-2 transition-colors">Login</a>
+        <a href="spaces.html" class="btn-primary text-sm shadow-md">
+          <span>Book a Space</span>
+          <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-2 md:hidden">
+        <button type="button" class="theme-toggle-btn w-9 h-9 rounded-full border border-[#E8E8E1] dark:border-[#2E3832] flex items-center justify-center text-[#777F79] dark:text-[#B9C2BC] bg-white dark:bg-[#242D28]">
+          <svg class="icon-sun w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+          <svg class="icon-moon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <button id="mobile-menu-btn" class="w-10 h-10 rounded-lg border border-[#E8E8E1] dark:border-[#2E3832] flex items-center justify-center text-[#173C35] dark:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm transition-opacity"></div>
+  <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 bg-[#F7F6F1] dark:bg-[#171D1A] z-50 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-[#E8E8E1] dark:border-[#2E3832]">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-[#173C35] flex items-center justify-center text-[#D9A66F] font-bold">N</div>
+          <span class="font-heading font-bold text-lg text-[#173C35] dark:text-white">NESTSPACE</span>
+        </div>
+        <button id="close-mobile-menu-btn" class="w-8 h-8 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center text-gray-500">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-4 mt-6">
+        <a href="index.html" class="text-base font-semibold text-[#173C35] dark:text-[#D9A66F]">Home (Classic)</a>
+        <a href="home-2.html" class="text-base font-medium text-[#777F79] dark:text-[#B9C2BC] hover:text-[#173C35]">Home 2 (Editorial)</a>
+        <a href="spaces.html" class="text-base font-medium text-[#777F79] dark:text-[#B9C2BC] hover:text-[#173C35]">Spaces</a>
+        <a href="membership.html" class="text-base font-medium text-[#777F79] dark:text-[#B9C2BC] hover:text-[#173C35]">Membership Plans</a>
+        <a href="gallery.html" class="text-base font-medium text-[#777F79] dark:text-[#B9C2BC] hover:text-[#173C35]">Gallery</a>
+        <a href="dashboard/overview.html" class="text-base font-medium text-[#777F79] dark:text-[#B9C2BC] hover:text-[#173C35]">Dashboard</a>
+      </nav>
+    </div>
+
+    <div class="flex flex-col gap-3 pt-6 border-t border-[#E8E8E1] dark:border-[#2E3832]">
+      <a href="login.html" class="btn-secondary w-full text-center">Login</a>
+      <a href="spaces.html" class="btn-primary w-full text-center">Book a Space ↗</a>
+    </div>
+  </div>
+
+  <!-- ==================== SECTION 1: HERO ==================== -->
+  <section class="relative pt-12 pb-24 lg:pt-16 lg:pb-32 overflow-hidden bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#173C35]/10 dark:bg-[#D9A66F]/10 border border-[#173C35]/20 dark:border-[#D9A66F]/30 text-xs font-semibold uppercase tracking-wider text-[#173C35] dark:text-[#D9A66F]">
+            <span class="w-2 h-2 rounded-full bg-[#D9A66F] animate-pulse"></span>
+            Quiet Work & Architectural Study Havens
+          </div>
+          
+          <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#173C35] dark:text-white leading-[1.12]">
+            Find Your Space. <br>
+            <span class="text-[#D9A66F]">Unlock Your Potential.</span>
+          </h1>
+
+          <p class="text-lg text-[#777F79] dark:text-[#B9C2BC] max-w-xl leading-relaxed">
+            A better place to work, study and create. Discover inspiring architectural workspaces designed around distraction-free focus, ergonomic comfort, and effortless flexibility.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="spaces.html" class="btn-primary text-base py-3.5 px-8 shadow-lg">
+              <span>Explore Spaces</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="membership.html" class="btn-secondary text-base py-3.5 px-7">
+              View Memberships
+            </a>
+          </div>
+
+          <!-- Trust Proof -->
+          <div class="pt-6 border-t border-[#E8E8E1] dark:border-[#2E3832] flex items-center gap-6">
+            <div class="flex -space-x-3">
+              <img class="w-10 h-10 rounded-full border-2 border-white dark:border-[#171D1A] object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Member">
+              <img class="w-10 h-10 rounded-full border-2 border-white dark:border-[#171D1A] object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Member">
+              <img class="w-10 h-10 rounded-full border-2 border-white dark:border-[#171D1A] object-cover" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" alt="Member">
+              <div class="w-10 h-10 rounded-full border-2 border-white dark:border-[#171D1A] bg-[#173C35] text-white flex items-center justify-center text-xs font-bold">+2.4k</div>
+            </div>
+            <div>
+              <div class="flex items-center text-[#D9A66F] text-sm">
+                ★★★★★ <span class="text-xs font-semibold text-[#173C35] dark:text-white ml-2">4.92 / 5</span>
+              </div>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">Trusted by founders, researchers & scholars</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual with Floating Availability Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/60 dark:border-[#242D28] group">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" 
+                 alt="NESTSPACE Architectural Coworking" 
+                 class="w-full h-[460px] sm:h-[520px] object-cover group-hover:scale-105 transition-transform duration-700">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+
+            <!-- Floating Badge Top Right -->
+            <div class="absolute top-4 right-4 bg-white/90 dark:bg-[#171D1A]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-2 border border-[#E8E8E1] dark:border-[#2E3832]">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+              <span class="text-xs font-bold text-[#173C35] dark:text-white">Live Capacity: 84% Free</span>
+            </div>
+
+            <!-- Floating Availability Card Bottom Left -->
+            <div class="absolute bottom-6 left-6 right-6 sm:right-auto sm:max-w-xs bg-white/95 dark:bg-[#242D28]/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/40 dark:border-[#313B35]">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-[#173C35] text-[#D9A66F] flex items-center justify-center font-bold text-lg">
+                  12
+                </div>
+                <div>
+                  <h4 class="font-heading font-bold text-sm text-[#173C35] dark:text-white">Desks Available Today</h4>
+                  <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">Floor 2 • Silent Library Wing</p>
+                </div>
+              </div>
+              <div class="mt-3 pt-2.5 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between text-xs">
+                <span class="text-[#777F79] dark:text-[#B9C2BC]">Next slot: <strong class="text-[#173C35] dark:text-white font-semibold">10:00 AM</strong></span>
+                <a href="spaces.html" class="text-[#D9A66F] font-semibold hover:underline">Reserve now &rarr;</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 2: QUICK BOOKING BAR ==================== -->
+  <section class="relative z-20 -mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white dark:bg-[#242D28] rounded-2xl shadow-xl border border-[#E8E8E1] dark:border-[#2E3832] p-4 sm:p-6 lg:p-8">
+      <form action="spaces.html" method="GET" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+        
+        <!-- Location -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-2">Location</label>
+          <div class="relative">
+            <select name="location" class="w-full h-12 px-3.5 pr-8 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-[#F7F6F1] dark:bg-[#171D1A] text-sm text-[#173C35] dark:text-white font-medium focus:outline-none focus:ring-2 focus:ring-[#173C35]">
+              <option value="central">Central Campus – North Wing</option>
+              <option value="west">Grand Atrium – West Wing</option>
+              <option value="loft">The Glasshouse – 4th Floor</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Space Type -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-2">Space Type</label>
+          <div class="relative">
+            <select name="category" class="w-full h-12 px-3.5 pr-8 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-[#F7F6F1] dark:bg-[#171D1A] text-sm text-[#173C35] dark:text-white font-medium focus:outline-none focus:ring-2 focus:ring-[#173C35]">
+              <option value="all">All Workspaces</option>
+              <option value="desk">Open Desk (Hot Desk)</option>
+              <option value="cabin">Private Cabin</option>
+              <option value="meeting">Meeting Room</option>
+              <option value="study">Quiet Study Carrel</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Check-in Date -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-2">Check-in Date</label>
+          <input type="date" name="date" class="w-full h-12 px-3.5 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-[#F7F6F1] dark:bg-[#171D1A] text-sm text-[#173C35] dark:text-white font-medium focus:outline-none focus:ring-2 focus:ring-[#173C35]" value="2026-11-06">
+        </div>
+
+        <!-- Start Time -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-2">Start Time</label>
+          <select name="time" class="w-full h-12 px-3.5 pr-8 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-[#F7F6F1] dark:bg-[#171D1A] text-sm text-[#173C35] dark:text-white font-medium focus:outline-none focus:ring-2 focus:ring-[#173C35]">
+            <option value="09:00">09:00 AM</option>
+            <option value="10:00" selected>10:00 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="14:00">02:00 PM</option>
+            <option value="18:00">06:00 PM (Evening Pass)</option>
+          </select>
+        </div>
+
+        <!-- Search Button -->
+        <div>
+          <button type="submit" class="w-full h-12 btn-primary rounded-xl flex items-center justify-center gap-2 font-bold shadow-md hover:shadow-lg">
+            <svg class="w-5 h-5 text-[#D9A66F]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <span>Search Availability</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3: WORKSPACE CATEGORIES ==================== -->
+  <section class="py-20 lg:py-28 bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">Tailored Work Environments</span>
+          <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white mt-1">
+            Spaces Designed for Every Ambition
+          </h2>
+        </div>
+        <p class="text-sm sm:text-base text-[#777F79] dark:text-[#B9C2BC] max-w-md mt-3 md:mt-0">
+          Whether you need deep silence for dissertation writing or an AV-equipped boardroom for client pitches, we have the ideal setup.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Category 1: Open Desks -->
+        <a href="spaces.html?category=desk" class="group bg-white dark:bg-[#242D28] rounded-2xl p-5 border border-[#E8E8E1] dark:border-[#2E3832] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="rounded-xl overflow-hidden mb-4 relative aspect-[4/3]">
+              <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=600&q=80" alt="Open Desks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-[#173C35] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">From ₹120/hr</span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-[#173C35] dark:text-white group-hover:text-[#D9A66F] transition-colors">Open Desks</h3>
+            <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] mt-1.5 leading-relaxed">
+              Flexible workstations with natural sunlight, power outlets and Herman Miller chairs for everyday productivity.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between text-xs font-semibold text-[#173C35] dark:text-[#D9A66F]">
+            <span>Explore 28 Available</span>
+            <span>&rarr;</span>
+          </div>
+        </a>
+
+        <!-- Category 2: Private Cabins -->
+        <a href="spaces.html?category=cabin" class="group bg-white dark:bg-[#242D28] rounded-2xl p-5 border border-[#E8E8E1] dark:border-[#2E3832] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="rounded-xl overflow-hidden mb-4 relative aspect-[4/3]">
+              <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=600&q=80" alt="Private Cabins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-[#173C35] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">From ₹350/hr</span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-[#173C35] dark:text-white group-hover:text-[#D9A66F] transition-colors">Private Cabins</h3>
+            <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] mt-1.5 leading-relaxed">
+              Soundproof glass studios for confidential calls, focus sprints, and uninterrupted private team work.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between text-xs font-semibold text-[#173C35] dark:text-[#D9A66F]">
+            <span>Explore 8 Available</span>
+            <span>&rarr;</span>
+          </div>
+        </a>
+
+        <!-- Category 3: Meeting Rooms -->
+        <a href="spaces.html?category=meeting" class="group bg-white dark:bg-[#242D28] rounded-2xl p-5 border border-[#E8E8E1] dark:border-[#2E3832] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="rounded-xl overflow-hidden mb-4 relative aspect-[4/3]">
+              <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=600&q=80" alt="Meeting Rooms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-[#173C35] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">From ₹600/hr</span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-[#173C35] dark:text-white group-hover:text-[#D9A66F] transition-colors">Meeting Rooms</h3>
+            <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] mt-1.5 leading-relaxed">
+              Equipped with 4K interactive displays, Polycom conference audio, and whiteboards for collaborative milestones.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between text-xs font-semibold text-[#173C35] dark:text-[#D9A66F]">
+            <span>Explore 6 Available</span>
+            <span>&rarr;</span>
+          </div>
+        </a>
+
+        <!-- Category 4: Study Zones -->
+        <a href="spaces.html?category=study" class="group bg-white dark:bg-[#242D28] rounded-2xl p-5 border border-[#E8E8E1] dark:border-[#2E3832] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="rounded-xl overflow-hidden mb-4 relative aspect-[4/3]">
+              <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=600&q=80" alt="Study Zones" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-[#173C35] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">From ₹90/hr</span>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-[#173C35] dark:text-white group-hover:text-[#D9A66F] transition-colors">Study Zones</h3>
+            <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] mt-1.5 leading-relaxed">
+              Quiet carrels with ambient reading lamps and acoustic sound dividers for exam preparation and scholarly reading.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between text-xs font-semibold text-[#173C35] dark:text-[#D9A66F]">
+            <span>Explore 14 Available</span>
+            <span>&rarr;</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: WHY CHOOSE US ==================== -->
+  <section class="py-20 bg-white dark:bg-[#242D28] border-y border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">The NESTSPACE Standard</span>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white mt-1">
+          Everything You Need for Pure Flow
+        </h2>
+        <p class="text-sm sm:text-base text-[#777F79] dark:text-[#B9C2BC] mt-3">
+          Thoughtfully curated architectural amenities to eliminate fatigue and maximize your output.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-2xl bg-[#F7F6F1] dark:bg-[#171D1A] border border-[#E8E8E1] dark:border-[#313B35]">
+          <div class="w-12 h-12 rounded-xl bg-[#173C35] dark:bg-white/10 text-[#D9A66F] flex items-center justify-center mb-5 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+          </div>
+          <h4 class="font-heading font-bold text-lg text-[#173C35] dark:text-white mb-2">High-Speed Fiber Wi-Fi</h4>
+          <p class="text-sm text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+            Redundant 1 Gbps symmetrical fiber connections with enterprise WPA3 security and dedicated video bandwidth.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-2xl bg-[#F7F6F1] dark:bg-[#171D1A] border border-[#E8E8E1] dark:border-[#313B35]">
+          <div class="w-12 h-12 rounded-xl bg-[#173C35] dark:bg-white/10 text-[#D9A66F] flex items-center justify-center mb-5 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h4 class="font-heading font-bold text-lg text-[#173C35] dark:text-white mb-2">24/7 Keyless Smart Access</h4>
+          <p class="text-sm text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+            Full flexible access anytime with biometric and NFC mobile key card unlock for night owls and early risers.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-2xl bg-[#F7F6F1] dark:bg-[#171D1A] border border-[#E8E8E1] dark:border-[#313B35]">
+          <div class="w-12 h-12 rounded-xl bg-[#173C35] dark:bg-white/10 text-[#D9A66F] flex items-center justify-center mb-5 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <h4 class="font-heading font-bold text-lg text-[#173C35] dark:text-white mb-2">Ergonomic Furniture</h4>
+          <p class="text-sm text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+            Herman Miller Aeron chairs, electric motorized sit-stand desks, and anti-glare architectural lighting.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-2xl bg-[#F7F6F1] dark:bg-[#171D1A] border border-[#E8E8E1] dark:border-[#313B35]">
+          <div class="w-12 h-12 rounded-xl bg-[#173C35] dark:bg-white/10 text-[#D9A66F] flex items-center justify-center mb-5 shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          </div>
+          <h4 class="font-heading font-bold text-lg text-[#173C35] dark:text-white mb-2">Artisan Coffee & Tea</h4>
+          <p class="text-sm text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+            Complimentary single-origin espresso, loose-leaf teas, infused sparkling water, and healthy brain snacks.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 5: FEATURED WORKSPACES ==================== -->
+  <section class="py-20 lg:py-28 bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">Spotlight Recommendations</span>
+          <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white mt-1">
+            Featured Workspaces
+          </h2>
+        </div>
+        <a href="spaces.html" class="inline-flex items-center gap-1.5 text-sm font-bold text-[#173C35] dark:text-[#D9A66F] hover:underline mt-4 sm:mt-0">
+          View all 24 spaces &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Space 1 -->
+        <div class="card-nest overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Private Cabin A-02" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-[#173C35] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                Private Cabin
+              </span>
+              <span class="absolute bottom-3 right-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm text-xs font-bold px-2.5 py-1 rounded-md text-[#173C35] dark:text-white">
+                ₹380 / hour
+              </span>
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-[#D9A66F] uppercase tracking-wider">Level 3 • North Wing</span>
+                <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">Available Today</span>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white mb-2">
+                Private Cabin A-02 – The Cedar Pod
+              </h3>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] mb-4">
+                Acoustic insulated private office with solid cedar desk, 27" 4K Dell UltraSharp monitor, and personal climate control.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 text-[11px] text-[#777F79] dark:text-[#B9C2BC] mb-4">
+                <span class="bg-[#F7F6F1] dark:bg-[#171D1A] px-2.5 py-1 rounded-md border border-[#E8E8E1] dark:border-[#313B35]">Capacity: 1–2</span>
+                <span class="bg-[#F7F6F1] dark:bg-[#171D1A] px-2.5 py-1 rounded-md border border-[#E8E8E1] dark:border-[#313B35]">4K Display</span>
+                <span class="bg-[#F7F6F1] dark:bg-[#171D1A] px-2.5 py-1 rounded-md border border-[#E8E8E1] dark:border-[#313B35]">Silent Zone</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="space-details.html?id=cabin-a02" class="btn-primary w-full text-center text-sm py-2.5">
+              View Details & Book
+            </a>
+          </div>
+        </div>
+
+        <!-- Space 2 -->
+        <div class="card-nest overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80" alt="Executive Boardroom" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-[#173C35] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                Meeting Room
+              </span>
+              <span class="absolute bottom-3 right-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm text-xs font-bold px-2.5 py-1 rounded-md text-[#173C35] dark:text-white">
+                ₹850 / hour
+              </span>
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-[#D9A66F] uppercase tracking-wider">Level 2 • Executive Wing</span>
+                <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">Available Today</span>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white mb-2">
+                Executive Boardroom – The Gallery
+              </h3>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] mb-4">
+                Premium 10-seater boardroom with 75" Samsung Flip interactive whiteboard, 4K camera setup, and dedicated espresso service.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 text-[11px] text-[#777F79] dark:text-[#B9C2BC] mb-4">
+                <span class="bg-[#F7F6F1] dark:bg-[#171D1A] px-2.5 py-1 rounded-md border border-[#E8E8E1] dark:border-[#313B35]">Capacity: 10–12</span>
+                <span class="bg-[#F7F6F1] dark:bg-[#171D1A] px-2.5 py-1 rounded-md border border-[#E8E8E1] dark:border-[#313B35]">Video Conf</span>
+                <span class="bg-[#F7F6F1] dark:bg-[#171D1A] px-2.5 py-1 rounded-md border border-[#E8E8E1] dark:border-[#313B35]">Whiteboard</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="space-details.html?id=boardroom-gallery" class="btn-primary w-full text-center text-sm py-2.5">
+              View Details & Book
+            </a>
+          </div>
+        </div>
+
+        <!-- Space 3 -->
+        <div class="card-nest overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="relative h-60 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=800&q=80" alt="Nordic Study Carrel" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-3 left-3 bg-[#173C35] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                Study Carrel
+              </span>
+              <span class="absolute bottom-3 right-3 bg-white/90 dark:bg-black/80 backdrop-blur-sm text-xs font-bold px-2.5 py-1 rounded-md text-[#173C35] dark:text-white">
+                ₹140 / hour
+              </span>
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-[#D9A66F] uppercase tracking-wider">Level 1 • Silent Library</span>
+                <span class="text-xs font-semibold text-emerald-600 dark:text-emerald-400">Available Today</span>
+              </div>
+              <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white mb-2">
+                Nordic Study Carrel – Desk 14
+              </h3>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] mb-4">
+                Oak-paneled private study carrel with integrated LED warm lamp, quiet phone booth access, and reference book access.
+              </p>
+              
+              <div class="flex flex-wrap gap-2 text-[11px] text-[#777F79] dark:text-[#B9C2BC] mb-4">
+                <span class="bg-[#F7F6F1] dark:bg-[#171D1A] px-2.5 py-1 rounded-md border border-[#E8E8E1] dark:border-[#313B35]">Capacity: 1</span>
+                <span class="bg-[#F7F6F1] dark:bg-[#171D1A] px-2.5 py-1 rounded-md border border-[#E8E8E1] dark:border-[#313B35]">Zero Noise</span>
+                <span class="bg-[#F7F6F1] dark:bg-[#171D1A] px-2.5 py-1 rounded-md border border-[#E8E8E1] dark:border-[#313B35]">Reading Lamp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0">
+            <a href="space-details.html?id=study-desk-14" class="btn-primary w-full text-center text-sm py-2.5">
+              View Details & Book
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 6: MEMBERSHIP PROMO BANNER ==================== -->
+  <section class="py-20 bg-gradient-to-br from-[#F5EFE6] via-[#FAF7F2] to-[#EAE4D8] dark:from-[#173C35] dark:to-[#0f2722] text-[#202824] dark:text-white relative overflow-hidden border-y border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none">
+      <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80" alt="Workspace background" class="w-full h-full object-cover">
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-8 space-y-4">
+          <span class="text-xs font-bold tracking-widest text-[#bd854b] dark:text-[#D9A66F] uppercase">Unlock Unlimited Potential</span>
+          <h2 class="font-heading font-extrabold text-3xl sm:text-5xl leading-tight text-[#173C35] dark:text-white">
+            Work Daily. Save Up To 45% With Our Flexible Monthly Memberships.
+          </h2>
+          <p class="text-base text-[#777F79] dark:text-gray-200 max-w-2xl leading-relaxed">
+            Get unlimited hot desk access, complimentary meeting room credits, free high-speed printing, priority booking, and community networking events.
+          </p>
+          
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
+            <div class="flex items-center gap-2 text-sm text-[#202824] dark:text-gray-200 font-medium">
+              <span class="text-[#D9A66F] font-bold">✓</span> 24/7 Building Access
+            </div>
+            <div class="flex items-center gap-2 text-sm text-[#202824] dark:text-gray-200 font-medium">
+              <span class="text-[#D9A66F] font-bold">✓</span> Free Specialty Coffee
+            </div>
+            <div class="flex items-center gap-2 text-sm text-[#202824] dark:text-gray-200 font-medium">
+              <span class="text-[#D9A66F] font-bold">✓</span> Meeting Room Credits
+            </div>
+            <div class="flex items-center gap-2 text-sm text-[#202824] dark:text-gray-200 font-medium">
+              <span class="text-[#D9A66F] font-bold">✓</span> Fiber Internet 1Gbps
+            </div>
+            <div class="flex items-center gap-2 text-sm text-[#202824] dark:text-gray-200 font-medium">
+              <span class="text-[#D9A66F] font-bold">✓</span> Dedicated Storage Locker
+            </div>
+            <div class="flex items-center gap-2 text-sm text-[#202824] dark:text-gray-200 font-medium">
+              <span class="text-[#D9A66F] font-bold">✓</span> No Lock-In Contracts
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-center">
+          <div class="bg-white dark:bg-white/10 dark:backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-[#D9A66F]/40 dark:border-white/20 w-full max-w-sm text-center shadow-xl">
+            <span class="text-xs uppercase tracking-wider text-[#bd854b] dark:text-[#D9A66F] font-extrabold">Plans starting from</span>
+            <div class="font-heading font-extrabold text-4xl text-[#173C35] dark:text-white my-2">₹999 <span class="text-base font-normal text-gray-500 dark:text-gray-300">/ month</span></div>
+            <p class="text-xs text-[#777F79] dark:text-gray-300 mb-5">Includes basic desk credits and high-speed Wi-Fi</p>
+            <a href="membership.html" class="btn-primary dark:btn-accent w-full text-center">
+              Compare All Plans &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 7: TESTIMONIALS ==================== -->
+  <section class="py-20 lg:py-28 bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">Community Stories</span>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white mt-1">
+          Loved by Scholars & Creators
+        </h2>
+        <p class="text-sm sm:text-base text-[#777F79] dark:text-[#B9C2BC] mt-3">
+          See how NESTSPACE transformed the daily routine of our members.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Review 1 -->
+        <div class="bg-white dark:bg-[#242D28] p-8 rounded-2xl border border-[#E8E8E1] dark:border-[#2E3832] shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-[#D9A66F] text-base mb-4">★★★★★</div>
+            <p class="text-sm text-[#202824] dark:text-gray-200 leading-relaxed italic">
+              "The silence in the study carrels is unmatched. As a PhD candidate writing my defense, finding a place with natural architectural light and zero distractions has been a genuine lifesaver."
+            </p>
+          </div>
+          <div class="flex items-center gap-4 mt-6 pt-6 border-t border-[#E8E8E1] dark:border-[#313B35]">
+            <img class="w-11 h-11 rounded-full object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Ananya Roy">
+            <div>
+              <h4 class="font-heading font-bold text-sm text-[#173C35] dark:text-white">Ananya Roy</h4>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">Doctoral Researcher, Architecture</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-white dark:bg-[#242D28] p-8 rounded-2xl border border-[#E8E8E1] dark:border-[#2E3832] shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-[#D9A66F] text-base mb-4">★★★★★</div>
+            <p class="text-sm text-[#202824] dark:text-gray-200 leading-relaxed italic">
+              "Our engineering team uses Private Cabin A-02 twice a week for sprint planning. The 4K displays and seamless booking interface make it infinitely better than booking traditional corporate hotels."
+            </p>
+          </div>
+          <div class="flex items-center gap-4 mt-6 pt-6 border-t border-[#E8E8E1] dark:border-[#313B35]">
+            <img class="w-11 h-11 rounded-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Karthik Menon">
+            <div>
+              <h4 class="font-heading font-bold text-sm text-[#173C35] dark:text-white">Karthik Menon</h4>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">Co-founder, VectorFlow Labs</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-white dark:bg-[#242D28] p-8 rounded-2xl border border-[#E8E8E1] dark:border-[#2E3832] shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-[#D9A66F] text-base mb-4">★★★★★</div>
+            <p class="text-sm text-[#202824] dark:text-gray-200 leading-relaxed italic">
+              "The member dashboard is so intuitive. In two clicks I book my favourite desk, see my remaining monthly credits, and download expense receipts directly for tax filing."
+            </p>
+          </div>
+          <div class="flex items-center gap-4 mt-6 pt-6 border-t border-[#E8E8E1] dark:border-[#313B35]">
+            <img class="w-11 h-11 rounded-full object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Pooja Sharma">
+            <div>
+              <h4 class="font-heading font-bold text-sm text-[#173C35] dark:text-white">Pooja Sharma</h4>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">Senior UX Consultant & Remote Lead</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 8: FINAL CTA ==================== -->
+  <section class="py-20 bg-white dark:bg-[#242D28] border-t border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">Begin Today</span>
+      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-[#173C35] dark:text-white leading-tight">
+        Your Next Productive Day Starts Here.
+      </h2>
+      <p class="text-base text-[#777F79] dark:text-[#B9C2BC] max-w-xl mx-auto">
+        Reserve an open desk in 60 seconds, or schedule a free personal walkthrough with our community manager.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-3">
+        <a href="spaces.html" class="btn-primary text-base py-3.5 px-8 shadow-md">
+          Book a Space Now
+        </a>
+        <a href="membership.html" class="btn-secondary text-base py-3.5 px-8">
+          Explore Memberships
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 9: FOOTER ==================== -->
+  <footer class="bg-white dark:bg-[#171D1A] text-[#202824] dark:text-white pt-16 pb-12 border-t border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#E8E8E1] dark:border-[#2E3832]">
+        
+        <!-- Brand Col -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#173C35] dark:bg-white/10 border border-[#D9A66F]/40 flex items-center justify-center text-[#D9A66F]">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 21V4l8 12V4" />
+                <path d="M12 20h8V4" stroke="#D9A66F" />
+              </svg>
+            </div>
+            <div>
+              <span class="font-heading font-extrabold text-xl tracking-tight text-[#173C35] dark:text-white block">NESTSPACE</span>
+              <span class="text-[10px] tracking-widest uppercase font-semibold text-[#bd854b] dark:text-[#D9A66F] block">WORK • STUDY • GROW</span>
+            </div>
+          </div>
+          
+          <p class="text-sm text-[#777F79] dark:text-gray-300 max-w-sm leading-relaxed">
+            A premium architectural workspace booking platform combining distraction-free focus, ergonomic private cabins, collaborative meeting rooms, and peaceful study libraries.
+          </p>
+
+          <div class="text-xs text-[#bd854b] dark:text-[#D9A66F] font-semibold flex items-center gap-2">
+            <span>📍 442 North Heritage Boulevard, Knowledge Corridor</span>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-heading font-bold text-sm text-[#173C35] dark:text-[#D9A66F] uppercase tracking-wider mb-4">Navigation</h4>
+          <ul class="space-y-2.5 text-sm text-[#777F79] dark:text-gray-300">
+            <li><a href="index.html" class="hover:text-[#173C35] dark:hover:text-white transition-colors">Home (Classic)</a></li>
+            <li><a href="home-2.html" class="hover:text-[#173C35] dark:hover:text-white transition-colors">Home 2 (Editorial)</a></li>
+            <li><a href="spaces.html" class="hover:text-[#173C35] dark:hover:text-white transition-colors">All Workspaces</a></li>
+            <li><a href="membership.html" class="hover:text-[#173C35] dark:hover:text-white transition-colors">Membership Plans</a></li>
+            <li><a href="gallery.html" class="hover:text-[#173C35] dark:hover:text-white transition-colors">Architectural Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Workspaces -->
+        <div>
+          <h4 class="font-heading font-bold text-sm text-[#173C35] dark:text-[#D9A66F] uppercase tracking-wider mb-4">Spaces</h4>
+          <ul class="space-y-2.5 text-sm text-[#777F79] dark:text-gray-300">
+            <li><a href="spaces.html?category=desk" class="hover:text-[#173C35] dark:hover:text-white transition-colors">Open Hot Desks</a></li>
+            <li><a href="spaces.html?category=cabin" class="hover:text-[#173C35] dark:hover:text-white transition-colors">Private Soundproof Cabins</a></li>
+            <li><a href="spaces.html?category=meeting" class="hover:text-[#173C35] dark:hover:text-white transition-colors">Conference Boardrooms</a></li>
+            <li><a href="spaces.html?category=study" class="hover:text-[#173C35] dark:hover:text-white transition-colors">Quiet Library Carrels</a></li>
+            <li><a href="dashboard/book-space.html" class="hover:text-[#173C35] dark:hover:text-white transition-colors">Real-time Desk Map</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Hours -->
+        <div>
+          <h4 class="font-heading font-bold text-sm text-[#173C35] dark:text-[#D9A66F] uppercase tracking-wider mb-4">Stay Connected</h4>
+          <p class="text-xs text-[#777F79] dark:text-gray-300 mb-3">Subscribe for open pass drops and member events.</p>
+          <form class="newsletter-form flex flex-col gap-2">
+            <input type="email" placeholder="Your email address" required class="h-10 px-3.5 rounded-lg bg-[#F7F6F1] dark:bg-white/10 border border-[#E8E8E1] dark:border-white/20 text-xs text-[#202824] dark:text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#173C35]">
+            <button type="submit" class="btn-primary dark:btn-accent text-xs py-2">Subscribe</button>
+          </form>
+          <div class="mt-4 text-[11px] text-[#777F79] dark:text-gray-400">
+            Front Desk: Mon–Sun, 7:00 AM – 11:00 PM<br>
+            Members: 24/7 Smart Key Access
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#777F79] dark:text-gray-400 gap-4">
+        <p>&copy; 2026 NESTSPACE. All rights reserved. Crafted for deep focus & productive work.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-[#173C35] dark:hover:text-white">Privacy Policy</a>
+          <a href="#" class="hover:text-[#173C35] dark:hover:text-white">Terms of Service</a>
+          <a href="#" class="hover:text-[#173C35] dark:hover:text-white">House Rules</a>
+          <a href="login.html" class="hover:text-[#173C35] dark:hover:text-white font-semibold text-[#bd854b] dark:text-[#D9A66F]">Member Portal</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

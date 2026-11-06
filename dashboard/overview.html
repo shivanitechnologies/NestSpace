@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Dashboard – NESTSPACE</title>
+  <meta name="description" content="Manage your NESTSPACE reservations, desk credits, and invoices.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23173C35'><path d='M6 6h4v20H6V6zm16 0h4v20h-4V6zM10 6l12 20h-4L6 6h4z' fill='%23D9A66F'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#173C35',
+            'primary-dark': '#0f2722',
+            secondary: '#D9A66F',
+            'nest-bg': '#F7F6F1',
+            'nest-dark-bg': '#171D1A',
+            'nest-surface': '#FFFFFF',
+            'nest-dark-surface': '#242D28',
+            'nest-heading': '#202824',
+            'nest-muted': '#777F79',
+            'nest-border': '#E8E8E1',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-[#FFFFFF] antialiased">
+
+  <div class="dashboard-layout">
+    
+    <!-- Mobile Sidebar Backdrop -->
+    <div id="dash-sidebar-backdrop" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+    <!-- ==================== FIXED LEFT SIDEBAR ==================== -->
+    <aside id="dash-sidebar" class="dashboard-sidebar">
+      
+      <!-- Brand & Member Status -->
+      <div class="p-6 border-b border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#173C35] flex items-center justify-center text-[#D9A66F] font-bold shadow-sm">
+            N
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white block leading-none">NESTSPACE</span>
+            <span class="text-[10px] tracking-wider uppercase font-semibold text-[#D9A66F] block mt-0.5">Member Portal</span>
+          </div>
+        </a>
+        <button id="dash-sidebar-close" class="lg:hidden text-gray-400 hover:text-gray-600">✕</button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+        
+        <!-- Workspace Section -->
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Workspace</span>
+          <nav class="space-y-1">
+            <a href="overview.html" class="nav-link-dash active">
+              <span class="text-base">📊</span>
+              <span>Overview</span>
+            </a>
+            <a href="bookings.html" class="nav-link-dash">
+              <span class="text-base">📅</span>
+              <span>My Bookings</span>
+            </a>
+            <a href="book-space.html" class="nav-link-dash">
+              <span class="text-base">✨</span>
+              <span>Book a Space</span>
+            </a>
+            <a href="explore-spaces.html" class="nav-link-dash">
+              <span class="text-base">🔍</span>
+              <span>Explore Spaces</span>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Account Section -->
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Account</span>
+          <nav class="space-y-1">
+            <a href="membership.html" class="nav-link-dash">
+              <span class="text-base">💳</span>
+              <span>Membership Plan</span>
+            </a>
+            <a href="invoices.html" class="nav-link-dash">
+              <span class="text-base">🧾</span>
+              <span>Invoices</span>
+            </a>
+            <a href="profile.html" class="nav-link-dash">
+              <span class="text-base">👤</span>
+              <span>My Profile</span>
+            </a>
+            <a href="notifications.html" class="nav-link-dash">
+              <span class="text-base">🔔</span>
+              <span>Notifications</span>
+            </a>
+            <a href="settings.html" class="nav-link-dash">
+              <span class="text-base">⚙️</span>
+              <span>Settings</span>
+            </a>
+          </nav>
+        </div>
+
+      </div>
+
+      <!-- Bottom User Profile Strip & Logout -->
+      <div class="p-4 border-t border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img class="w-9 h-9 rounded-full object-cover border border-[#D9A66F]" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Pravin">
+          <div class="text-xs">
+            <strong class="block text-[#173C35] dark:text-white leading-tight">Pravin Kumar</strong>
+            <span class="text-gray-400 text-[10px]">Pro Member</span>
+          </div>
+        </div>
+        <a href="../login.html" title="Logout" class="text-gray-400 hover:text-red-600 text-sm p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          🚪
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- ==================== MAIN CONTENT AREA ==================== -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar -->
+      <header class="dashboard-header">
+        <div class="flex items-center gap-3">
+          <button id="dash-sidebar-toggle" class="lg:hidden w-9 h-9 rounded-lg border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[#173C35] dark:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <div class="relative hidden sm:block w-72">
+            <input type="text" placeholder="Search desks, rooms or dates..." class="w-full h-9 pl-9 pr-4 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A] border border-[#E8E8E1] dark:border-[#313B35] text-xs focus:outline-none focus:ring-1 focus:ring-[#173C35]">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs">🔍</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <!-- Theme Toggle -->
+          <button type="button" class="theme-toggle-btn w-9 h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-gray-500 hover:text-gray-900 dark:text-gray-300">
+            <svg class="icon-sun w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+            <svg class="icon-moon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+
+          <!-- Notifications Dropdown -->
+          <div class="relative">
+            <button id="dash-notif-btn" class="w-9 h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-gray-500 hover:text-[#173C35] relative">
+              🔔
+              <span id="notif-badge-count" class="w-2 h-2 rounded-full bg-red-500 absolute top-2 right-2"></span>
+            </button>
+            <div id="dash-notif-dropdown" class="hidden absolute right-0 mt-2 w-72 rounded-2xl bg-white dark:bg-[#242D28] shadow-xl border border-[#E8E8E1] dark:border-[#313B35] p-4 text-xs z-50 space-y-3">
+              <div class="flex items-center justify-between pb-2 border-b border-gray-100 dark:border-gray-700">
+                <span class="font-bold text-[#173C35] dark:text-white">Notifications</span>
+                <a href="notifications.html" class="text-[10px] text-[#D9A66F]">View All</a>
+              </div>
+              <div class="space-y-2">
+                <p class="text-gray-600 dark:text-gray-300"><strong>Cabin A-02</strong> confirmed for Friday 10:00 AM.</p>
+                <p class="text-gray-600 dark:text-gray-300">Monthly Pro plan renewed successfully.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="book-space.html" class="btn-primary text-xs py-2 px-4 shadow-sm hidden sm:inline-flex">
+            + Quick Reserve
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Body Content -->
+      <div class="p-6 sm:p-8 max-w-7xl w-full mx-auto space-y-8">
+        
+        <!-- Welcome Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h1 class="font-heading font-extrabold text-2xl sm:text-3xl text-[#173C35] dark:text-white">
+              Good morning, Pravin!
+            </h1>
+            <p class="text-xs sm:text-sm text-[#777F79] dark:text-[#B9C2BC] mt-0.5">
+              Ready for a productive day? You have 1 confirmed reservation today.
+            </p>
+          </div>
+          <div class="text-xs text-right">
+            <span class="text-gray-400">Campus Status:</span>
+            <span class="text-emerald-600 font-bold block">Open • Level 3 Silent Zone Active</span>
+          </div>
+        </div>
+
+        <!-- 4 Metric Cards -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          
+          <div class="card-nest p-5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-400 font-semibold uppercase">Upcoming</span>
+              <span class="text-base">📅</span>
+            </div>
+            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3">
+              03
+            </div>
+            <p class="text-[11px] text-[#777F79] dark:text-[#B9C2BC] mt-1">Bookings this week</p>
+          </div>
+
+          <div class="card-nest p-5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-400 font-semibold uppercase">Hours Used</span>
+              <span class="text-base">⏱️</span>
+            </div>
+            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3">
+              24 <span class="text-sm font-normal text-gray-400">/ 40 hrs</span>
+            </div>
+            <p class="text-[11px] text-emerald-600 font-semibold mt-1">16 hrs remaining</p>
+          </div>
+
+          <div class="card-nest p-5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-400 font-semibold uppercase">Current Plan</span>
+              <span class="text-base">⭐</span>
+            </div>
+            <div class="font-heading font-extrabold text-3xl text-[#D9A66F] mt-3">
+              Pro
+            </div>
+            <p class="text-[11px] text-[#777F79] dark:text-[#B9C2BC] mt-1">Renews in 18 days</p>
+          </div>
+
+          <div class="card-nest p-5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-400 font-semibold uppercase">Invoices</span>
+              <span class="text-base">🧾</span>
+            </div>
+            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3">
+              05
+            </div>
+            <p class="text-[11px] text-gray-400 mt-1">All accounts settled</p>
+          </div>
+
+        </div>
+
+        <!-- Next Reservation Banner (Specified in brief) -->
+        <div class="bg-gradient-to-r from-[#F5EFE6] via-white to-[#ECE5D8] dark:from-[#173C35] dark:to-[#1d4d44] text-[#202824] dark:text-white rounded-3xl p-6 sm:p-8 border border-[#D9A66F]/40 dark:border-transparent shadow-md relative overflow-hidden">
+          <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="status-pill status-confirmed text-xs">
+                  ● Confirmed
+                </span>
+                <span class="text-xs text-[#777F79] dark:text-gray-300 font-mono">Booking ID: NS-1024</span>
+              </div>
+              
+              <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-[#173C35] dark:text-white">
+                Private Cabin – A02 (The Cedar Pod)
+              </h2>
+              
+              <div class="flex flex-wrap items-center gap-4 text-xs text-[#777F79] dark:text-gray-200">
+                <span class="flex items-center gap-1.5">🗓️ Friday, 10:00 AM – 12:00 PM</span>
+                <span class="flex items-center gap-1.5">📍 Level 3 • North Wing</span>
+                <span class="flex items-center gap-1.5">🪑 Desk Node A-04</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <a href="bookings.html" class="btn-primary dark:btn-accent text-xs py-3 px-6 text-center font-bold">
+                View Details & Key →
+              </a>
+              <button type="button" class="px-5 py-3 rounded-full border border-[#173C35] text-[#173C35] hover:bg-[#173C35] hover:text-white dark:border-white/30 dark:text-white dark:hover:bg-white/10 text-xs font-semibold transition-colors">
+                Reschedule
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two Column Widget: Weekly Focus Chart & Quick Actions -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Left: Weekly Focus Chart -->
+          <div class="lg:col-span-8 bg-white dark:bg-[#242D28] rounded-2xl p-6 border border-[#E8E8E1] dark:border-[#313B35] shadow-sm">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="font-heading font-bold text-lg text-[#173C35] dark:text-white">Weekly Focus Hours</h3>
+                <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">Hours spent in deep work across spaces</p>
+              </div>
+              <span class="text-xs text-[#D9A66F] font-bold">Total: 24.5 hrs</span>
+            </div>
+
+            <!-- CSS Bar Graph -->
+            <div class="h-48 flex items-end justify-between gap-3 pt-6 border-b border-[#E8E8E1] dark:border-[#313B35] pb-2">
+              <div class="flex-1 flex flex-col items-center gap-2">
+                <div class="w-full bg-[#173C35]/20 dark:bg-[#D9A66F]/20 rounded-t-lg transition-all hover:bg-[#173C35]" style="height: 45%;"></div>
+                <span class="text-[10px] text-gray-400">Mon</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center gap-2">
+                <div class="w-full bg-[#173C35]/20 dark:bg-[#D9A66F]/20 rounded-t-lg transition-all hover:bg-[#173C35]" style="height: 60%;"></div>
+                <span class="text-[10px] text-gray-400">Tue</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center gap-2">
+                <div class="w-full bg-[#173C35]/20 dark:bg-[#D9A66F]/20 rounded-t-lg transition-all hover:bg-[#173C35]" style="height: 85%;"></div>
+                <span class="text-[10px] text-gray-400">Wed</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center gap-2">
+                <div class="w-full bg-[#173C35] dark:bg-[#D9A66F] rounded-t-lg transition-all" style="height: 95%;"></div>
+                <span class="text-[10px] text-[#173C35] dark:text-white font-bold">Thu</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center gap-2">
+                <div class="w-full bg-[#173C35]/20 dark:bg-[#D9A66F]/20 rounded-t-lg transition-all hover:bg-[#173C35]" style="height: 40%;"></div>
+                <span class="text-[10px] text-gray-400">Fri</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center gap-2">
+                <div class="w-full bg-[#173C35]/10 rounded-t-lg" style="height: 15%;"></div>
+                <span class="text-[10px] text-gray-400">Sat</span>
+              </div>
+              <div class="flex-1 flex flex-col items-center gap-2">
+                <div class="w-full bg-[#173C35]/10 rounded-t-lg" style="height: 10%;"></div>
+                <span class="text-[10px] text-gray-400">Sun</span>
+              </div>
+            </div>
+
+            <div class="pt-4 flex items-center justify-between text-xs text-[#777F79] dark:text-[#B9C2BC]">
+              <span>Most productive zone: <strong>Silent Library Carrel</strong></span>
+              <span>Average session: <strong>3.2 hrs</strong></span>
+            </div>
+          </div>
+
+          <!-- Right: Quick Space Booker -->
+          <div class="lg:col-span-4 bg-white dark:bg-[#242D28] rounded-2xl p-6 border border-[#E8E8E1] dark:border-[#313B35] shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 class="font-heading font-bold text-lg text-[#173C35] dark:text-white mb-1">Quick Reserve</h3>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] mb-4">Instant desk booking for today</p>
+              
+              <div class="space-y-3 text-xs">
+                <div>
+                  <label class="block text-gray-400 mb-1">Pick Wing</label>
+                  <select class="w-full input-nest text-xs h-10">
+                    <option>North Wing – Silent Library</option>
+                    <option>West Wing – Atrium Hot Desks</option>
+                    <option>Executive Wing – Meeting Studio</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-gray-400 mb-1">Start Time</label>
+                  <select class="w-full input-nest text-xs h-10">
+                    <option>Now (Immediate Check-in)</option>
+                    <option>02:00 PM Afternoon Pass</option>
+                    <option>06:00 PM Evening Study</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="book-space.html" class="btn-primary w-full text-center text-xs py-3">
+                Open Full Desk Map &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

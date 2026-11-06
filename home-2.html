@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NESTSPACE – Editorial & Luxury Architectural Workspace</title>
+  <meta name="description" content="An immersive architectural sanctuary engineered for deep intellectual pursuit, quiet focus, and executive collaboration.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23173C35'><path d='M6 6h4v20H6V6zm16 0h4v20h-4V6zM10 6l12 20h-4L6 6h4z' fill='%23D9A66F'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#173C35',
+            'primary-dark': '#0f2722',
+            secondary: '#D9A66F',
+            'nest-bg': '#F7F6F1',
+            'nest-dark-bg': '#171D1A',
+            'nest-surface': '#FFFFFF',
+            'nest-dark-surface': '#242D28',
+            'nest-heading': '#202824',
+            'nest-muted': '#777F79',
+            'nest-border': '#E8E8E1',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/theme.js"></script>
+</head>
+<body class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-[#FFFFFF] antialiased transition-colors duration-300">
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="main-header" class="sticky top-0 z-50 bg-[#F7F6F1]/90 dark:bg-[#171D1A]/90 backdrop-blur-md border-b border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-[#173C35] dark:bg-[#242D28] border border-[#D9A66F]/40 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+          <svg class="w-6 h-6 text-[#D9A66F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 21V4l8 12V4" />
+            <path d="M12 20h8V4" stroke="#D9A66F" />
+            <line x1="4" y1="12" x2="20" y2="12" stroke-dasharray="2 2" stroke="white" opacity="0.6"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl tracking-tight text-[#173C35] dark:text-white block leading-none">NESTSPACE</span>
+          <span class="text-[10px] tracking-widest uppercase font-semibold text-[#D9A66F] block mt-0.5">WORK • STUDY • GROW</span>
+        </div>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors">HOME</a>
+        <a href="home-2.html" class="text-sm font-semibold text-[#173C35] dark:text-[#D9A66F] border-b-2 border-[#173C35] dark:border-[#D9A66F] pb-1">HOME 2 (EDITORIAL)</a>
+        <a href="spaces.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors">SPACES</a>
+        <a href="membership.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors">PLANS</a>
+        <a href="gallery.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors">GALLERY</a>
+        <a href="dashboard/overview.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors">DASHBOARD</a>
+      </nav>
+
+      <!-- Right CTAs & Theme Toggle -->
+      <div class="hidden md:flex items-center gap-4">
+        <button type="button" class="theme-toggle-btn w-10 h-10 rounded-full border border-[#E8E8E1] dark:border-[#2E3832] flex items-center justify-center text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors bg-white/60 dark:bg-[#242D28]">
+          <svg class="icon-sun w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+          <svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <a href="login.html" class="text-sm font-semibold text-[#173C35] dark:text-white hover:text-[#D9A66F] px-3 py-2">Login</a>
+        <a href="spaces.html" class="btn-primary text-sm shadow-md">
+          <span>Book a Space</span>
+          <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Button -->
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="mobile-menu-btn" class="w-10 h-10 rounded-lg border border-[#E8E8E1] dark:border-[#2E3832] flex items-center justify-center text-[#173C35] dark:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm"></div>
+  <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 bg-[#F7F6F1] dark:bg-[#171D1A] z-50 p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-[#E8E8E1] dark:border-[#2E3832]">
+        <span class="font-heading font-bold text-lg text-[#173C35] dark:text-white">NESTSPACE</span>
+        <button id="close-mobile-menu-btn" class="w-8 h-8 rounded-full border flex items-center justify-center text-gray-500">&times;</button>
+      </div>
+      <nav class="flex flex-col gap-4 mt-6">
+        <a href="index.html" class="text-base font-medium text-[#777F79]">Home 1 (Classic)</a>
+        <a href="home-2.html" class="text-base font-semibold text-[#173C35] dark:text-[#D9A66F]">Home 2 (Editorial)</a>
+        <a href="spaces.html" class="text-base font-medium text-[#777F79]">Spaces</a>
+        <a href="membership.html" class="text-base font-medium text-[#777F79]">Membership Plans</a>
+        <a href="gallery.html" class="text-base font-medium text-[#777F79]">Gallery</a>
+        <a href="dashboard/overview.html" class="text-base font-medium text-[#777F79]">Dashboard</a>
+      </nav>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a href="login.html" class="btn-secondary w-full text-center">Login</a>
+      <a href="spaces.html" class="btn-primary w-full text-center">Book a Space ↗</a>
+    </div>
+  </div>
+
+  <!-- ==================== SECTION 1: FULL-WIDTH CINEMATIC HERO ==================== -->
+  <section class="relative min-h-[90vh] flex items-center justify-center text-[#202824] dark:text-white overflow-hidden bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <!-- Large Workspace Photograph Background -->
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=2000&q=85" 
+           alt="Cinematic Architectural Workspace" 
+           class="w-full h-full object-cover">
+      <!-- Adaptive Gradient Overlay: Light architectural wash in light mode, Dark Forest in dark mode -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#F7F6F1] via-[#F7F6F1]/85 to-[#F7F6F1]/60 dark:from-[#171D1A] dark:via-[#173C35]/75 dark:to-[#171D1A]/80"></div>
+    </div>
+
+    <!-- Centered Editorial Content -->
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#173C35]/10 dark:bg-white/10 backdrop-blur-md border border-[#173C35]/20 dark:border-white/20 text-xs font-semibold uppercase tracking-widest text-[#173C35] dark:text-[#D9A66F] mb-6">
+        Architectural Sanctuary for High Caliber Minds
+      </div>
+
+      <h1 class="font-heading font-extrabold text-4xl sm:text-6xl lg:text-7xl leading-tight tracking-tight max-w-4xl mx-auto mb-6 text-[#173C35] dark:text-white">
+        Where Quiet Focus Meets Architectural Elegance.
+      </h1>
+
+      <p class="text-lg sm:text-xl text-[#777F79] dark:text-gray-200 font-normal max-w-2xl mx-auto mb-10 leading-relaxed">
+        Engineered with natural timber, acoustic clarity, and ergonomic precision to give modern intellectuals the sanctuary they deserve.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="spaces.html" class="btn-primary dark:btn-accent text-base py-4 px-9 shadow-2xl hover:scale-105 transition-transform font-bold">
+          Reserve a Private Suite &rarr;
+        </a>
+        <a href="gallery.html" class="px-8 py-4 rounded-full border border-[#173C35] text-[#173C35] hover:bg-[#173C35] hover:text-white dark:border-white/30 dark:hover:border-white dark:bg-white/5 dark:text-white font-semibold text-base transition-colors backdrop-blur-md">
+          View Architectural Portfolio
+        </a>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-16 mt-12 border-t border-[#E8E8E1] dark:border-white/15 max-w-3xl mx-auto">
+        <div>
+          <div class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-[#D9A66F]">28dB</div>
+          <p class="text-xs text-[#777F79] dark:text-gray-300 mt-1 uppercase tracking-wider">Acoustic Library Rating</p>
+        </div>
+        <div>
+          <div class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white">100%</div>
+          <p class="text-xs text-[#777F79] dark:text-gray-300 mt-1 uppercase tracking-wider">Renewable Solar Powered</p>
+        </div>
+        <div>
+          <div class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-[#D9A66F]">1 Gbps</div>
+          <p class="text-xs text-[#777F79] dark:text-gray-300 mt-1 uppercase tracking-wider">Ultra-Low Latency Fiber</p>
+        </div>
+        <div>
+          <div class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white">24/7</div>
+          <p class="text-xs text-[#777F79] dark:text-gray-300 mt-1 uppercase tracking-wider">Biometric Keyless Access</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 2: ASYMMETRIC EXPERIENCE INTRO ==================== -->
+  <section class="py-24 lg:py-32 bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Large Architectural Image -->
+        <div class="lg:col-span-7 relative">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Architectural Library Interior" 
+                 class="w-full h-[500px] object-cover">
+          </div>
+          <!-- Overlapping inset quote box -->
+          <div class="absolute -bottom-8 -right-4 sm:-right-8 bg-white dark:bg-[#173C35] text-[#202824] dark:text-white p-6 sm:p-8 rounded-2xl shadow-xl max-w-xs sm:max-w-sm hidden sm:block border border-[#D9A66F]/40 dark:border-[#2a5e53]">
+            <span class="text-2xl text-[#D9A66F]">“</span>
+            <p class="text-xs sm:text-sm font-medium leading-relaxed italic text-[#777F79] dark:text-gray-200">
+              Space is not merely an empty backdrop; it dictates the speed, breadth, and depth of your intellectual breakthroughs.
+            </p>
+            <span class="block text-[11px] uppercase tracking-wider text-[#bd854b] dark:text-[#D9A66F] font-bold mt-3">— Studio V. Architects</span>
+          </div>
+        </div>
+
+        <!-- Short Description Content -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">The Architecture of Stillness</span>
+          <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white leading-tight">
+            Designed to Quiet the External World.
+          </h2>
+          <p class="text-base text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+            Conventional coworking spaces can be noisy and distracting. NESTSPACE rejects the chaotic ping-pong table aesthetic in favor of Nordic acoustics, natural European oak surfaces, and dedicated quiet zones.
+          </p>
+          <p class="text-base text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+            Each workstation is oriented towards biophilic greenery and calibrated light, allowing your nervous system to settle into uninterrupted deep work.
+          </p>
+
+          <div class="pt-4">
+            <a href="spaces.html" class="inline-flex items-center gap-2 text-sm font-bold text-[#173C35] dark:text-[#D9A66F] hover:gap-3 transition-all">
+              <span>Explore Our Floor Plans & Zones</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3: SPACE COLLECTION (ASYMMETRIC HORIZONTAL CARDS) ==================== -->
+  <section class="py-20 lg:py-28 bg-white dark:bg-[#242D28] border-y border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">The Signature Collection</span>
+          <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white mt-1">
+            Curated Spaces of Rare Character
+          </h2>
+        </div>
+        <p class="text-sm text-[#777F79] dark:text-[#B9C2BC] max-w-sm mt-3 md:mt-0">
+          Different dimensions for distinct tasks. Handcrafted for maximum mental energy.
+        </p>
+      </div>
+
+      <div class="space-y-12">
+        
+        <!-- Large Card 1 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#F7F6F1] dark:bg-[#171D1A] rounded-3xl p-6 sm:p-10 border border-[#E8E8E1] dark:border-[#313B35]">
+          <div class="lg:col-span-7 rounded-2xl overflow-hidden h-72 sm:h-96">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80" alt="Executive Atrium" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="lg:col-span-5 space-y-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#D9A66F]">Collection No. 01 • Executive</span>
+            <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-[#173C35] dark:text-white">
+              The Penthouse Boardroom
+            </h3>
+            <p class="text-sm text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+              Featuring double-height floor-to-ceiling glass, Italian leather conference seating, bespoke 85" conferencing systems, and private barista catering.
+            </p>
+            <div class="flex items-center gap-6 py-2">
+              <div>
+                <span class="block text-xs text-gray-500">Seating</span>
+                <span class="font-bold text-sm text-[#173C35] dark:text-white">Up to 16 Guests</span>
+              </div>
+              <div class="border-l border-gray-300 dark:border-gray-700 pl-6">
+                <span class="block text-xs text-gray-500">Rates</span>
+                <span class="font-bold text-sm text-[#173C35] dark:text-white">₹1,200 / hour</span>
+              </div>
+            </div>
+            <a href="space-details.html?id=penthouse-boardroom" class="btn-primary text-sm py-2.5 px-6">
+              Reserve This Room &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Medium Card 2 (Inverted) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#F7F6F1] dark:bg-[#171D1A] rounded-3xl p-6 sm:p-10 border border-[#E8E8E1] dark:border-[#313B35]">
+          <div class="lg:col-span-5 space-y-4 order-2 lg:order-1">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#D9A66F]">Collection No. 02 • Solitude</span>
+            <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-[#173C35] dark:text-white">
+              The Cedar Wood Pod Suite
+            </h3>
+            <p class="text-sm text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+              Complete acoustic isolation wrapped in fragrant cedarwood and sustainable felt panels. Perfect for founders, authors, and high-stakes calls.
+            </p>
+            <div class="flex items-center gap-6 py-2">
+              <div>
+                <span class="block text-xs text-gray-500">Acoustic Shield</span>
+                <span class="font-bold text-sm text-[#173C35] dark:text-white">Class A Isolation</span>
+              </div>
+              <div class="border-l border-gray-300 dark:border-gray-700 pl-6">
+                <span class="block text-xs text-gray-500">Rates</span>
+                <span class="font-bold text-sm text-[#173C35] dark:text-white">₹380 / hour</span>
+              </div>
+            </div>
+            <a href="space-details.html?id=cabin-a02" class="btn-primary text-sm py-2.5 px-6">
+              Reserve This Pod &rarr;
+            </a>
+          </div>
+          <div class="lg:col-span-7 rounded-2xl overflow-hidden h-72 sm:h-96 order-1 lg:order-2">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Cedar Wood Pod" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: PRODUCTIVITY STATISTICS ==================== -->
+  <section class="py-20 bg-white dark:bg-[#1f2723] text-[#202824] dark:text-white border-y border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-[#E8E8E1] dark:divide-[#2E3832]">
+        
+        <div class="p-6">
+          <div class="font-heading font-extrabold text-4xl sm:text-6xl text-[#173C35] dark:text-[#D9A66F] counter-val" data-target="2450" data-suffix="+">2,450+</div>
+          <h4 class="text-base font-semibold text-[#173C35] dark:text-white mt-2">Active Scholars & Founders</h4>
+          <p class="text-xs text-[#777F79] dark:text-gray-300 mt-1">Working across 18 specialized fields</p>
+        </div>
+
+        <div class="p-6">
+          <div class="font-heading font-extrabold text-4xl sm:text-6xl text-[#173C35] dark:text-white counter-val" data-target="38" data-suffix=" Suites">38 Suites</div>
+          <h4 class="text-base font-semibold text-[#173C35] dark:text-white mt-2">Architectural Workspaces</h4>
+          <p class="text-xs text-[#777F79] dark:text-gray-300 mt-1">From private carrels to team lofts</p>
+        </div>
+
+        <div class="p-6">
+          <div class="font-heading font-extrabold text-4xl sm:text-6xl text-[#173C35] dark:text-[#D9A66F] counter-val" data-target="12" data-suffix=" Rooms">12 Rooms</div>
+          <h4 class="text-base font-semibold text-[#173C35] dark:text-white mt-2">Executive Meeting Studios</h4>
+          <p class="text-xs text-[#777F79] dark:text-gray-300 mt-1">With 4K interactive conferencing</p>
+        </div>
+
+        <div class="p-6">
+          <div class="font-heading font-extrabold text-4xl sm:text-6xl text-[#173C35] dark:text-white counter-val" data-target="99" data-suffix=".4%">99.4%</div>
+          <h4 class="text-base font-semibold text-[#173C35] dark:text-white mt-2">Member Satisfaction Score</h4>
+          <p class="text-xs text-[#777F79] dark:text-gray-300 mt-1">Verified post-session feedback</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 5: DESIGNED FOR EVERY AMBITION ==================== -->
+  <section class="py-24 lg:py-32 bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">User Personas</span>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-[#173C35] dark:text-white mt-1">
+          Designed for Every Ambition
+        </h2>
+        <p class="text-base text-[#777F79] dark:text-[#B9C2BC] mt-3">
+          Customized membership formats and environments for distinct workflow requirements.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1: Students & Scholars -->
+        <div class="bg-white dark:bg-[#242D28] rounded-2xl p-7 border border-[#E8E8E1] dark:border-[#2E3832] flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#173C35]/10 text-[#173C35] dark:text-[#D9A66F] flex items-center justify-center font-bold text-xl mb-6">
+              📚
+            </div>
+            <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white mb-2">The Scholar</h3>
+            <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] leading-relaxed mb-4">
+              For PhD candidates, medical students, and bar exam preppers requiring 10-hour silence marathons with reference text carrels.
+            </p>
+            <ul class="text-xs text-[#202824] dark:text-gray-300 space-y-2">
+              <li>• Whispering-free Silent Library</li>
+              <li>• High CRI reading lamps</li>
+              <li>• Flexible student night passes</li>
+            </ul>
+          </div>
+          <a href="membership.html" class="mt-6 text-xs font-bold text-[#D9A66F] hover:underline">View Scholar Plans &rarr;</a>
+        </div>
+
+        <!-- Card 2: Freelancers & Nomads -->
+        <div class="bg-white dark:bg-[#242D28] rounded-2xl p-7 border border-[#E8E8E1] dark:border-[#2E3832] flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#173C35]/10 text-[#173C35] dark:text-[#D9A66F] flex items-center justify-center font-bold text-xl mb-6">
+              💻
+            </div>
+            <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white mb-2">The Digital Nomad</h3>
+            <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] leading-relaxed mb-4">
+              For designers, software engineers, and remote creatives who want natural light, ergonomic desks, and artisanal coffee.
+            </p>
+            <ul class="text-xs text-[#202824] dark:text-gray-300 space-y-2">
+              <li>• Hot desk flexibility</li>
+              <li>• 1 Gbps fiber & phone booths</li>
+              <li>• Specialty espresso bar</li>
+            </ul>
+          </div>
+          <a href="membership.html" class="mt-6 text-xs font-bold text-[#D9A66F] hover:underline">View Nomad Plans &rarr;</a>
+        </div>
+
+        <!-- Card 3: Startups & Builders -->
+        <div class="bg-white dark:bg-[#242D28] rounded-2xl p-7 border border-[#E8E8E1] dark:border-[#2E3832] flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#173C35]/10 text-[#173C35] dark:text-[#D9A66F] flex items-center justify-center font-bold text-xl mb-6">
+              🚀
+            </div>
+            <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white mb-2">The Startup Team</h3>
+            <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] leading-relaxed mb-4">
+              For 4-10 person teams needing privacy to brainstorm, sprint, and meet with venture partners under one roof.
+            </p>
+            <ul class="text-xs text-[#202824] dark:text-gray-300 space-y-2">
+              <li>• Lockable glass team suites</li>
+              <li>• Meeting room credit bundles</li>
+              <li>• Registered business address</li>
+            </ul>
+          </div>
+          <a href="membership.html" class="mt-6 text-xs font-bold text-[#D9A66F] hover:underline">View Startup Plans &rarr;</a>
+        </div>
+
+        <!-- Card 4: Executive & Consultants -->
+        <div class="bg-white dark:bg-[#242D28] rounded-2xl p-7 border border-[#E8E8E1] dark:border-[#2E3832] flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-[#173C35]/10 text-[#173C35] dark:text-[#D9A66F] flex items-center justify-center font-bold text-xl mb-6">
+              ⚖️
+            </div>
+            <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white mb-2">The Consultant</h3>
+            <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] leading-relaxed mb-4">
+              For legal partners, financial advisors, and executive leaders demanding absolute confidentiality and premium host service.
+            </p>
+            <ul class="text-xs text-[#202824] dark:text-gray-300 space-y-2">
+              <li>• VIP Boardroom reservation</li>
+              <li>• Concierge guest greeting</li>
+              <li>• Dedicated indoor parking</li>
+            </ul>
+          </div>
+          <a href="membership.html" class="mt-6 text-xs font-bold text-[#D9A66F] hover:underline">View Executive Plans &rarr;</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 6: SIGNATURE AMENITIES (SPLIT IMAGE & TEXT) ==================== -->
+  <section class="py-20 bg-white dark:bg-[#242D28]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      
+      <!-- Split 1 -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-5">
+          <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">Amenity Architecture 01</span>
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white">
+            Precision Acoustics & Sound Isolation
+          </h3>
+          <p class="text-base text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+            Every wall, ceiling, and partition in NESTSPACE features laboratory-tested decibel dampening. Our sound masking system emits subtle ambient pink noise tuned to enhance cognitive retention while absorbing voice reverberation.
+          </p>
+          <div class="grid grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
+              <span class="font-bold text-sm text-[#173C35] dark:text-white">Silent Pods</span>
+              <p class="text-xs text-gray-500 mt-1">Zero echo private calling</p>
+            </div>
+            <div class="p-4 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
+              <span class="font-bold text-sm text-[#173C35] dark:text-white">Noise Floor</span>
+              <p class="text-xs text-gray-500 mt-1">Under 30dB library zones</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-6 rounded-3xl overflow-hidden shadow-xl">
+          <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=1000&q=80" alt="Precision Acoustics" class="w-full h-[400px] object-cover">
+        </div>
+      </div>
+
+      <!-- Split 2 (Inverted) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 rounded-3xl overflow-hidden shadow-xl order-2 lg:order-1">
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1000&q=80" alt="Natural Light and Ergonomics" class="w-full h-[400px] object-cover">
+        </div>
+        <div class="lg:col-span-6 space-y-5 order-1 lg:order-2">
+          <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">Amenity Architecture 02</span>
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white">
+            Circadian Lighting & Indoor Greenery
+          </h3>
+          <p class="text-base text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+            Our architectural lighting automatically adjusts its color temperature throughout the day: energizing cool white in morning hours, shifting to mellow warm sand at dusk to protect your circadian rhythm during late evening study.
+          </p>
+          <div class="grid grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
+              <span class="font-bold text-sm text-[#173C35] dark:text-white">98+ CRI Lumens</span>
+              <p class="text-xs text-gray-500 mt-1">True daylight color rendering</p>
+            </div>
+            <div class="p-4 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
+              <span class="font-bold text-sm text-[#173C35] dark:text-white">HEPA Air Flow</span>
+              <p class="text-xs text-gray-500 mt-1">Continuous oxygen refresh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 7: MEMBERSHIP SPOTLIGHT ==================== -->
+  <section class="py-24 bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-gradient-to-br from-[#F5EFE6] via-white to-[#EAE4D8] dark:from-[#173C35] dark:to-[#0f2722] rounded-3xl p-8 sm:p-14 text-[#202824] dark:text-white border border-[#D9A66F]/40 dark:border-transparent relative overflow-hidden shadow-xl">
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-8 space-y-4">
+            <span class="px-3.5 py-1 rounded-full bg-[#D9A66F] text-[#171D1A] text-xs font-bold uppercase tracking-wider">
+              Exclusive Member Tier
+            </span>
+            <h2 class="font-heading font-extrabold text-3xl sm:text-5xl leading-tight text-[#173C35] dark:text-white">
+              The Resident Pass – Your Guaranteed Dedicated Desk
+            </h2>
+            <p class="text-base text-[#777F79] dark:text-gray-200 max-w-xl leading-relaxed">
+              Never hunt for a seat. Enjoy your own permanent electric sit-stand desk, lockable filing pedestals, personalized keycards, and unlimited 24/7 access.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2 text-sm text-[#202824] dark:text-gray-200 font-medium">
+              <span class="flex items-center gap-1.5"><strong class="text-[#D9A66F]">✓</strong> 20 hrs Meeting Credits</span>
+              <span class="flex items-center gap-1.5"><strong class="text-[#D9A66F]">✓</strong> Commercial Mail Delivery</span>
+              <span class="flex items-center gap-1.5"><strong class="text-[#D9A66F]">✓</strong> Free Guest Passes</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 flex flex-col items-center lg:items-end">
+            <div class="bg-white dark:bg-white/10 dark:backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-[#D9A66F]/40 dark:border-white/20 text-center w-full max-w-xs shadow-lg">
+              <span class="text-xs uppercase text-[#bd854b] dark:text-[#D9A66F] font-bold">Resident Plan</span>
+              <div class="font-heading font-extrabold text-4xl text-[#173C35] dark:text-white my-2">₹4,999 <span class="text-xs font-normal text-gray-500 dark:text-gray-300">/ mo</span></div>
+              <p class="text-xs text-[#777F79] dark:text-gray-300 mb-5">Only 4 desks remaining in North Atrium</p>
+              <a href="membership.html" class="btn-primary dark:btn-accent w-full text-center py-3">
+                Secure Resident Desk
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 8: PHOTO GALLERY PREVIEW (OVERLAPPING ARCHITECTURAL PHOTOGRAPHY) ==================== -->
+  <section class="py-20 bg-white dark:bg-[#242D28] overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">Visual Aesthetic</span>
+          <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white mt-1">
+            Spaces Captured on 35mm
+          </h2>
+        </div>
+        <a href="gallery.html" class="text-sm font-bold text-[#173C35] dark:text-[#D9A66F] hover:underline mt-3 sm:mt-0">
+          Open Full Masonry Gallery &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" alt="Gallery 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md mt-6 sm:-mt-4">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Gallery 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Gallery 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+        <div class="h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md mt-6 sm:-mt-4">
+          <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=600&q=80" alt="Gallery 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 9: CUSTOMER STORIES ==================== -->
+  <section class="py-20 lg:py-28 bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">Scholarly Testimonials</span>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white mt-1">
+          Voices of Our Daily Community
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="bg-white dark:bg-[#242D28] p-8 sm:p-10 rounded-3xl border border-[#E8E8E1] dark:border-[#313B35] shadow-sm">
+          <div class="text-[#D9A66F] text-2xl mb-4 font-serif">“</div>
+          <p class="text-base sm:text-lg text-[#202824] dark:text-gray-100 font-normal leading-relaxed italic mb-6">
+            "I completed my book manuscript in the North Library wing over four months. The absence of chatter, paired with natural light and great espresso, made it the single most productive period of my professional life."
+          </p>
+          <div class="flex items-center gap-4">
+            <img class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Author">
+            <div>
+              <h4 class="font-heading font-bold text-base text-[#173C35] dark:text-white">Dr. Maya Varma</h4>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">Non-Fiction Author & Historian</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#242D28] p-8 sm:p-10 rounded-3xl border border-[#E8E8E1] dark:border-[#313B35] shadow-sm">
+          <div class="text-[#D9A66F] text-2xl mb-4 font-serif">“</div>
+          <p class="text-base sm:text-lg text-[#202824] dark:text-gray-100 font-normal leading-relaxed italic mb-6">
+            "When pitching international investors on Zoom, the acoustics and camera framing in the Penthouse Boardroom give our startup instant executive gravitas. It's a key reason we secured our pre-seed round."
+          </p>
+          <div class="flex items-center gap-4">
+            <img class="w-12 h-12 rounded-full object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Founder">
+            <div>
+              <h4 class="font-heading font-bold text-base text-[#173C35] dark:text-white">Siddharth Rao</h4>
+              <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">Founder & CEO, DeepMatrix AI</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 10: CINEMATIC BOOKING CTA ==================== -->
+  <section class="relative py-28 overflow-hidden bg-gradient-to-br from-[#F5EFE6] via-white to-[#EAE4D8] dark:from-[#173C35] dark:to-[#0f2722] text-[#202824] dark:text-white border-t border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="absolute inset-0 opacity-10 dark:opacity-25 pointer-events-none">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=80" alt="Workspace background" class="w-full h-full object-cover">
+    </div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <span class="text-xs font-bold tracking-widest text-[#bd854b] dark:text-[#D9A66F] uppercase">Begin Your Flow</span>
+      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl leading-tight text-[#173C35] dark:text-white">
+        Step Into an Atmosphere Built For Your Best Work.
+      </h2>
+      <p class="text-base sm:text-lg text-[#777F79] dark:text-gray-200 max-w-xl mx-auto">
+        Join the NESTSPACE collective today. Book an hourly pass or schedule an architectural walkthrough.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <a href="spaces.html" class="btn-primary dark:btn-accent text-base py-4 px-9 font-bold shadow-xl hover:scale-105 transition-transform">
+          Book a Space Online
+        </a>
+        <a href="membership.html" class="px-8 py-4 rounded-full border border-[#173C35] text-[#173C35] hover:bg-[#173C35] hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-[#173C35] font-semibold transition-all">
+          Explore All Memberships
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-white dark:bg-[#171D1A] text-[#202824] dark:text-white pt-16 pb-12 border-t border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#E8E8E1] dark:border-[#2E3832]">
+        
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#173C35] dark:bg-white/10 border border-[#D9A66F]/40 flex items-center justify-center text-[#D9A66F]">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 21V4l8 12V4" />
+                <path d="M12 20h8V4" stroke="#D9A66F" />
+              </svg>
+            </div>
+            <div>
+              <span class="font-heading font-extrabold text-xl tracking-tight text-[#173C35] dark:text-white block">NESTSPACE</span>
+              <span class="text-[10px] tracking-widest uppercase font-semibold text-[#bd854b] dark:text-[#D9A66F] block">EDITORIAL EDITION</span>
+            </div>
+          </div>
+          <p class="text-sm text-[#777F79] dark:text-gray-400 max-w-sm leading-relaxed">
+            Quiet luxury, acoustic precision, and architectural balance engineered for intellectual professionals and thoughtful study.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-bold text-sm text-[#173C35] dark:text-[#D9A66F] uppercase tracking-wider mb-4">Explore</h4>
+          <ul class="space-y-2.5 text-sm text-[#777F79] dark:text-gray-400">
+            <li><a href="index.html" class="hover:text-[#173C35] dark:hover:text-white">Home 1 (Classic)</a></li>
+            <li><a href="home-2.html" class="text-[#173C35] dark:text-white font-semibold">Home 2 (Editorial)</a></li>
+            <li><a href="spaces.html" class="hover:text-[#173C35] dark:hover:text-white">Spaces Catalog</a></li>
+            <li><a href="membership.html" class="hover:text-[#173C35] dark:hover:text-white">Pricing & Plans</a></li>
+            <li><a href="gallery.html" class="hover:text-[#173C35] dark:hover:text-white">Architecture Gallery</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-bold text-sm text-[#173C35] dark:text-[#D9A66F] uppercase tracking-wider mb-4">Spaces</h4>
+          <ul class="space-y-2.5 text-sm text-[#777F79] dark:text-gray-400">
+            <li><a href="space-details.html?id=cabin-a02" class="hover:text-[#173C35] dark:hover:text-white">Cedar Wood Pod</a></li>
+            <li><a href="space-details.html?id=boardroom-gallery" class="hover:text-[#173C35] dark:hover:text-white">The Penthouse Boardroom</a></li>
+            <li><a href="spaces.html?category=study" class="hover:text-[#173C35] dark:hover:text-white">Nordic Study Carrels</a></li>
+            <li><a href="dashboard/overview.html" class="hover:text-[#173C35] dark:hover:text-white">Member Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-bold text-sm text-[#173C35] dark:text-[#D9A66F] uppercase tracking-wider mb-4">Concierge</h4>
+          <p class="text-xs text-[#777F79] dark:text-gray-400 leading-relaxed mb-3">
+            Open daily for members: 24/7.<br>
+            Guest tours by appointment.
+          </p>
+          <a href="spaces.html" class="btn-primary dark:btn-accent text-xs py-2 px-4 inline-block">Schedule Walkthrough</a>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#777F79] dark:text-gray-500 gap-4">
+        <p>&copy; 2026 NESTSPACE. All rights reserved. Architectural and intellectual sanctuary.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-[#173C35] dark:hover:text-white">Privacy</a>
+          <a href="#" class="hover:text-[#173C35] dark:hover:text-white">Terms</a>
+          <a href="dashboard/overview.html" class="hover:text-[#173C35] dark:hover:text-white text-[#bd854b] dark:text-[#D9A66F]">Member Access</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your Account – NESTSPACE</title>
+  <meta name="description" content="Join NESTSPACE. Start booking desks, private cabins, and executive meeting rooms with flexible plans.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23173C35'><path d='M6 6h4v20H6V6zm16 0h4v20h-4V6zM10 6l12 20h-4L6 6h4z' fill='%23D9A66F'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#173C35',
+            'primary-dark': '#0f2722',
+            secondary: '#D9A66F',
+            'nest-bg': '#F7F6F1',
+            'nest-dark-bg': '#171D1A',
+            'nest-surface': '#FFFFFF',
+            'nest-dark-surface': '#242D28',
+            'nest-heading': '#202824',
+            'nest-muted': '#777F79',
+            'nest-border': '#E8E8E1',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/theme.js"></script>
+</head>
+<body class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-[#FFFFFF] min-h-screen flex flex-col justify-center">
+
+  <!-- Top bar with home link and theme toggle -->
+  <div class="fixed top-6 left-6 right-6 flex items-center justify-between z-30 pointer-events-none">
+    <a href="index.html" class="pointer-events-auto inline-flex items-center gap-2 text-xs font-bold text-[#173C35] dark:text-[#D9A66F] bg-white/80 dark:bg-[#242D28]/80 backdrop-blur-md px-3.5 py-2 rounded-full border border-[#E8E8E1] dark:border-[#313B35] shadow-sm hover:scale-105 transition-transform">
+      &larr; Return to NESTSPACE
+    </a>
+
+    <button type="button" class="theme-toggle-btn pointer-events-auto w-10 h-10 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[#777F79] dark:text-[#B9C2BC] bg-white/80 dark:bg-[#242D28]/80 backdrop-blur-md shadow-sm">
+      <svg class="icon-sun w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+      <svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+    </button>
+  </div>
+
+  <div class="min-h-screen grid grid-cols-1 lg:grid-cols-12">
+    
+    <!-- Left Column: Visual & Perks -->
+    <div class="hidden lg:flex lg:col-span-5 relative bg-gradient-to-br from-[#F5EFE6] via-white to-[#EAE4D8] dark:from-[#173C35] dark:to-[#0f2722] text-[#202824] dark:text-white p-16 flex-col justify-between overflow-hidden border-r border-[#E8E8E1] dark:border-transparent">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=1200&q=85" alt="NESTSPACE Interior" class="w-full h-full object-cover opacity-10 dark:opacity-25">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#F5EFE6] via-[#F5EFE6]/70 to-[#F5EFE6]/90 dark:from-[#173C35] dark:via-[#173C35]/70 dark:to-[#173C35]/90"></div>
+      </div>
+
+      <div class="relative z-10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#173C35] dark:bg-white/10 border border-[#D9A66F]/40 flex items-center justify-center text-[#D9A66F]">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 21V4l8 12V4" />
+              <path d="M12 20h8V4" stroke="#D9A66F" />
+            </svg>
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-xl tracking-tight text-[#173C35] dark:text-white block">NESTSPACE</span>
+            <span class="text-[10px] tracking-widest uppercase font-semibold text-[#bd854b] dark:text-[#D9A66F] block">WORK • STUDY • GROW</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative z-10 space-y-6">
+        <h2 class="font-heading font-bold text-3xl leading-snug text-[#173C35] dark:text-white">
+          Begin Your Most Focused Chapter.
+        </h2>
+        
+        <div class="space-y-4 text-xs text-[#202824] dark:text-gray-200">
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold">✓</span>
+            <span>Instant access to 38 curated architectural desks</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold">✓</span>
+            <span>Real-time desk reservation & calendar sync</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold">✓</span>
+            <span>Zero cancellation fees up to 2 hours prior</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold">✓</span>
+            <span>24/7 keyless smartphone door access</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative z-10 text-xs text-[#777F79] dark:text-gray-400">
+        &copy; 2026 NESTSPACE Architectural Collective.
+      </div>
+    </div>
+
+    <!-- Right Column: Registration Card -->
+    <div class="lg:col-span-7 flex items-center justify-center p-6 sm:p-12 lg:p-16 my-auto">
+      <div class="w-full max-w-md space-y-6">
+        
+        <div>
+          <h2 class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white">Create Account</h2>
+          <p class="text-xs sm:text-sm text-[#777F79] dark:text-[#B9C2BC] mt-1.5">
+            Join 2,400+ scholars, founders, and deep-focus professionals.
+          </p>
+        </div>
+
+        <!-- Social Buttons -->
+        <div class="grid grid-cols-2 gap-3">
+          <button type="button" class="flex items-center justify-center gap-2 h-11 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-white dark:bg-[#242D28] text-xs font-semibold text-[#173C35] dark:text-white hover:bg-gray-50 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.36 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.36 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+            <span>Google</span>
+          </button>
+          <button type="button" class="flex items-center justify-center gap-2 h-11 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-white dark:bg-[#242D28] text-xs font-semibold text-[#173C35] dark:text-white hover:bg-gray-50 transition-colors">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.84c.64-.78 1.08-1.87.96-2.96-.93.04-2.05.62-2.71 1.4-.58.67-1.09 1.77-.95 2.83 1.04.08 2.06-.49 2.7-1.27z"/></svg>
+            <span>Apple</span>
+          </button>
+        </div>
+
+        <div class="relative flex items-center justify-center">
+          <div class="border-t border-[#E8E8E1] dark:border-[#313B35] w-full"></div>
+          <span class="bg-[#F7F6F1] dark:bg-[#171D1A] px-3 text-xs text-gray-400 font-medium absolute">or register with email</span>
+        </div>
+
+        <!-- Form -->
+        <form action="dashboard/overview.html" method="GET" class="space-y-3.5">
+          
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-1">Full Name</label>
+            <input type="text" required placeholder="Pravin Kumar" class="w-full input-nest text-sm font-medium">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-1">Email Address</label>
+              <input type="email" required placeholder="pravin@example.com" class="w-full input-nest text-sm font-medium">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-1">Phone Number</label>
+              <input type="tel" required placeholder="+91 98765 43210" class="w-full input-nest text-sm font-medium">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-1">Create Password</label>
+            <input type="password" required placeholder="Minimum 8 characters" class="w-full input-nest text-sm font-medium">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-[#777F79] dark:text-[#B9C2BC] mb-1">Confirm Password</label>
+            <input type="password" required placeholder="Repeat password" class="w-full input-nest text-sm font-medium">
+          </div>
+
+          <div class="flex items-start gap-2 text-xs pt-1">
+            <input type="checkbox" required class="mt-0.5 rounded border-[#E8E8E1] text-[#173C35] focus:ring-[#173C35]">
+            <span class="text-[#777F79] dark:text-[#B9C2BC]">
+              I agree to the <a href="#" class="underline text-[#173C35] dark:text-white">Terms of Membership</a> and acknowledge the <a href="#" class="underline text-[#173C35] dark:text-white">Quiet Conduct Policy</a>.
+            </span>
+          </div>
+
+          <button type="submit" class="w-full btn-primary py-3.5 text-sm font-bold shadow-md hover:shadow-lg mt-2">
+            Create Account & Join &rarr;
+          </button>
+
+        </form>
+
+        <p class="text-center text-xs text-[#777F79] dark:text-[#B9C2BC]">
+          Already have an account? 
+          <a href="login.html" class="font-bold text-[#173C35] dark:text-[#D9A66F] hover:underline ml-1">Sign In</a>
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+

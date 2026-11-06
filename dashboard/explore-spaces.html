@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Spaces – NESTSPACE Member Dashboard</title>
+  <meta name="description" content="Explore campus spaces, check live seat availability, and filter by noise levels and amenities.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23173C35'><path d='M6 6h4v20H6V6zm16 0h4v20h-4V6zM10 6l12 20h-4L6 6h4z' fill='%23D9A66F'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#173C35',
+            'primary-dark': '#0f2722',
+            secondary: '#D9A66F',
+            'nest-bg': '#F7F6F1',
+            'nest-dark-bg': '#171D1A',
+            'nest-surface': '#FFFFFF',
+            'nest-dark-surface': '#242D28',
+            'nest-heading': '#202824',
+            'nest-muted': '#777F79',
+            'nest-border': '#E8E8E1',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-[#FFFFFF] antialiased">
+
+  <div class="dashboard-layout">
+    
+    <div id="dash-sidebar-backdrop" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+    <!-- SIDEBAR -->
+    <aside id="dash-sidebar" class="dashboard-sidebar">
+      <div class="p-6 border-b border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#173C35] flex items-center justify-center text-[#D9A66F] font-bold shadow-sm">
+            N
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white block leading-none">NESTSPACE</span>
+            <span class="text-[10px] tracking-wider uppercase font-semibold text-[#D9A66F] block mt-0.5">Member Portal</span>
+          </div>
+        </a>
+        <button id="dash-sidebar-close" class="lg:hidden text-gray-400">✕</button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Workspace</span>
+          <nav class="space-y-1">
+            <a href="overview.html" class="nav-link-dash">
+              <span class="text-base">📊</span>
+              <span>Overview</span>
+            </a>
+            <a href="bookings.html" class="nav-link-dash">
+              <span class="text-base">📅</span>
+              <span>My Bookings</span>
+            </a>
+            <a href="book-space.html" class="nav-link-dash">
+              <span class="text-base">✨</span>
+              <span>Book a Space</span>
+            </a>
+            <a href="explore-spaces.html" class="nav-link-dash active">
+              <span class="text-base">🔍</span>
+              <span>Explore Spaces</span>
+            </a>
+          </nav>
+        </div>
+
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Account</span>
+          <nav class="space-y-1">
+            <a href="membership.html" class="nav-link-dash">
+              <span class="text-base">💳</span>
+              <span>Membership Plan</span>
+            </a>
+            <a href="invoices.html" class="nav-link-dash">
+              <span class="text-base">🧾</span>
+              <span>Invoices</span>
+            </a>
+            <a href="profile.html" class="nav-link-dash">
+              <span class="text-base">👤</span>
+              <span>My Profile</span>
+            </a>
+            <a href="notifications.html" class="nav-link-dash">
+              <span class="text-base">🔔</span>
+              <span>Notifications</span>
+            </a>
+            <a href="settings.html" class="nav-link-dash">
+              <span class="text-base">⚙️</span>
+              <span>Settings</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img class="w-9 h-9 rounded-full object-cover border border-[#D9A66F]" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Pravin">
+          <div class="text-xs">
+            <strong class="block text-[#173C35] dark:text-white leading-tight">Pravin Kumar</strong>
+            <span class="text-gray-400 text-[10px]">Pro Member</span>
+          </div>
+        </div>
+        <a href="../login.html" title="Logout" class="text-gray-400 hover:text-red-600 text-sm p-1.5 rounded-lg">
+          🚪
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="flex items-center gap-3">
+          <button id="dash-sidebar-toggle" class="lg:hidden w-9 h-9 rounded-lg border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[#173C35] dark:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <h2 class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white">Campus Spaces Directory</h2>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="book-space.html" class="btn-primary text-xs py-2 px-4 shadow-sm">
+            + Reserve Seat
+          </a>
+        </div>
+      </header>
+
+      <div class="p-6 sm:p-8 max-w-7xl w-full mx-auto space-y-6">
+        
+        <!-- Search & Filter Ribbon -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-between items-center bg-white dark:bg-[#242D28] p-4 rounded-2xl border border-[#E8E8E1] dark:border-[#313B35]">
+          <div class="relative w-full sm:w-96">
+            <input type="text" id="dash-space-search" placeholder="Filter by space name or feature..." class="w-full input-nest text-xs h-10 pl-9">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs">🔍</span>
+          </div>
+
+          <div class="flex items-center gap-2 w-full sm:w-auto overflow-x-auto">
+            <button class="dash-zone-btn px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#173C35] text-white" data-zone="all">All</button>
+            <button class="dash-zone-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-500" data-zone="silent">Silent Zones</button>
+            <button class="dash-zone-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-500" data-zone="collab">Collaboration</button>
+            <button class="dash-zone-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-500" data-zone="pod">Private Pods</button>
+          </div>
+        </div>
+
+        <!-- Space Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="dash-spaces-grid">
+          
+          <div class="card-nest overflow-hidden flex flex-col justify-between" data-zone="pod">
+            <div class="relative h-44">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Cabin" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-[#173C35] text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Level 3</span>
+            </div>
+            <div class="p-5 space-y-2">
+              <div class="flex justify-between items-center text-xs">
+                <strong class="font-bold text-[#173C35] dark:text-white">Cabin A-02 (Cedar Pod)</strong>
+                <span class="text-emerald-600 font-semibold">2 Free</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">Motorized sit-stand desk, Herman Miller chair, 4K USB-C display.</p>
+              <div class="pt-3">
+                <a href="book-space.html?space=cabin-a02" class="btn-primary w-full text-center text-xs py-2">
+                  Select This Space
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-nest overflow-hidden flex flex-col justify-between" data-zone="collab">
+            <div class="relative h-44">
+              <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=600&q=80" alt="Atrium" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-[#173C35] text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Level 2</span>
+            </div>
+            <div class="p-5 space-y-2">
+              <div class="flex justify-between items-center text-xs">
+                <strong class="font-bold text-[#173C35] dark:text-white">The Skylight Atrium</strong>
+                <span class="text-emerald-600 font-semibold">12 Free</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">Double-height skylight sunlight, communal high tables, and power bars.</p>
+              <div class="pt-3">
+                <a href="book-space.html?space=atrium" class="btn-primary w-full text-center text-xs py-2">
+                  Select This Space
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-nest overflow-hidden flex flex-col justify-between" data-zone="silent">
+            <div class="relative h-44">
+              <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=600&q=80" alt="Library" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-[#173C35] text-white text-[10px] font-bold px-2.5 py-1 rounded-full">Level 1</span>
+            </div>
+            <div class="p-5 space-y-2">
+              <div class="flex justify-between items-center text-xs">
+                <strong class="font-bold text-[#173C35] dark:text-white">Silent Library Carrels</strong>
+                <span class="text-amber-500 font-semibold">4 Free</span>
+              </div>
+              <p class="text-xs text-gray-500 leading-relaxed">Acoustic timber privacy partitions, reading lamps, zero ambient noise.</p>
+              <div class="pt-3">
+                <a href="book-space.html?space=carrels" class="btn-primary w-full text-center text-xs py-2">
+                  Select This Space
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script>
+    document.querySelectorAll('.dash-zone-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.dash-zone-btn').forEach(b => {
+          b.className = 'dash-zone-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-500';
+        });
+        btn.className = 'dash-zone-btn px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#173C35] text-white';
+        const zone = btn.dataset.zone;
+        document.querySelectorAll('#dash-spaces-grid > div').forEach(card => {
+          if (zone === 'all' || card.dataset.zone === zone) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+

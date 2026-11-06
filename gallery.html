@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architectural Gallery – NESTSPACE</title>
+  <meta name="description" content="Explore the architecture, interior lighting, and acoustic craftsmanship of NESTSPACE through our photographic collection.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23173C35'><path d='M6 6h4v20H6V6zm16 0h4v20h-4V6zM10 6l12 20h-4L6 6h4z' fill='%23D9A66F'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#173C35',
+            'primary-dark': '#0f2722',
+            secondary: '#D9A66F',
+            'nest-bg': '#F7F6F1',
+            'nest-dark-bg': '#171D1A',
+            'nest-surface': '#FFFFFF',
+            'nest-dark-surface': '#242D28',
+            'nest-heading': '#202824',
+            'nest-muted': '#777F79',
+            'nest-border': '#E8E8E1',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/theme.js"></script>
+</head>
+<body class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-[#FFFFFF] antialiased transition-colors duration-300">
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="main-header" class="sticky top-0 z-50 bg-[#F7F6F1]/90 dark:bg-[#171D1A]/90 backdrop-blur-md border-b border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-[#173C35] dark:bg-[#242D28] border border-[#D9A66F]/40 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+          <svg class="w-6 h-6 text-[#D9A66F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 21V4l8 12V4" />
+            <path d="M12 20h8V4" stroke="#D9A66F" />
+          </svg>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl tracking-tight text-[#173C35] dark:text-white block leading-none">NESTSPACE</span>
+          <span class="text-[10px] tracking-widest uppercase font-semibold text-[#D9A66F] block mt-0.5">WORK • STUDY • GROW</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white">HOME</a>
+        <a href="home-2.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white">HOME 2</a>
+        <a href="spaces.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white">SPACES</a>
+        <a href="membership.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white">PLANS</a>
+        <a href="gallery.html" class="text-sm font-semibold text-[#173C35] dark:text-[#D9A66F] border-b-2 border-[#173C35] dark:border-[#D9A66F] pb-1">GALLERY</a>
+        <a href="dashboard/overview.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white">DASHBOARD</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-4">
+        <button type="button" class="theme-toggle-btn w-10 h-10 rounded-full border border-[#E8E8E1] dark:border-[#2E3832] flex items-center justify-center text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors bg-white/60 dark:bg-[#242D28]">
+          <svg class="icon-sun w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+          <svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <a href="login.html" class="text-sm font-semibold text-[#173C35] dark:text-white hover:text-[#D9A66F] px-3 py-2">Login</a>
+        <a href="spaces.html" class="btn-primary text-sm shadow-md">
+          <span>Book a Space</span>
+          <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="mobile-menu-btn" class="w-10 h-10 rounded-lg border border-[#E8E8E1] dark:border-[#2E3832] flex items-center justify-center text-[#173C35] dark:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm"></div>
+  <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 bg-[#F7F6F1] dark:bg-[#171D1A] z-50 p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-[#E8E8E1] dark:border-[#2E3832]">
+        <span class="font-heading font-bold text-lg text-[#173C35] dark:text-white">NESTSPACE</span>
+        <button id="close-mobile-menu-btn" class="w-8 h-8 rounded-full border flex items-center justify-center text-gray-500">&times;</button>
+      </div>
+      <nav class="flex flex-col gap-4 mt-6">
+        <a href="index.html" class="text-base font-medium text-[#777F79]">Home 1</a>
+        <a href="home-2.html" class="text-base font-medium text-[#777F79]">Home 2</a>
+        <a href="spaces.html" class="text-base font-medium text-[#777F79]">Spaces</a>
+        <a href="membership.html" class="text-base font-medium text-[#777F79]">Membership Plans</a>
+        <a href="gallery.html" class="text-base font-semibold text-[#173C35] dark:text-[#D9A66F]">Gallery</a>
+        <a href="dashboard/overview.html" class="text-base font-medium text-[#777F79]">Dashboard</a>
+      </nav>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a href="login.html" class="btn-secondary w-full text-center">Login</a>
+      <a href="spaces.html" class="btn-primary w-full text-center">Book a Space ↗</a>
+    </div>
+  </div>
+
+  <!-- ==================== SECTION 1: HERO ==================== -->
+  <section class="relative py-16 lg:py-24 bg-gradient-to-b from-[#F5EFE6] via-[#F7F6F1] to-[#F7F6F1] dark:from-[#171D1A] dark:to-[#171D1A] text-[#202824] dark:text-white border-b border-[#E8E8E1] dark:border-[#2E3832] text-center overflow-hidden">
+    <div class="absolute inset-0 opacity-5 dark:opacity-20 pointer-events-none">
+      <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80" alt="Architecture" class="w-full h-full object-cover">
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#bd854b] dark:text-[#D9A66F] block mb-3">Architectural Photography Portfolio</span>
+      <h1 class="font-heading font-extrabold text-4xl sm:text-6xl leading-tight text-[#173C35] dark:text-white">
+        The Architecture of Focus & Stillness
+      </h1>
+      <p class="text-base sm:text-lg text-[#777F79] dark:text-gray-300 max-w-xl mx-auto mt-4">
+        Take a visual tour through our hand-finished cedarwood walls, natural limestone atriums, and curated library reading alcoves.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 2: FILTER TABS ==================== -->
+  <section class="py-8 bg-[#F7F6F1] dark:bg-[#171D1A] border-b border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-center gap-2 flex-wrap">
+        <button class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs font-bold bg-[#173C35] text-white transition-all shadow-sm" data-filter="all">
+          All Photography
+        </button>
+        <button class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-all" data-filter="workspace">
+          Workspaces & Desks
+        </button>
+        <button class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-all" data-filter="study">
+          Study & Silent Library
+        </button>
+        <button class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-all" data-filter="meeting">
+          Meeting & Boardrooms
+        </button>
+        <button class="gallery-filter-btn px-5 py-2.5 rounded-full text-xs font-semibold text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-all" data-filter="amenity">
+          Amenities & Coffee Bar
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3: BALANCED MASONRY GALLERY ==================== -->
+  <section class="py-16 lg:py-24 bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="masonry-gallery-container">
+        
+        <!-- Item 1: Large Vertical (Study) -->
+        <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer shadow-md sm:row-span-2" data-category="study">
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" alt="Silent Study Wing" class="w-full h-80 sm:h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#D9A66F]">Silent Study</span>
+            <h4 class="font-heading font-bold text-lg gallery-title">The Grand Reading Hall – Level 1</h4>
+            <p class="text-xs text-gray-300 mt-1">High-ceiling silence carrels bathed in natural morning light.</p>
+          </div>
+        </div>
+
+        <!-- Item 2: Standard Horizontal (Workspace) -->
+        <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer shadow-md" data-category="workspace">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Atrium Hot Desk" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#D9A66F]">Hot Desking</span>
+            <h4 class="font-heading font-bold text-lg gallery-title">Central Atrium Flex Zone</h4>
+            <p class="text-xs text-gray-300 mt-1">Engineered European oak workbenches with built-in power nodes.</p>
+          </div>
+        </div>
+
+        <!-- Item 3: Standard Horizontal (Meeting) -->
+        <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer shadow-md" data-category="meeting">
+          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80" alt="Executive Boardroom" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#D9A66F]">Conferencing</span>
+            <h4 class="font-heading font-bold text-lg gallery-title">Penthouse Gallery Boardroom</h4>
+            <p class="text-xs text-gray-300 mt-1">Double height windows with automated acoustic privacy drapery.</p>
+          </div>
+        </div>
+
+        <!-- Item 4: Medium Horizontal (Amenity) -->
+        <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer shadow-md" data-category="amenity">
+          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" alt="Espresso Bar" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#D9A66F]">Hospitality</span>
+            <h4 class="font-heading font-bold text-lg gallery-title">Artisan Coffee & Botanical Bar</h4>
+            <p class="text-xs text-gray-300 mt-1">Freshly roasted single origin beans and loose-leaf herbal teas.</p>
+          </div>
+        </div>
+
+        <!-- Item 5: Large Vertical (Workspace) -->
+        <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer shadow-md sm:row-span-2" data-category="workspace">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Cedar Pod" class="w-full h-80 sm:h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#D9A66F]">Private Cabin</span>
+            <h4 class="font-heading font-bold text-lg gallery-title">Cedar Wood Pod Suite A-02</h4>
+            <p class="text-xs text-gray-300 mt-1">Private studio with Herman Miller Aeron and 4K display.</p>
+          </div>
+        </div>
+
+        <!-- Item 6: Horizontal (Study) -->
+        <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer shadow-md" data-category="study">
+          <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=800&q=80" alt="Nordic Study Carrel" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#D9A66F]">Study Carrel</span>
+            <h4 class="font-heading font-bold text-lg gallery-title">Nordic Wood Carrel Niche</h4>
+            <p class="text-xs text-gray-300 mt-1">Glare-free warm ambient lamps tuned for prolonged reading.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: ARCHITECTURAL PHILOSOPHY ==================== -->
+  <section class="py-20 bg-white dark:bg-[#242D28] border-t border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#D9A66F]">The Design Philosophy</span>
+      <h3 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white">
+        Crafting Spatial Restraint for Cognitive Ease
+      </h3>
+      <p class="text-base text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+        We consciously avoided the neon distractions and plastic furniture common to mass-market coworking chains. By relying on organic stone, real timber, muted sand textiles, and targeted acoustic treatments, NESTSPACE calms sensory overload so your mind can dwell on ideas of consequence.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 5: FINAL CTA ==================== -->
+  <section class="py-20 bg-white dark:bg-[#242D28] text-[#202824] dark:text-white border-t border-[#E8E8E1] dark:border-[#2E3832] text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-[#173C35] dark:text-white">Find Your Perfect Workspace</h2>
+      <p class="text-sm sm:text-base text-[#777F79] dark:text-gray-300 mt-3 mb-8">
+        Experience these spaces firsthand. Reserve an hourly session or schedule a guided architecture tour.
+      </p>
+      <div class="flex items-center justify-center gap-4">
+        <a href="spaces.html" class="btn-primary dark:btn-accent text-sm py-3 px-8 font-bold">
+          Explore Available Spaces
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LIGHTBOX MODAL ==================== -->
+  <div id="gallery-lightbox-modal" class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-4 backdrop-blur-md">
+    <button id="close-lightbox-btn" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-2xl font-bold transition-all z-20">
+      &times;
+    </button>
+    
+    <button id="prev-lightbox-btn" class="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xl transition-all z-20">
+      &#10094;
+    </button>
+    <button id="next-lightbox-btn" class="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xl transition-all z-20">
+      &#10095;
+    </button>
+
+    <div class="max-w-5xl w-full max-h-[85vh] flex flex-col items-center">
+      <img id="lightbox-image" src="" alt="Fullscreen Preview" class="max-w-full max-h-[70vh] object-contain rounded-xl shadow-2xl">
+      <div class="mt-4 text-center text-white">
+        <span id="lightbox-category" class="text-[11px] font-bold uppercase tracking-widest text-[#D9A66F]">WORKSPACE</span>
+        <h4 id="lightbox-caption" class="font-heading font-bold text-lg mt-0.5">Caption Title</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-white pt-12 pb-8 border-t border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-[#777F79] dark:text-gray-400">
+      <p>&copy; 2026 NESTSPACE. All rights reserved. Architectural Gallery.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery.js"></script>
+</body>
+</html>
+

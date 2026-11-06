@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership Plans & Pricing – NESTSPACE</title>
+  <meta name="description" content="Transparent, flexible workspace memberships designed around how you study and build. Choose Basic, Pro, or Elite.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23173C35'><path d='M6 6h4v20H6V6zm16 0h4v20h-4V6zM10 6l12 20h-4L6 6h4z' fill='%23D9A66F'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#173C35',
+            'primary-dark': '#0f2722',
+            secondary: '#D9A66F',
+            'nest-bg': '#F7F6F1',
+            'nest-dark-bg': '#171D1A',
+            'nest-surface': '#FFFFFF',
+            'nest-dark-surface': '#242D28',
+            'nest-heading': '#202824',
+            'nest-muted': '#777F79',
+            'nest-border': '#E8E8E1',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/theme.js"></script>
+</head>
+<body class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-[#FFFFFF] antialiased transition-colors duration-300">
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="main-header" class="sticky top-0 z-50 bg-[#F7F6F1]/90 dark:bg-[#171D1A]/90 backdrop-blur-md border-b border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-[#173C35] dark:bg-[#242D28] border border-[#D9A66F]/40 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+          <svg class="w-6 h-6 text-[#D9A66F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 21V4l8 12V4" />
+            <path d="M12 20h8V4" stroke="#D9A66F" />
+          </svg>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl tracking-tight text-[#173C35] dark:text-white block leading-none">NESTSPACE</span>
+          <span class="text-[10px] tracking-widest uppercase font-semibold text-[#D9A66F] block mt-0.5">WORK • STUDY • GROW</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white">HOME</a>
+        <a href="home-2.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white">HOME 2</a>
+        <a href="spaces.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white">SPACES</a>
+        <a href="membership.html" class="text-sm font-semibold text-[#173C35] dark:text-[#D9A66F] border-b-2 border-[#173C35] dark:border-[#D9A66F] pb-1">PLANS</a>
+        <a href="gallery.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white">GALLERY</a>
+        <a href="dashboard/overview.html" class="text-sm font-medium text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white">DASHBOARD</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-4">
+        <button type="button" class="theme-toggle-btn w-10 h-10 rounded-full border border-[#E8E8E1] dark:border-[#2E3832] flex items-center justify-center text-[#777F79] hover:text-[#173C35] dark:text-[#B9C2BC] dark:hover:text-white transition-colors bg-white/60 dark:bg-[#242D28]">
+          <svg class="icon-sun w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+          <svg class="icon-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <a href="login.html" class="text-sm font-semibold text-[#173C35] dark:text-white hover:text-[#D9A66F] px-3 py-2">Login</a>
+        <a href="spaces.html" class="btn-primary text-sm shadow-md">
+          <span>Book a Space</span>
+          <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="mobile-menu-btn" class="w-10 h-10 rounded-lg border border-[#E8E8E1] dark:border-[#2E3832] flex items-center justify-center text-[#173C35] dark:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm"></div>
+  <div id="mobile-menu-drawer" class="fixed top-0 right-0 bottom-0 w-80 bg-[#F7F6F1] dark:bg-[#171D1A] z-50 p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-[#E8E8E1] dark:border-[#2E3832]">
+        <span class="font-heading font-bold text-lg text-[#173C35] dark:text-white">NESTSPACE</span>
+        <button id="close-mobile-menu-btn" class="w-8 h-8 rounded-full border flex items-center justify-center text-gray-500">&times;</button>
+      </div>
+      <nav class="flex flex-col gap-4 mt-6">
+        <a href="index.html" class="text-base font-medium text-[#777F79]">Home 1</a>
+        <a href="home-2.html" class="text-base font-medium text-[#777F79]">Home 2</a>
+        <a href="spaces.html" class="text-base font-medium text-[#777F79]">Spaces</a>
+        <a href="membership.html" class="text-base font-semibold text-[#173C35] dark:text-[#D9A66F]">Membership Plans</a>
+        <a href="gallery.html" class="text-base font-medium text-[#777F79]">Gallery</a>
+        <a href="dashboard/overview.html" class="text-base font-medium text-[#777F79]">Dashboard</a>
+      </nav>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a href="login.html" class="btn-secondary w-full text-center">Login</a>
+      <a href="spaces.html" class="btn-primary w-full text-center">Book a Space ↗</a>
+    </div>
+  </div>
+
+  <!-- ==================== SECTION 1: HERO & BILLING TOGGLE ==================== -->
+  <section class="py-16 lg:py-24 bg-[#F7F6F1] dark:bg-[#171D1A] text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">Simple & Transparent Rates</span>
+      <h1 class="font-heading font-extrabold text-4xl sm:text-5xl text-[#173C35] dark:text-white mt-2 leading-tight">
+        Membership Plans Built for Focus & Scale
+      </h1>
+      <p class="text-base text-[#777F79] dark:text-[#B9C2BC] max-w-xl mx-auto mt-3">
+        No hidden maintenance dues or long-term lease traps. Upgrade, downgrade, or pause anytime.
+      </p>
+
+      <!-- Monthly vs Annual Toggle -->
+      <div class="inline-flex items-center gap-3 p-1.5 rounded-full bg-white dark:bg-[#242D28] border border-[#E8E8E1] dark:border-[#313B35] mt-8 shadow-sm">
+        <button id="toggle-monthly" class="px-5 py-2 rounded-full text-xs font-bold bg-[#173C35] text-white transition-all">
+          Monthly Billing
+        </button>
+        <button id="toggle-annual" class="px-5 py-2 rounded-full text-xs font-semibold text-[#777F79] dark:text-[#B9C2BC] hover:text-[#173C35] transition-all flex items-center gap-1.5">
+          <span>Annual Billing</span>
+          <span class="bg-[#D9A66F] text-[#171D1A] text-[10px] font-extrabold px-2 py-0.5 rounded-full">Save 20%</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 2: THREE PRICING CARDS ==================== -->
+  <section class="pb-20 bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Plan 1: Basic -->
+        <div class="card-nest p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white">Basic</h3>
+              <span class="text-xs font-semibold text-gray-500">Flexible Access</span>
+            </div>
+            
+            <div class="my-6">
+              <div class="flex items-baseline gap-1">
+                <span class="font-heading font-extrabold text-4xl text-[#173C35] dark:text-white plan-price" data-monthly="999" data-annual="799">₹999</span>
+                <span class="text-xs text-[#777F79] dark:text-[#B9C2BC]">/ month</span>
+              </div>
+              <p class="text-xs text-gray-400 mt-1">Billed monthly, pause or cancel anytime</p>
+            </div>
+
+            <ul class="space-y-3.5 text-xs text-[#202824] dark:text-gray-200 border-t border-[#E8E8E1] dark:border-[#313B35] pt-6">
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-600 font-bold">✓</span> Flexible Hot Desk access (40 hrs/mo)
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-600 font-bold">✓</span> High-speed 1 Gbps Fiber Wi-Fi
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-600 font-bold">✓</span> Complimentary filter coffee and herbal tea
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-600 font-bold">✓</span> Access to Silent Library zones
+              </li>
+              <li class="flex items-center gap-2.5 text-gray-400">
+                <span>✕</span> No meeting room credits included
+              </li>
+              <li class="flex items-center gap-2.5 text-gray-400">
+                <span>✕</span> 24/7 keyless night access
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-8">
+            <a href="signup.html?plan=basic" class="btn-secondary w-full text-center text-sm py-3">
+              Choose Basic Plan
+            </a>
+          </div>
+        </div>
+
+        <!-- Plan 2: Pro (POPULAR - Highlighted) -->
+        <div class="card-nest p-8 flex flex-col justify-between border-2 border-[#173C35] dark:border-[#D9A66F] shadow-xl relative bg-white dark:bg-[#242D28] transform md:-translate-y-3">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#D9A66F] text-[#171D1A] text-[11px] font-extrabold uppercase tracking-wider px-4 py-1 rounded-full shadow-md">
+            Most Popular
+          </div>
+
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-heading font-extrabold text-2xl text-[#173C35] dark:text-white">Pro</h3>
+              <span class="text-xs font-bold text-[#D9A66F]">Unrestricted Flow</span>
+            </div>
+            
+            <div class="my-6">
+              <div class="flex items-baseline gap-1">
+                <span class="font-heading font-extrabold text-5xl text-[#173C35] dark:text-white plan-price" data-monthly="1999" data-annual="1599">₹1,999</span>
+                <span class="text-xs text-[#777F79] dark:text-[#B9C2BC]">/ month</span>
+              </div>
+              <p class="text-xs text-gray-400 mt-1">Recommended for remote professionals</p>
+            </div>
+
+            <ul class="space-y-3.5 text-xs text-[#202824] dark:text-gray-200 border-t border-[#E8E8E1] dark:border-[#313B35] pt-6">
+              <li class="flex items-center gap-2.5">
+                <span class="text-[#D9A66F] font-bold">✓</span> Priority Desk access (Unlimited hrs/mo)
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-[#D9A66F] font-bold">✓</span> <strong>6 Hours</strong> Meeting Room Credits / mo
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-[#D9A66F] font-bold">✓</span> 24/7 Smart Biometric Keyless Access
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-[#D9A66F] font-bold">✓</span> Unlimited Artisan Specialty Espresso
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-[#D9A66F] font-bold">✓</span> 2 Monthly Free Guest Passes
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-[#D9A66F] font-bold">✓</span> 50 Free B&W Laser Prints / month
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-8">
+            <a href="signup.html?plan=pro" class="btn-primary w-full text-center text-sm py-3 shadow-lg">
+              Choose Pro Plan
+            </a>
+          </div>
+        </div>
+
+        <!-- Plan 3: Elite -->
+        <div class="card-nest p-8 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white">Elite</h3>
+              <span class="text-xs font-semibold text-gray-500">Private Suite</span>
+            </div>
+            
+            <div class="my-6">
+              <div class="flex items-baseline gap-1">
+                <span class="font-heading font-extrabold text-4xl text-[#173C35] dark:text-white plan-price" data-monthly="3999" data-annual="3199">₹3,999</span>
+                <span class="text-xs text-[#777F79] dark:text-[#B9C2BC]">/ month</span>
+              </div>
+              <p class="text-xs text-gray-400 mt-1">Dedicated private cabin allocations</p>
+            </div>
+
+            <ul class="space-y-3.5 text-xs text-[#202824] dark:text-gray-200 border-t border-[#E8E8E1] dark:border-[#313B35] pt-6">
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-600 font-bold">✓</span> Private Soundproof Cabin Access (20 hrs/mo)
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-600 font-bold">✓</span> <strong>15 Hours</strong> Executive Boardroom Credits
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-600 font-bold">✓</span> Dedicated Lockable Filing Pedestal
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-600 font-bold">✓</span> Commercial Business Mailing Address
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-600 font-bold">✓</span> Priority 24/7 Concierge Support
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span class="text-emerald-600 font-bold">✓</span> Unlimited High-Speed Scanning & Printing
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-8">
+            <a href="signup.html?plan=elite" class="btn-secondary w-full text-center text-sm py-3">
+              Choose Elite Plan
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3: PLAN COMPARISON TABLE ==================== -->
+  <section class="py-20 bg-white dark:bg-[#242D28] border-y border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">Full Comparison Matrix</span>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white mt-1">
+          Detailed Feature Breakdown
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="border-b border-[#E8E8E1] dark:border-[#313B35]">
+              <th class="py-4 px-6 text-sm font-bold text-[#173C35] dark:text-white">Workspace Privileges</th>
+              <th class="py-4 px-6 text-sm font-bold text-center">Basic (₹999)</th>
+              <th class="py-4 px-6 text-sm font-bold text-center text-[#173C35] dark:text-[#D9A66F]">Pro (₹1,999)</th>
+              <th class="py-4 px-6 text-sm font-bold text-center">Elite (₹3,999)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#E8E8E1] dark:divide-[#313B35] text-[#777F79] dark:text-[#B9C2BC]">
+            <tr>
+              <td class="py-4 px-6 font-semibold text-[#202824] dark:text-white">Open Desk Hot Desking</td>
+              <td class="py-4 px-6 text-center">40 hrs / month</td>
+              <td class="py-4 px-6 text-center font-bold text-[#173C35] dark:text-white">Unlimited</td>
+              <td class="py-4 px-6 text-center font-bold text-[#173C35] dark:text-white">Unlimited + Priority</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-semibold text-[#202824] dark:text-white">24/7 Keyless Smart Entry</td>
+              <td class="py-4 px-6 text-center text-gray-400">Regular hours only</td>
+              <td class="py-4 px-6 text-center text-emerald-600 font-bold">✓ Included</td>
+              <td class="py-4 px-6 text-center text-emerald-600 font-bold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-semibold text-[#202824] dark:text-white">Meeting Room Credits</td>
+              <td class="py-4 px-6 text-center text-gray-400">—</td>
+              <td class="py-4 px-6 text-center font-bold text-[#173C35] dark:text-white">6 hrs / mo</td>
+              <td class="py-4 px-6 text-center font-bold text-[#173C35] dark:text-white">15 hrs / mo</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-semibold text-[#202824] dark:text-white">Private Cedar Pod Access</td>
+              <td class="py-4 px-6 text-center text-gray-400">Standard rates</td>
+              <td class="py-4 px-6 text-center text-gray-400">20% Discount</td>
+              <td class="py-4 px-6 text-center text-emerald-600 font-bold">20 hrs Free Included</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-semibold text-[#202824] dark:text-white">Specialty Espresso & Teas</td>
+              <td class="py-4 px-6 text-center">Standard Drip</td>
+              <td class="py-4 px-6 text-center text-emerald-600 font-bold">✓ Unlimited Barista</td>
+              <td class="py-4 px-6 text-center text-emerald-600 font-bold">✓ Unlimited Barista</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-semibold text-[#202824] dark:text-white">Commercial Mail & Parcel Handling</td>
+              <td class="py-4 px-6 text-center text-gray-400">—</td>
+              <td class="py-4 px-6 text-center text-gray-400">₹400 / mo add-on</td>
+              <td class="py-4 px-6 text-center text-emerald-600 font-bold">✓ Included</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-6 font-semibold text-[#202824] dark:text-white">Member Dashboard App</td>
+              <td class="py-4 px-6 text-center text-emerald-600 font-bold">✓</td>
+              <td class="py-4 px-6 text-center text-emerald-600 font-bold">✓</td>
+              <td class="py-4 px-6 text-center text-emerald-600 font-bold">✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: SIGNATURE BENEFITS ==================== -->
+  <section class="py-20 bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest text-[#D9A66F] uppercase">Every Member Enjoys</span>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white mt-1">
+          Hospitality in Every Square Foot
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#242D28] border border-[#E8E8E1] dark:border-[#313B35]">
+          <div class="w-12 h-12 rounded-xl bg-[#173C35] dark:bg-white/10 text-[#D9A66F] flex items-center justify-center font-bold text-xl mb-4">
+            🛡️
+          </div>
+          <h4 class="font-heading font-bold text-lg text-[#173C35] dark:text-white mb-2">Zero Lock-In Leases</h4>
+          <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+            Freelance work and research cycles ebb and flow. Pause your subscription for up to 60 days with zero penalty or administrative fee.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#242D28] border border-[#E8E8E1] dark:border-[#313B35]">
+          <div class="w-12 h-12 rounded-xl bg-[#173C35] dark:bg-white/10 text-[#D9A66F] flex items-center justify-center font-bold text-xl mb-4">
+            🤝
+          </div>
+          <h4 class="font-heading font-bold text-lg text-[#173C35] dark:text-white mb-2">Curated Intellectual Community</h4>
+          <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+            Join monthly fireside talks with authors, AI researchers, and startup founders. Build genuine peer relationships without forced social mixers.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-[#242D28] border border-[#E8E8E1] dark:border-[#313B35]">
+          <div class="w-12 h-12 rounded-xl bg-[#173C35] dark:bg-white/10 text-[#D9A66F] flex items-center justify-center font-bold text-xl mb-4">
+            ⚡
+          </div>
+          <h4 class="font-heading font-bold text-lg text-[#173C35] dark:text-white mb-2">Redundant Power & Solar Grid</h4>
+          <p class="text-xs text-[#777F79] dark:text-[#B9C2BC] leading-relaxed">
+            100% uninterrupted online performance with dual-generator backup and rooftop solar panels so you never lose unsaved work.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 5: ENTERPRISE & TEAM PASSES ==================== -->
+  <section class="py-16 bg-gradient-to-r from-[#F5EFE6] via-white to-[#F5EFE6] dark:from-[#242D28] dark:to-[#171D1A] text-[#202824] dark:text-white border-y border-[#E8E8E1] dark:border-[#313B35]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-8 space-y-3">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#bd854b] dark:text-[#D9A66F]">Need 5 to 50 Desks?</span>
+          <h3 class="font-heading font-extrabold text-3xl sm:text-4xl text-[#173C35] dark:text-white">Custom Team Suites & Corporate Flex Passes</h3>
+          <p class="text-sm text-[#777F79] dark:text-gray-200 max-w-xl">
+            Provide your remote team with access to all NESTSPACE campus locations under a unified corporate invoice with consolidated expense management.
+          </p>
+        </div>
+        <div class="lg:col-span-4 flex justify-start lg:justify-end">
+          <a href="signup.html?type=enterprise" class="btn-primary dark:btn-accent text-sm py-3 px-8 font-bold">
+            Contact Enterprise Concierge &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 6: FAQ ACCORDION ==================== -->
+  <section class="py-20 bg-[#F7F6F1] dark:bg-[#171D1A]">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <h3 class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white">
+          Membership Questions Answered
+        </h3>
+      </div>
+
+      <div class="space-y-4 accordion-container">
+        
+        <div class="bg-white dark:bg-[#242D28] rounded-2xl border border-[#E8E8E1] dark:border-[#313B35] overflow-hidden">
+          <button class="accordion-header w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-[#173C35] dark:text-white">
+            <span>Can I upgrade or downgrade my plan mid-month?</span>
+            <span class="accordion-icon text-[#D9A66F]">▼</span>
+          </button>
+          <div class="accordion-content px-6 pb-4 text-xs text-[#777F79] dark:text-[#B9C2BC] hidden">
+            Yes! You can adjust your plan at any time in your Member Dashboard under the Membership tab. Unused funds are prorated instantly toward your upgraded plan.
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-[#242D28] rounded-2xl border border-[#E8E8E1] dark:border-[#313B35] overflow-hidden">
+          <button class="accordion-header w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm text-[#173C35] dark:text-white">
+            <span>Do unused meeting room credits roll over to next month?</span>
+            <span class="accordion-icon text-[#D9A66F]">▼</span>
+          </button>
+          <div class="accordion-content px-6 pb-4 text-xs text-[#777F79] dark:text-[#B9C2BC] hidden">
+            Pro and Elite members enjoy credit rollover for up to 30 days. You can also purchase additional credit bundles anytime at member-only discounted rates.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-white pt-12 pb-8 border-t border-[#E8E8E1] dark:border-[#2E3832]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-[#777F79] dark:text-gray-400">
+      <p>&copy; 2026 NESTSPACE. All rights reserved. Work • Study • Grow.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Annual vs Monthly Switcher
+    const monthlyBtn = document.getElementById('toggle-monthly');
+    const annualBtn = document.getElementById('toggle-annual');
+    const priceElements = document.querySelectorAll('.plan-price');
+
+    if (monthlyBtn && annualBtn) {
+      monthlyBtn.addEventListener('click', () => {
+        monthlyBtn.className = 'px-5 py-2 rounded-full text-xs font-bold bg-[#173C35] text-white transition-all';
+        annualBtn.className = 'px-5 py-2 rounded-full text-xs font-semibold text-[#777F79] dark:text-[#B9C2BC] hover:text-[#173C35] transition-all flex items-center gap-1.5';
+        priceElements.forEach(el => {
+          el.textContent = `₹${el.dataset.monthly}`;
+        });
+      });
+
+      annualBtn.addEventListener('click', () => {
+        annualBtn.className = 'px-5 py-2 rounded-full text-xs font-bold bg-[#173C35] text-white transition-all flex items-center gap-1.5';
+        monthlyBtn.className = 'px-5 py-2 rounded-full text-xs font-semibold text-[#777F79] dark:text-[#B9C2BC] hover:text-[#173C35] transition-all';
+        priceElements.forEach(el => {
+          el.textContent = `₹${el.dataset.annual}`;
+        });
+      });
+    }
+  </script>
+</body>
+</html>
+

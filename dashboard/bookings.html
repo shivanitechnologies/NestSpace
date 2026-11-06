@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings – NESTSPACE Member Dashboard</title>
+  <meta name="description" content="View, manage, reschedule or cancel your upcoming and past NESTSPACE reservations.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23173C35'><path d='M6 6h4v20H6V6zm16 0h4v20h-4V6zM10 6l12 20h-4L6 6h4z' fill='%23D9A66F'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#173C35',
+            'primary-dark': '#0f2722',
+            secondary: '#D9A66F',
+            'nest-bg': '#F7F6F1',
+            'nest-dark-bg': '#171D1A',
+            'nest-surface': '#FFFFFF',
+            'nest-dark-surface': '#242D28',
+            'nest-heading': '#202824',
+            'nest-muted': '#777F79',
+            'nest-border': '#E8E8E1',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-[#FFFFFF] antialiased">
+
+  <div class="dashboard-layout">
+    
+    <div id="dash-sidebar-backdrop" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside id="dash-sidebar" class="dashboard-sidebar">
+      <div class="p-6 border-b border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#173C35] flex items-center justify-center text-[#D9A66F] font-bold shadow-sm">
+            N
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white block leading-none">NESTSPACE</span>
+            <span class="text-[10px] tracking-wider uppercase font-semibold text-[#D9A66F] block mt-0.5">Member Portal</span>
+          </div>
+        </a>
+        <button id="dash-sidebar-close" class="lg:hidden text-gray-400">✕</button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Workspace</span>
+          <nav class="space-y-1">
+            <a href="overview.html" class="nav-link-dash">
+              <span class="text-base">📊</span>
+              <span>Overview</span>
+            </a>
+            <a href="bookings.html" class="nav-link-dash active">
+              <span class="text-base">📅</span>
+              <span>My Bookings</span>
+            </a>
+            <a href="book-space.html" class="nav-link-dash">
+              <span class="text-base">✨</span>
+              <span>Book a Space</span>
+            </a>
+            <a href="explore-spaces.html" class="nav-link-dash">
+              <span class="text-base">🔍</span>
+              <span>Explore Spaces</span>
+            </a>
+          </nav>
+        </div>
+
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Account</span>
+          <nav class="space-y-1">
+            <a href="membership.html" class="nav-link-dash">
+              <span class="text-base">💳</span>
+              <span>Membership Plan</span>
+            </a>
+            <a href="invoices.html" class="nav-link-dash">
+              <span class="text-base">🧾</span>
+              <span>Invoices</span>
+            </a>
+            <a href="profile.html" class="nav-link-dash">
+              <span class="text-base">👤</span>
+              <span>My Profile</span>
+            </a>
+            <a href="notifications.html" class="nav-link-dash">
+              <span class="text-base">🔔</span>
+              <span>Notifications</span>
+            </a>
+            <a href="settings.html" class="nav-link-dash">
+              <span class="text-base">⚙️</span>
+              <span>Settings</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img class="w-9 h-9 rounded-full object-cover border border-[#D9A66F]" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Pravin">
+          <div class="text-xs">
+            <strong class="block text-[#173C35] dark:text-white leading-tight">Pravin Kumar</strong>
+            <span class="text-gray-400 text-[10px]">Pro Member</span>
+          </div>
+        </div>
+        <a href="../login.html" title="Logout" class="text-gray-400 hover:text-red-600 text-sm p-1.5 rounded-lg">
+          🚪
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="flex items-center gap-3">
+          <button id="dash-sidebar-toggle" class="lg:hidden w-9 h-9 rounded-lg border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[#173C35] dark:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <h2 class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white">My Reservations</h2>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button type="button" class="theme-toggle-btn w-9 h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-gray-500 hover:text-gray-900 dark:text-gray-300">
+            <svg class="icon-sun w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+            <svg class="icon-moon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+          <a href="book-space.html" class="btn-primary text-xs py-2 px-4 shadow-sm">
+            + New Booking
+          </a>
+        </div>
+      </header>
+
+      <div class="p-6 sm:p-8 max-w-7xl w-full mx-auto space-y-6">
+        
+        <!-- Filter Tabs -->
+        <div class="flex items-center gap-6 border-b border-[#E8E8E1] dark:border-[#313B35] text-sm overflow-x-auto pb-1">
+          <button class="booking-filter-tab pb-3 border-b-2 border-[#173C35] text-[#173C35] dark:text-[#D9A66F] font-semibold transition-all" data-filter="all">
+            All Bookings (4)
+          </button>
+          <button class="booking-filter-tab pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-700 transition-all" data-filter="upcoming">
+            Upcoming (2)
+          </button>
+          <button class="booking-filter-tab pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-700 transition-all" data-filter="completed">
+            Completed (1)
+          </button>
+          <button class="booking-filter-tab pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-700 transition-all" data-filter="cancelled">
+            Cancelled (1)
+          </button>
+        </div>
+
+        <!-- Bookings List -->
+        <div class="space-y-4" id="booking-cards-container">
+          
+          <!-- Booking 1: Upcoming Cabin -->
+          <div class="booking-card-item bg-white dark:bg-[#242D28] rounded-2xl p-5 sm:p-6 border border-[#E8E8E1] dark:border-[#313B35] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6" data-status="upcoming">
+            <div class="flex items-start sm:items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=300&q=80" alt="Space" class="w-20 h-20 rounded-xl object-cover shrink-0">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="status-pill status-confirmed">Confirmed</span>
+                  <span class="text-xs text-gray-400 font-mono">NS-1024</span>
+                </div>
+                <h3 class="font-heading font-bold text-base text-[#173C35] dark:text-white">
+                  Private Cabin – A02 (The Cedar Pod)
+                </h3>
+                <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">
+                  🗓️ Friday, 10:00 AM – 12:00 PM • Desk Node A-04 • Level 3 North Wing
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 booking-actions">
+              <button type="button" onclick="showQrPass('NS-1024', 'Cabin A-02', 'Desk A-04')" class="btn-secondary text-xs py-2 px-3.5">
+                📱 Digital Key Pass
+              </button>
+              <button type="button" class="btn-reschedule-booking px-3.5 py-2 rounded-full border border-gray-300 dark:border-gray-600 text-xs font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                Reschedule
+              </button>
+              <button type="button" class="btn-cancel-booking text-xs text-red-500 hover:text-red-700 font-semibold px-2">
+                Cancel
+              </button>
+            </div>
+          </div>
+
+          <!-- Booking 2: Upcoming Atrium Desk -->
+          <div class="booking-card-item bg-white dark:bg-[#242D28] rounded-2xl p-5 sm:p-6 border border-[#E8E8E1] dark:border-[#313B35] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6" data-status="upcoming">
+            <div class="flex items-start sm:items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=300&q=80" alt="Space" class="w-20 h-20 rounded-xl object-cover shrink-0">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="status-pill status-confirmed">Confirmed</span>
+                  <span class="text-xs text-gray-400 font-mono">NS-1038</span>
+                </div>
+                <h3 class="font-heading font-bold text-base text-[#173C35] dark:text-white">
+                  The Atrium Hot Desk – Pod B
+                </h3>
+                <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">
+                  🗓️ Monday, 09:00 AM – 01:00 PM • Desk B-02 • Level 2 Skylight Atrium
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 booking-actions">
+              <button type="button" onclick="showQrPass('NS-1038', 'Atrium Pod B', 'Desk B-02')" class="btn-secondary text-xs py-2 px-3.5">
+                📱 Digital Key Pass
+              </button>
+              <button type="button" class="btn-reschedule-booking px-3.5 py-2 rounded-full border border-gray-300 dark:border-gray-600 text-xs font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                Reschedule
+              </button>
+              <button type="button" class="btn-cancel-booking text-xs text-red-500 hover:text-red-700 font-semibold px-2">
+                Cancel
+              </button>
+            </div>
+          </div>
+
+          <!-- Booking 3: Completed Session -->
+          <div class="booking-card-item bg-white dark:bg-[#242D28] rounded-2xl p-5 sm:p-6 border border-[#E8E8E1] dark:border-[#313B35] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6" data-status="completed">
+            <div class="flex items-start sm:items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=300&q=80" alt="Space" class="w-20 h-20 rounded-xl object-cover shrink-0 grayscale opacity-80">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="status-pill status-completed">Completed</span>
+                  <span class="text-xs text-gray-400 font-mono">NS-0982</span>
+                </div>
+                <h3 class="font-heading font-bold text-base text-[#173C35] dark:text-white">
+                  Nordic Study Carrel – Desk 14
+                </h3>
+                <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">
+                  🗓️ Yesterday, 02:00 PM – 05:00 PM • Level 1 Silent Library
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <a href="invoices.html" class="text-xs font-semibold text-[#173C35] dark:text-[#D9A66F] hover:underline">
+                View Receipt (₹420)
+              </a>
+              <a href="book-space.html" class="btn-secondary text-xs py-1.5 px-3">
+                Book Again
+              </a>
+            </div>
+          </div>
+
+          <!-- Booking 4: Cancelled Session -->
+          <div class="booking-card-item bg-white dark:bg-[#242D28] rounded-2xl p-5 sm:p-6 border border-[#E8E8E1] dark:border-[#313B35] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6 opacity-75" data-status="cancelled">
+            <div class="flex items-start sm:items-center gap-4">
+              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=300&q=80" alt="Space" class="w-20 h-20 rounded-xl object-cover shrink-0 grayscale opacity-60">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="status-pill status-cancelled">Cancelled</span>
+                  <span class="text-xs text-gray-400 font-mono">NS-0914</span>
+                </div>
+                <h3 class="font-heading font-bold text-base text-gray-500 line-through">
+                  Executive Boardroom – The Gallery
+                </h3>
+                <p class="text-xs text-gray-400">
+                  🗓️ Oct 28, 2026 • Refunded to Nest Credit Balance
+                </p>
+              </div>
+            </div>
+
+            <span class="text-xs text-emerald-600 font-semibold">100% Refunded</span>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ==================== QR DIGITAL PASS MODAL ==================== -->
+  <div id="qr-pass-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#242D28] rounded-3xl p-8 max-w-sm w-full shadow-2xl border border-[#E8E8E1] dark:border-[#313B35] text-center space-y-4">
+      <div class="w-10 h-10 rounded-xl bg-[#173C35] dark:bg-white/10 text-[#D9A66F] font-bold flex items-center justify-center mx-auto text-sm">
+        N
+      </div>
+      <div>
+        <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white" id="qr-modal-space">Private Cabin A-02</h3>
+        <p class="text-xs text-gray-400" id="qr-modal-id">Pass ID: NS-1024</p>
+      </div>
+
+      <!-- Simulated QR Code -->
+      <div class="p-4 bg-white rounded-2xl border-2 border-gray-200 inline-block mx-auto shadow-inner">
+        <svg class="w-36 h-36 text-black" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v4h-4v-4zm-4 4h4v4h-4v-4zm4-4h4v4h-4v-4zm-4-4h4v4h-4v-4z"/>
+        </svg>
+      </div>
+
+      <p class="text-[11px] text-[#777F79] dark:text-[#B9C2BC]">
+        Tap your device on the door scanner or show at reception for immediate biometric entry.
+      </p>
+
+      <button type="button" onclick="closeQrPass()" class="w-full btn-primary py-2.5 text-xs font-bold">
+        Close Pass
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== RESCHEDULE MODAL ==================== -->
+  <div id="reschedule-booking-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#242D28] rounded-3xl p-8 max-w-md w-full shadow-2xl border border-[#E8E8E1] dark:border-[#313B35] space-y-4">
+      <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white">Reschedule Reservation</h3>
+      <p class="text-xs text-gray-400">Select your new preferred date and time slot.</p>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="block text-gray-400 mb-1">New Date</label>
+          <input type="date" value="2026-11-09" class="w-full input-nest text-xs h-10">
+        </div>
+        <div>
+          <label class="block text-gray-400 mb-1">New Slot</label>
+          <select class="w-full input-nest text-xs h-10">
+            <option>10:00 AM – 12:00 PM</option>
+            <option>02:00 PM – 04:00 PM</option>
+            <option>04:00 PM – 06:00 PM</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 pt-3">
+        <button type="button" id="confirm-reschedule-btn" class="flex-1 btn-primary py-2.5 text-xs font-bold">
+          Confirm Change
+        </button>
+        <button type="button" class="close-reschedule-modal flex-1 btn-secondary text-xs py-2.5 font-bold">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CANCEL CONFIRMATION MODAL ==================== -->
+  <div id="cancel-booking-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#242D28] rounded-3xl p-8 max-w-sm w-full shadow-2xl border border-[#E8E8E1] dark:border-[#313B35] text-center space-y-4">
+      <div class="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold mx-auto">
+        !
+      </div>
+      <h3 class="font-heading font-bold text-xl text-[#173C35] dark:text-white">Cancel Reservation?</h3>
+      <p class="text-xs text-gray-400 leading-relaxed">
+        Because you are cancelling more than 2 hours in advance, 100% of your booking amount will be refunded immediately to your Nest Wallet.
+      </p>
+
+      <div class="flex flex-col gap-2 pt-2">
+        <button type="button" id="confirm-cancel-action-btn" class="w-full py-2.5 rounded-full bg-red-600 text-white font-bold text-xs hover:bg-red-700 transition-colors">
+          Yes, Cancel Reservation
+        </button>
+        <button type="button" id="abort-cancel-action-btn" class="text-xs text-gray-500 hover:text-gray-700 py-1">
+          Keep My Booking
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script>
+    function showQrPass(id, space, seat) {
+      document.getElementById('qr-modal-id').textContent = 'Pass: ' + id + ' • ' + seat;
+      document.getElementById('qr-modal-space').textContent = space;
+      const modal = document.getElementById('qr-pass-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+    function closeQrPass() {
+      const modal = document.getElementById('qr-pass-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  </script>
+</body>
+</html>
+

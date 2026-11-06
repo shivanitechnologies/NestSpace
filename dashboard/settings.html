@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings – NESTSPACE Member Dashboard</title>
+  <meta name="description" content="Manage your preferences, security settings, notification channels, and integrations.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23173C35'><path d='M6 6h4v20H6V6zm16 0h4v20h-4V6zM10 6l12 20h-4L6 6h4z' fill='%23D9A66F'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#173C35',
+            'primary-dark': '#0f2722',
+            secondary: '#D9A66F',
+            'nest-bg': '#F7F6F1',
+            'nest-dark-bg': '#171D1A',
+            'nest-surface': '#FFFFFF',
+            'nest-dark-surface': '#242D28',
+            'nest-heading': '#202824',
+            'nest-muted': '#777F79',
+            'nest-border': '#E8E8E1',
+          },
+          fontFamily: {
+            heading: ['Manrope', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body class="bg-[#F7F6F1] dark:bg-[#171D1A] text-[#202824] dark:text-[#FFFFFF] antialiased">
+
+  <div class="dashboard-layout">
+    
+    <div id="dash-sidebar-backdrop" class="fixed inset-0 bg-black/50 z-30 hidden lg:hidden"></div>
+
+    <!-- SIDEBAR -->
+    <aside id="dash-sidebar" class="dashboard-sidebar">
+      <div class="p-6 border-b border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-[#173C35] flex items-center justify-center text-[#D9A66F] font-bold shadow-sm">
+            N
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white block leading-none">NESTSPACE</span>
+            <span class="text-[10px] tracking-wider uppercase font-semibold text-[#D9A66F] block mt-0.5">Member Portal</span>
+          </div>
+        </a>
+        <button id="dash-sidebar-close" class="lg:hidden text-gray-400">✕</button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Workspace</span>
+          <nav class="space-y-1">
+            <a href="overview.html" class="nav-link-dash">
+              <span class="text-base">📊</span>
+              <span>Overview</span>
+            </a>
+            <a href="bookings.html" class="nav-link-dash">
+              <span class="text-base">📅</span>
+              <span>My Bookings</span>
+            </a>
+            <a href="book-space.html" class="nav-link-dash">
+              <span class="text-base">✨</span>
+              <span>Book a Space</span>
+            </a>
+            <a href="explore-spaces.html" class="nav-link-dash">
+              <span class="text-base">🔍</span>
+              <span>Explore Spaces</span>
+            </a>
+          </nav>
+        </div>
+
+        <div>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-gray-400 px-3 block mb-2">Account</span>
+          <nav class="space-y-1">
+            <a href="membership.html" class="nav-link-dash">
+              <span class="text-base">💳</span>
+              <span>Membership Plan</span>
+            </a>
+            <a href="invoices.html" class="nav-link-dash">
+              <span class="text-base">🧾</span>
+              <span>Invoices</span>
+            </a>
+            <a href="profile.html" class="nav-link-dash">
+              <span class="text-base">👤</span>
+              <span>My Profile</span>
+            </a>
+            <a href="notifications.html" class="nav-link-dash">
+              <span class="text-base">🔔</span>
+              <span>Notifications</span>
+            </a>
+            <a href="settings.html" class="nav-link-dash active">
+              <span class="text-base">⚙️</span>
+              <span>Settings</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img class="w-9 h-9 rounded-full object-cover border border-[#D9A66F]" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Pravin">
+          <div class="text-xs">
+            <strong class="block text-[#173C35] dark:text-white leading-tight">Pravin Kumar</strong>
+            <span class="text-gray-400 text-[10px]">Pro Member</span>
+          </div>
+        </div>
+        <a href="../login.html" title="Logout" class="text-gray-400 hover:text-red-600 text-sm p-1.5 rounded-lg">
+          🚪
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+      <header class="dashboard-header">
+        <div class="flex items-center gap-3">
+          <button id="dash-sidebar-toggle" class="lg:hidden w-9 h-9 rounded-lg border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[#173C35] dark:text-white">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <h2 class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white">Account Settings</h2>
+        </div>
+      </header>
+
+      <div class="p-6 sm:p-8 max-w-4xl w-full mx-auto space-y-8">
+        
+        <!-- Theme Preference -->
+        <div class="bg-white dark:bg-[#242D28] rounded-2xl p-6 sm:p-8 border border-[#E8E8E1] dark:border-[#313B35] shadow-sm space-y-4">
+          <h3 class="font-heading font-bold text-lg text-[#173C35] dark:text-white">Appearance & Theme</h3>
+          <p class="text-xs text-[#777F79] dark:text-[#B9C2BC]">Choose how NESTSPACE looks on this device.</p>
+          
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+            <button type="button" onclick="setThemeDirect('light')" class="p-4 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] bg-[#F7F6F1] text-xs font-bold text-[#173C35] text-center hover:border-[#173C35]">
+              ☀️ Light Theme
+            </button>
+            <button type="button" onclick="setThemeDirect('dark')" class="p-4 rounded-xl border border-[#313B35] bg-[#171D1A] text-xs font-bold text-white text-center hover:border-[#D9A66F]">
+              🌙 Dark Theme
+            </button>
+          </div>
+        </div>
+
+        <!-- Notification Channels -->
+        <form class="dashboard-save-form bg-white dark:bg-[#242D28] rounded-2xl p-6 sm:p-8 border border-[#E8E8E1] dark:border-[#313B35] shadow-sm space-y-6">
+          <h3 class="font-heading font-bold text-lg text-[#173C35] dark:text-white">Notification Preferences</h3>
+          
+          <div class="space-y-4 text-xs">
+            <label class="flex items-center justify-between p-3 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
+              <div>
+                <strong class="block text-[#173C35] dark:text-white">Booking Reminders via SMS & WhatsApp</strong>
+                <span class="text-gray-400">Receive smart door pass link 30 minutes before your slot</span>
+              </div>
+              <input type="checkbox" checked class="rounded text-[#173C35] w-4 h-4">
+            </label>
+
+            <label class="flex items-center justify-between p-3 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
+              <div>
+                <strong class="block text-[#173C35] dark:text-white">Tax Invoice Receipts to Email</strong>
+                <span class="text-gray-400">Instant PDF dispatched upon payment completion</span>
+              </div>
+              <input type="checkbox" checked class="rounded text-[#173C35] w-4 h-4">
+            </label>
+
+            <label class="flex items-center justify-between p-3 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
+              <div>
+                <strong class="block text-[#173C35] dark:text-white">Google & Apple Calendar Sync</strong>
+                <span class="text-gray-400">Auto-add confirmed desk hours into your work calendar</span>
+              </div>
+              <input type="checkbox" checked class="rounded text-[#173C35] w-4 h-4">
+            </label>
+          </div>
+
+          <div class="pt-2 flex justify-end">
+            <button type="submit" class="btn-primary py-2.5 px-6 text-xs font-bold shadow-md">
+              Save Preferences
+            </button>
+          </div>
+        </form>
+
+        <!-- Danger Zone -->
+        <div class="bg-red-50 dark:bg-red-950/20 rounded-2xl p-6 sm:p-8 border border-red-200 dark:border-red-900/40 space-y-4">
+          <h3 class="font-heading font-bold text-lg text-red-700 dark:text-red-400">Membership Pause & Deactivation</h3>
+          <p class="text-xs text-red-600 dark:text-red-300">
+            Need to take time away? Pause your active plan for up to 60 days with full credit retention.
+          </p>
+          <div class="pt-2">
+            <button type="button" onclick="showToast('Your membership has been paused for 30 days.')" class="px-5 py-2.5 rounded-full border border-red-400 text-red-700 dark:text-red-300 text-xs font-bold hover:bg-red-100 dark:hover:bg-red-900/40 transition-colors">
+              Pause Membership (30 Days)
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+  <script>
+    function setThemeDirect(mode) {
+      if (mode === 'dark') {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('nestspace_theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('nestspace_theme', 'light');
+      }
+      showToast('Theme updated to ' + mode + ' mode!');
+    }
+  </script>
+</body>
+</html>
+
