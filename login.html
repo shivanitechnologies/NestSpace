@@ -106,7 +106,10 @@
 
       <!-- Bottom Badges -->
       <div class="relative z-10 text-xs text-[#777F79] dark:text-gray-300 flex items-center gap-6">
-        <span>🔒 256-Bit SSL Encrypted</span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          256-Bit SSL Encrypted
+        </span>
         <span>•</span>
         <span>24/7 Smart Key Access</span>
       </div>
@@ -135,7 +138,10 @@
         <!-- Quick Demo Credentials Fill -->
         <div class="p-3 rounded-2xl bg-[#F7F6F1] dark:bg-[#171D1A] border border-[#E8E8E1] dark:border-[#313B35] space-y-2">
           <div class="flex items-center justify-between text-[11px] font-semibold text-[#777F79] dark:text-gray-300">
-            <span>⚡ Instant Demo Access</span>
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 text-[#D9A66F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Instant Demo Access
+            </span>
             <span class="text-[10px] text-[#D9A66F]">1-Click Autofill</span>
           </div>
           <div class="grid grid-cols-2 gap-2">
@@ -181,8 +187,8 @@
             </div>
             <div class="relative">
               <input type="password" id="login-pwd" required placeholder="••••••••••••" value="securepassword" class="w-full input-nest text-sm font-medium pr-10">
-              <button type="button" onclick="togglePasswordVisibility('login-pwd')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none" title="Toggle password">
-                👁️
+              <button type="button" onclick="togglePasswordVisibility('login-pwd')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 focus:outline-none" title="Toggle password">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
               </button>
             </div>
           </div>

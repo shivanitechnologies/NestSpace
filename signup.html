@@ -90,19 +90,27 @@
         
         <div class="space-y-4 text-xs text-[#202824] dark:text-gray-200">
           <div class="flex items-center gap-3">
-            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold">✓</span>
+            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
             <span>Instant access to 38 curated architectural desks</span>
           </div>
           <div class="flex items-center gap-3">
-            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold">✓</span>
+            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
             <span>Real-time desk reservation & calendar sync</span>
           </div>
           <div class="flex items-center gap-3">
-            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold">✓</span>
+            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
             <span>Zero cancellation fees up to 2 hours prior</span>
           </div>
           <div class="flex items-center gap-3">
-            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold">✓</span>
+            <span class="w-6 h-6 rounded-full bg-[#D9A66F] text-[#171D1A] flex items-center justify-center font-bold shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
             <span>24/7 keyless smartphone door access</span>
           </div>
         </div>
@@ -130,8 +138,9 @@
             <strong class="font-bold text-[#173C35] dark:text-white block">Rapid Demo Testing</strong>
             <span class="text-[11px] text-[#777F79] dark:text-gray-400">Fill test scholar credentials with 1 click</span>
           </div>
-          <button type="button" onclick="fillDemoSignup()" class="py-1.5 px-3 rounded-lg bg-[#173C35] text-white text-[11px] font-bold hover:bg-[#0f2722] transition-colors shadow-sm">
-            ⚡ Autofill Form
+          <button type="button" onclick="fillDemoSignup()" class="py-1.5 px-3 rounded-lg bg-[#173C35] text-white text-[11px] font-bold hover:bg-[#0f2722] transition-colors shadow-sm flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-[#D9A66F]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span>Autofill Form</span>
           </button>
         </div>
 
@@ -176,7 +185,7 @@
             <div class="relative">
               <input type="password" id="signup-pwd" required placeholder="Minimum 8 characters" oninput="checkPasswordStrength(this.value)" class="w-full input-nest text-sm font-medium pr-10">
               <button type="button" onclick="togglePasswordVisibility('signup-pwd')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none" title="Toggle password">
-                👁️
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
               </button>
             </div>
             <!-- Password Strength Bar -->
@@ -199,7 +208,7 @@
             <div class="relative">
               <input type="password" id="signup-pwd-confirm" required placeholder="Repeat password" class="w-full input-nest text-sm font-medium pr-10">
               <button type="button" onclick="togglePasswordVisibility('signup-pwd-confirm')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none" title="Toggle password">
-                👁️
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
               </button>
             </div>
           </div>

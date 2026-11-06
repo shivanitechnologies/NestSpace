@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     toast.innerHTML = `
       <div class="w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${isSuccess ? 'bg-[#D9A66F] text-[#171D1A]' : 'bg-red-100 text-red-800'}">
-        ${isSuccess ? '✓' : '!'}
+        ${isSuccess ? '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>' : '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'}
       </div>
       <div class="flex-1">${message}</div>
       <button class="text-white/70 hover:text-white">&times;</button>
