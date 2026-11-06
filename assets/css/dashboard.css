@@ -31,13 +31,18 @@
 
 @media (max-width: 1024px) {
   .dashboard-sidebar {
+    width: 280px;
+    max-width: 82vw;
     transform: translateX(-100%);
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .dashboard-sidebar.sidebar-open {
     transform: translateX(0);
   }
   .dashboard-main {
     margin-left: 0;
+    padding-bottom: 5rem; /* Ensure space for mobile bottom nav */
   }
 }
 
@@ -77,6 +82,84 @@
   position: sticky;
   top: 0;
   z-index: 30;
+}
+
+@media (max-width: 640px) {
+  .dashboard-header {
+    height: 60px;
+    padding: 0 1rem;
+  }
+}
+
+/* Mobile Bottom Navigation Bar (App-like Docked Navigation) */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 45;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.mobile-bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 6px 4px;
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  min-height: 48px;
+}
+
+.mobile-bottom-nav-item svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+  transition: transform 0.2s ease, stroke-width 0.2s ease;
+}
+
+.mobile-bottom-nav-item:hover,
+.mobile-bottom-nav-item:focus {
+  color: var(--color-primary);
+}
+
+.mobile-bottom-nav-item.active {
+  color: #173C35;
+}
+
+.mobile-bottom-nav-item.active svg {
+  transform: translateY(-2px);
+  stroke-width: 2.2;
+}
+
+html.dark .mobile-bottom-nav {
+  background-color: #242D28;
+  border-top-color: #313B35;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .mobile-bottom-nav-item.active {
+  color: #D9A66F;
+}
+
+@media (min-width: 1025px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
 }
 
 .nav-link-dash {

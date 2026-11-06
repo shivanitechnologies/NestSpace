@@ -142,33 +142,40 @@
       
       <!-- Topbar -->
       <header class="dashboard-header">
-        <div class="flex items-center gap-3">
-          <button id="dash-sidebar-toggle" class="lg:hidden w-9 h-9 rounded-lg border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[#173C35] dark:text-white">
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <button id="dash-sidebar-toggle" class="lg:hidden w-9 h-9 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[#173C35] dark:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Open navigation menu">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
-          <div class="relative hidden sm:block w-72">
+          
+          <!-- Mobile Brand Indicator -->
+          <div class="flex lg:hidden items-center gap-2">
+            <span class="w-7 h-7 rounded-lg bg-[#173C35] dark:bg-[#D9A66F] text-[#D9A66F] dark:text-[#171D1A] font-bold text-xs flex items-center justify-center shadow-xs">N</span>
+            <span class="font-heading font-extrabold text-sm sm:text-base text-[#173C35] dark:text-white truncate">Overview</span>
+          </div>
+
+          <div class="relative hidden sm:block w-64 lg:w-72">
             <input type="text" placeholder="Search desks, rooms or dates..." class="w-full h-9 pl-9 pr-4 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A] border border-[#E8E8E1] dark:border-[#313B35] text-xs focus:outline-none focus:ring-1 focus:ring-[#173C35]">
             <svg class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35" stroke-linecap="round"/></svg>
           </div>
         </div>
 
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 sm:gap-3">
           <!-- RTL Toggle -->
-          <button type="button" class="rtl-toggle-btn w-9 h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-xs font-bold text-[#173C35] dark:text-[#D9A66F] hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Toggle RTL layout" title="Toggle RTL / LTR layout">
+          <button type="button" class="rtl-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[11px] sm:text-xs font-bold text-[#173C35] dark:text-[#D9A66F] hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Toggle RTL layout" title="Toggle RTL / LTR layout">
             <span class="rtl-btn-label">RTL</span>
           </button>
 
           <!-- Theme Toggle -->
-          <button type="button" class="theme-toggle-btn w-9 h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-gray-500 hover:text-gray-900 dark:text-gray-300">
+          <button type="button" class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-gray-500 hover:text-gray-900 dark:text-gray-300">
             <svg class="icon-sun w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
             <svg class="icon-moon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
           </button>
 
           <!-- Notifications Dropdown -->
           <div class="relative">
-            <button id="dash-notif-btn" class="w-9 h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-gray-500 hover:text-[#173C35] dark:hover:text-white relative" aria-label="Notifications">
+            <button id="dash-notif-btn" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-gray-500 hover:text-[#173C35] dark:hover:text-white relative" aria-label="Notifications">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 01-3.46 0" stroke-linecap="round"/></svg>
-              <span id="notif-badge-count" class="w-2 h-2 rounded-full bg-red-500 absolute top-2 right-2"></span>
+              <span id="notif-badge-count" class="w-2 h-2 rounded-full bg-red-500 absolute top-1.5 right-1.5 sm:top-2 sm:right-2"></span>
             </button>
             <div id="dash-notif-dropdown" class="hidden absolute right-0 mt-2 w-72 rounded-2xl bg-white dark:bg-[#242D28] shadow-xl border border-[#E8E8E1] dark:border-[#313B35] p-4 text-xs z-50 space-y-3">
               <div class="flex items-center justify-between pb-2 border-b border-gray-100 dark:border-gray-700">
@@ -189,10 +196,10 @@
       </header>
 
       <!-- Dashboard Body Content -->
-      <div class="p-6 sm:p-8 max-w-7xl w-full mx-auto space-y-8">
+      <div class="p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-6 sm:space-y-8 pb-24 lg:pb-8">
         
         <!-- Welcome Header -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
           <div>
             <h1 class="font-heading font-extrabold text-2xl sm:text-3xl text-[#173C35] dark:text-white">
               Good morning, Pravin!
@@ -201,141 +208,141 @@
               Ready for a productive day? You have 1 confirmed reservation today.
             </p>
           </div>
-          <div class="text-xs text-right">
-            <span class="text-gray-400">Campus Status:</span>
-            <span class="text-emerald-600 font-bold block">Open • Level 3 Silent Zone Active</span>
+          <div class="text-xs sm:text-right flex sm:block items-center justify-between p-2.5 sm:p-0 rounded-xl bg-white sm:bg-transparent dark:bg-[#242D28] sm:dark:bg-transparent border sm:border-0 border-[#E8E8E1] dark:border-[#313B35]">
+            <span class="text-gray-400 text-[11px] sm:text-xs">Campus Status:</span>
+            <span class="text-emerald-600 dark:text-emerald-400 font-bold block text-xs">Open • Level 3 Silent Active</span>
           </div>
         </div>
 
         <!-- Live Campus Acoustic Telemetry Strip -->
-        <div class="p-4 rounded-2xl bg-white dark:bg-[#242D28] border border-[#E8E8E1] dark:border-[#313B35] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="p-4 rounded-2xl bg-white dark:bg-[#242D28] border border-[#E8E8E1] dark:border-[#313B35] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
           <div class="flex items-center gap-3">
-            <span class="relative flex h-3 w-3">
+            <span class="relative flex h-3 w-3 shrink-0">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
             </span>
             <div>
               <strong class="font-heading font-bold text-xs text-[#173C35] dark:text-white block">Campus Telemetry (Real-Time)</strong>
-              <span class="text-[11px] text-[#777F79] dark:text-gray-400">Sensors calibrated across all 3 architectural tiers</span>
+              <span class="text-[11px] text-[#777F79] dark:text-gray-400">Acoustic sensors calibrated across tiers</span>
             </div>
           </div>
 
-          <div class="flex flex-wrap items-center gap-3 text-xs">
-            <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
-              <span class="text-gray-400">Level 1 (Library):</span>
-              <strong class="text-emerald-600 dark:text-emerald-400 font-mono">24 dB</strong>
-              <span class="text-[10px] text-gray-400">Whisper-Free</span>
+          <div class="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:items-center text-xs">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-2 p-2 sm:px-3 sm:py-1.5 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A] text-center sm:text-left">
+              <span class="text-gray-400 text-[10px] sm:text-xs">Level 1</span>
+              <strong class="text-emerald-600 dark:text-emerald-400 font-mono text-xs sm:text-sm">24 dB</strong>
+              <span class="text-[9px] text-gray-400 hidden sm:inline">Silent</span>
             </div>
-            <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
-              <span class="text-gray-400">Level 2 (Atrium):</span>
-              <strong class="text-amber-600 dark:text-amber-400 font-mono">41 dB</strong>
-              <span class="text-[10px] text-gray-400">Moderate Hum</span>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-2 p-2 sm:px-3 sm:py-1.5 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A] text-center sm:text-left">
+              <span class="text-gray-400 text-[10px] sm:text-xs">Level 2</span>
+              <strong class="text-amber-600 dark:text-amber-400 font-mono text-xs sm:text-sm">41 dB</strong>
+              <span class="text-[9px] text-gray-400 hidden sm:inline">Atrium</span>
             </div>
-            <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A]">
-              <span class="text-gray-400">Level 3 (Cabins):</span>
-              <strong class="text-[#173C35] dark:text-[#D9A66F] font-mono">28 dB</strong>
-              <span class="text-[10px] text-gray-400">Acoustic Shield</span>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-2 p-2 sm:px-3 sm:py-1.5 rounded-xl bg-[#F7F6F1] dark:bg-[#171D1A] text-center sm:text-left">
+              <span class="text-gray-400 text-[10px] sm:text-xs">Level 3</span>
+              <strong class="text-[#173C35] dark:text-[#D9A66F] font-mono text-xs sm:text-sm">28 dB</strong>
+              <span class="text-[9px] text-gray-400 hidden sm:inline">Cabins</span>
             </div>
           </div>
         </div>
 
         <!-- 4 Metric Cards -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           
-          <div class="card-nest p-5">
+          <div class="card-nest p-3.5 sm:p-5">
             <div class="flex items-center justify-between">
-              <span class="text-xs text-gray-400 font-semibold uppercase">Upcoming</span>
-              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke-linecap="round"/></svg>
+              <span class="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase tracking-wider">Upcoming</span>
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke-linecap="round"/></svg>
               </div>
             </div>
-            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3 flex items-baseline justify-between">
+            <div class="font-heading font-extrabold text-2xl sm:text-3xl text-[#173C35] dark:text-white mt-2 sm:mt-3 flex items-baseline justify-between">
               <span>03</span>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 font-bold font-sans">Active</span>
+              <span class="text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 font-bold font-sans">Active</span>
             </div>
-            <p class="text-[11px] text-[#777F79] dark:text-[#B9C2BC] mt-1">Bookings this week</p>
+            <p class="text-[10px] sm:text-[11px] text-[#777F79] dark:text-[#B9C2BC] mt-1">Bookings this week</p>
           </div>
 
-          <div class="card-nest p-5">
+          <div class="card-nest p-3.5 sm:p-5">
             <div class="flex items-center justify-between">
-              <span class="text-xs text-gray-400 font-semibold uppercase">Hours Used</span>
-              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span class="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase tracking-wider">Hours Used</span>
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
             </div>
-            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3 flex items-baseline justify-between">
-              <span>24 <span class="text-sm font-normal text-gray-400">/ 40h</span></span>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 font-bold font-sans">60%</span>
+            <div class="font-heading font-extrabold text-2xl sm:text-3xl text-[#173C35] dark:text-white mt-2 sm:mt-3 flex items-baseline justify-between">
+              <span>24 <span class="text-xs sm:text-sm font-normal text-gray-400">/40h</span></span>
+              <span class="text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 font-bold font-sans">60%</span>
             </div>
-            <p class="text-[11px] text-emerald-600 font-semibold mt-1">16 hrs remaining</p>
+            <p class="text-[10px] sm:text-[11px] text-emerald-600 font-semibold mt-1">16 hrs remaining</p>
           </div>
 
-          <div class="card-nest p-5">
+          <div class="card-nest p-3.5 sm:p-5">
             <div class="flex items-center justify-between">
-              <span class="text-xs text-gray-400 font-semibold uppercase">Current Plan</span>
-              <div class="w-8 h-8 rounded-lg bg-[#D9A66F]/15 text-[#D9A66F] flex items-center justify-center">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span class="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase tracking-wider">Plan</span>
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-[#D9A66F]/15 text-[#D9A66F] flex items-center justify-center shrink-0">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               </div>
             </div>
-            <div class="font-heading font-extrabold text-3xl text-[#D9A66F] mt-3 flex items-baseline justify-between">
+            <div class="font-heading font-extrabold text-2xl sm:text-3xl text-[#D9A66F] mt-2 sm:mt-3 flex items-baseline justify-between">
               <span>Pro</span>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 font-bold font-sans">Auto-Renew</span>
+              <span class="text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 font-bold font-sans">Auto</span>
             </div>
-            <p class="text-[11px] text-[#777F79] dark:text-[#B9C2BC] mt-1">Renews in 18 days</p>
+            <p class="text-[10px] sm:text-[11px] text-[#777F79] dark:text-[#B9C2BC] mt-1">Renews in 18 days</p>
           </div>
 
-          <div class="card-nest p-5">
+          <div class="card-nest p-3.5 sm:p-5">
             <div class="flex items-center justify-between">
-              <span class="text-xs text-gray-400 font-semibold uppercase">Invoices</span>
-              <div class="w-8 h-8 rounded-lg bg-gray-500/10 text-gray-600 dark:text-gray-300 flex items-center justify-center">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <span class="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase tracking-wider">Invoices</span>
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gray-500/10 text-gray-600 dark:text-gray-300 flex items-center justify-center shrink-0">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
               </div>
             </div>
-            <div class="font-heading font-extrabold text-3xl text-[#173C35] dark:text-white mt-3 flex items-baseline justify-between">
+            <div class="font-heading font-extrabold text-2xl sm:text-3xl text-[#173C35] dark:text-white mt-2 sm:mt-3 flex items-baseline justify-between">
               <span>05</span>
-              <span class="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 font-bold font-sans">Settled</span>
+              <span class="text-[9px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 font-bold font-sans">Settled</span>
             </div>
-            <p class="text-[11px] text-gray-400 mt-1">All accounts settled</p>
+            <p class="text-[10px] sm:text-[11px] text-gray-400 mt-1">All accounts settled</p>
           </div>
 
         </div>
 
-        <!-- Next Reservation Banner (Specified in brief) -->
-        <div class="bg-gradient-to-r from-[#F5EFE6] via-white to-[#ECE5D8] dark:from-[#173C35] dark:to-[#1d4d44] text-[#202824] dark:text-white rounded-3xl p-6 sm:p-8 border border-[#D9A66F]/40 dark:border-transparent shadow-md relative overflow-hidden">
-          <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div class="space-y-3">
-              <div class="flex items-center gap-2">
-                <span class="status-pill status-confirmed text-xs">
+        <!-- Next Reservation Banner -->
+        <div class="bg-gradient-to-r from-[#F5EFE6] via-white to-[#ECE5D8] dark:from-[#173C35] dark:to-[#1d4d44] text-[#202824] dark:text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#D9A66F]/40 dark:border-transparent shadow-md relative overflow-hidden">
+          <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
+            <div class="space-y-2.5 sm:space-y-3">
+              <div class="flex items-center justify-between sm:justify-start gap-2">
+                <span class="status-pill status-confirmed text-[11px] sm:text-xs">
                   ● Confirmed
                 </span>
-                <span class="text-xs text-[#777F79] dark:text-gray-300 font-mono">Booking ID: NS-1024</span>
+                <span class="text-[11px] sm:text-xs text-[#777F79] dark:text-gray-300 font-mono">ID: NS-1024</span>
               </div>
               
-              <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-[#173C35] dark:text-white">
+              <h2 class="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl text-[#173C35] dark:text-white leading-tight">
                 Private Cabin – A02 (The Cedar Pod)
               </h2>
               
-              <div class="flex flex-wrap items-center gap-4 text-xs text-[#777F79] dark:text-gray-200">
+              <div class="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4 text-xs text-[#777F79] dark:text-gray-200">
                 <span class="flex items-center gap-1.5">
-                  <svg class="w-3.5 h-3.5 text-[#D9A66F]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  <svg class="w-3.5 h-3.5 text-[#D9A66F] shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
                   Friday, 10:00 AM – 12:00 PM
                 </span>
                 <span class="flex items-center gap-1.5">
-                  <svg class="w-3.5 h-3.5 text-[#D9A66F]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg class="w-3.5 h-3.5 text-[#D9A66F] shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Level 3 • North Wing
                 </span>
                 <span class="flex items-center gap-1.5">
-                  <svg class="w-3.5 h-3.5 text-[#D9A66F]" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 18v3M20 18v3M4 14h16M6 14V6a2 2 0 012-2h8a2 2 0 012 2v8"/></svg>
+                  <svg class="w-3.5 h-3.5 text-[#D9A66F] shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 18v3M20 18v3M4 14h16M6 14V6a2 2 0 012-2h8a2 2 0 012 2v8"/></svg>
                   Desk Node A-04
                 </span>
               </div>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <a href="bookings.html" class="btn-primary dark:btn-accent text-xs py-3 px-6 text-center font-bold">
-                View Details & Key →
+            <div class="grid grid-cols-2 sm:flex sm:flex-row items-center gap-2.5 sm:gap-3 pt-3 sm:pt-0 border-t border-[#D9A66F]/20 sm:border-0">
+              <a href="bookings.html" class="btn-primary dark:btn-accent text-xs py-2.5 sm:py-3 px-4 sm:px-6 text-center font-bold">
+                View Key →
               </a>
-              <button type="button" class="px-5 py-3 rounded-full border border-[#173C35] text-[#173C35] hover:bg-[#173C35] hover:text-white dark:border-white/30 dark:text-white dark:hover:bg-white/10 text-xs font-semibold transition-colors">
+              <button type="button" class="btn-reschedule-booking py-2.5 sm:py-3 px-4 sm:px-5 rounded-full border border-[#173C35] text-[#173C35] hover:bg-[#173C35] hover:text-white dark:border-white/30 dark:text-white dark:hover:bg-white/10 text-xs font-semibold transition-colors text-center">
                 Reschedule
               </button>
             </div>
@@ -356,7 +363,7 @@
             </div>
 
             <!-- CSS Bar Graph -->
-            <div class="h-48 flex items-end justify-between gap-3 pt-6 border-b border-[#E8E8E1] dark:border-[#313B35] pb-2">
+            <div class="h-44 sm:h-48 flex items-end justify-between gap-1.5 sm:gap-3 pt-6 border-b border-[#E8E8E1] dark:border-[#313B35] pb-2">
               <div class="flex-1 flex flex-col items-center gap-2">
                 <div class="w-full bg-[#173C35]/20 dark:bg-[#D9A66F]/20 rounded-t-lg transition-all hover:bg-[#173C35]" style="height: 45%;"></div>
                 <span class="text-[10px] text-gray-400">Mon</span>
@@ -490,6 +497,30 @@
     </main>
 
   </div>
+
+  <!-- ==================== MOBILE BOTTOM NAVIGATION DOCK (App-Like Nav) ==================== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="overview.html" class="mobile-bottom-nav-item active">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      <span>Overview</span>
+    </a>
+    <a href="book-space.html" class="mobile-bottom-nav-item">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
+      <span>Reserve</span>
+    </a>
+    <a href="bookings.html" class="mobile-bottom-nav-item">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke-linecap="round"/></svg>
+      <span>Bookings</span>
+    </a>
+    <a href="invoices.html" class="mobile-bottom-nav-item">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13" stroke-linecap="round"/></svg>
+      <span>Invoices</span>
+    </a>
+    <button type="button" id="dash-mobile-menu-btn" class="mobile-bottom-nav-item" aria-label="Open menu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/><line x1="4" y1="18" x2="20" y2="18" stroke-linecap="round"/></svg>
+      <span>Menu</span>
+    </button>
+  </nav>
 
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/dashboard.js"></script>

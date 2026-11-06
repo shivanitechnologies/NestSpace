@@ -130,73 +130,77 @@
     <!-- ==================== MAIN CONTENT ==================== -->
     <main class="dashboard-main">
       <header class="dashboard-header">
-        <div class="flex items-center gap-3">
-          <button id="dash-sidebar-toggle" class="lg:hidden w-9 h-9 rounded-lg border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[#173C35] dark:text-white">
+        <div class="flex items-center gap-2.5 sm:gap-3">
+          <button id="dash-sidebar-toggle" class="lg:hidden w-9 h-9 rounded-xl border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[#173C35] dark:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Open navigation menu">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
-          <h2 class="font-heading font-extrabold text-lg text-[#173C35] dark:text-white">My Reservations</h2>
+          
+          <div class="flex items-center gap-2">
+            <span class="w-7 h-7 rounded-lg bg-[#173C35] dark:bg-[#D9A66F] text-[#D9A66F] dark:text-[#171D1A] font-bold text-xs flex lg:hidden items-center justify-center shadow-xs">N</span>
+            <h2 class="font-heading font-extrabold text-sm sm:text-lg text-[#173C35] dark:text-white truncate">My Reservations</h2>
+          </div>
         </div>
 
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 sm:gap-3">
           <!-- RTL Toggle -->
-          <button type="button" class="rtl-toggle-btn w-9 h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-xs font-bold text-[#173C35] dark:text-[#D9A66F] hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Toggle RTL layout" title="Toggle RTL / LTR layout">
+          <button type="button" class="rtl-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-[11px] sm:text-xs font-bold text-[#173C35] dark:text-[#D9A66F] hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Toggle RTL layout" title="Toggle RTL / LTR layout">
             <span class="rtl-btn-label">RTL</span>
           </button>
-          <button type="button" class="theme-toggle-btn w-9 h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-gray-500 hover:text-gray-900 dark:text-gray-300">
+          <button type="button" class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#E8E8E1] dark:border-[#313B35] flex items-center justify-center text-gray-500 hover:text-gray-900 dark:text-gray-300">
             <svg class="icon-sun w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
             <svg class="icon-moon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
           </button>
-          <a href="book-space.html" class="btn-primary text-xs py-2 px-4 shadow-sm">
+          <a href="book-space.html" class="btn-primary text-xs py-2 px-3 sm:px-4 shadow-sm hidden xs:inline-flex">
             + New Booking
           </a>
         </div>
       </header>
 
-      <div class="p-6 sm:p-8 max-w-7xl w-full mx-auto space-y-6">
+      <div class="p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-6 pb-24 lg:pb-8">
         
         <!-- Weekly Interactive Schedule Ribbon -->
         <div class="bg-white dark:bg-[#242D28] rounded-2xl p-4 sm:p-5 border border-[#E8E8E1] dark:border-[#313B35] shadow-sm">
           <div class="flex items-center justify-between mb-3 text-xs">
             <span class="font-bold text-[#173C35] dark:text-white uppercase tracking-wider">November 2026 • Week 45</span>
-            <span class="text-[#D9A66F] font-semibold">2 Active Sessions This Week</span>
+            <span class="text-[#D9A66F] font-semibold text-[11px] sm:text-xs">2 Active This Week</span>
           </div>
-          <div class="grid grid-cols-7 gap-2 text-center text-xs">
-            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
-              <span class="text-gray-400 text-[10px] block">MON</span>
-              <strong class="font-bold text-sm text-[#173C35] dark:text-white">02</strong>
+          <div class="grid grid-cols-7 gap-1 sm:gap-2 text-center text-xs">
+            <div class="p-1.5 sm:p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[9px] sm:text-[10px] block">MON</span>
+              <strong class="font-bold text-xs sm:text-sm text-[#173C35] dark:text-white">02</strong>
             </div>
-            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
-              <span class="text-gray-400 text-[10px] block">TUE</span>
-              <strong class="font-bold text-sm text-[#173C35] dark:text-white">03</strong>
+            <div class="p-1.5 sm:p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[9px] sm:text-[10px] block">TUE</span>
+              <strong class="font-bold text-xs sm:text-sm text-[#173C35] dark:text-white">03</strong>
             </div>
-            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
-              <span class="text-gray-400 text-[10px] block">WED</span>
-              <strong class="font-bold text-sm text-[#173C35] dark:text-white">04</strong>
+            <div class="p-1.5 sm:p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[9px] sm:text-[10px] block">WED</span>
+              <strong class="font-bold text-xs sm:text-sm text-[#173C35] dark:text-white">04</strong>
             </div>
-            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
-              <span class="text-gray-400 text-[10px] block">THU</span>
-              <strong class="font-bold text-sm text-[#173C35] dark:text-white">05</strong>
+            <div class="p-1.5 sm:p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[9px] sm:text-[10px] block">THU</span>
+              <strong class="font-bold text-xs sm:text-sm text-[#173C35] dark:text-white">05</strong>
             </div>
-            <div class="p-2.5 rounded-xl bg-[#173C35] text-white font-bold shadow-md cursor-pointer relative">
-              <span class="text-[10px] block text-[#D9A66F]">FRI</span>
-              <strong class="font-bold text-sm">06</strong>
-              <span class="w-1.5 h-1.5 rounded-full bg-[#D9A66F] mx-auto mt-1 block"></span>
+            <div class="p-1.5 sm:p-2.5 rounded-xl bg-[#173C35] text-white font-bold shadow-md cursor-pointer relative">
+              <span class="text-[9px] sm:text-[10px] block text-[#D9A66F]">FRI</span>
+              <strong class="font-bold text-xs sm:text-sm">06</strong>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#D9A66F] mx-auto mt-0.5 sm:mt-1 block"></span>
             </div>
-            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
-              <span class="text-gray-400 text-[10px] block">SAT</span>
-              <strong class="font-bold text-sm text-[#173C35] dark:text-white">07</strong>
+            <div class="p-1.5 sm:p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[9px] sm:text-[10px] block">SAT</span>
+              <strong class="font-bold text-xs sm:text-sm text-[#173C35] dark:text-white">07</strong>
             </div>
-            <div class="p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
-              <span class="text-gray-400 text-[10px] block">SUN</span>
-              <strong class="font-bold text-sm text-[#173C35] dark:text-white">08</strong>
+            <div class="p-1.5 sm:p-2.5 rounded-xl border border-transparent hover:border-[#D9A66F] cursor-pointer">
+              <span class="text-gray-400 text-[9px] sm:text-[10px] block">SUN</span>
+              <strong class="font-bold text-xs sm:text-sm text-[#173C35] dark:text-white">08</strong>
             </div>
           </div>
         </div>
 
         <!-- Filter & Search Bar -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
           <!-- Filter Tabs -->
-          <div class="flex items-center gap-6 border-b sm:border-b-0 border-[#E8E8E1] dark:border-[#313B35] text-sm overflow-x-auto pb-1 sm:pb-0">
+          <div class="flex items-center gap-3 sm:gap-6 border-b sm:border-b-0 border-[#E8E8E1] dark:border-[#313B35] text-xs sm:text-sm overflow-x-auto pb-2 sm:pb-0 scrollbar-none whitespace-nowrap">
             <button class="booking-filter-tab pb-3 sm:pb-1 border-b-2 border-[#173C35] text-[#173C35] dark:text-[#D9A66F] font-semibold transition-all" data-filter="all">
               All Bookings (4)
             </button>
@@ -426,6 +430,30 @@
       </div>
     </div>
   </div>
+
+  <!-- ==================== MOBILE BOTTOM NAVIGATION DOCK (App-Like Nav) ==================== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="overview.html" class="mobile-bottom-nav-item">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      <span>Overview</span>
+    </a>
+    <a href="book-space.html" class="mobile-bottom-nav-item">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
+      <span>Reserve</span>
+    </a>
+    <a href="bookings.html" class="mobile-bottom-nav-item active">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke-linecap="round"/></svg>
+      <span>Bookings</span>
+    </a>
+    <a href="invoices.html" class="mobile-bottom-nav-item">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13" stroke-linecap="round"/></svg>
+      <span>Invoices</span>
+    </a>
+    <button type="button" id="dash-mobile-menu-btn" class="mobile-bottom-nav-item" aria-label="Open menu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/><line x1="4" y1="18" x2="20" y2="18" stroke-linecap="round"/></svg>
+      <span>Menu</span>
+    </button>
+  </nav>
 
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/dashboard.js"></script>

@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Mobile Sidebar Toggle
   const sidebarToggleBtn = document.getElementById('dash-sidebar-toggle');
+  const mobileMenuBtn = document.getElementById('dash-mobile-menu-btn');
   const sidebarCloseBtn = document.getElementById('dash-sidebar-close');
   const sidebar = document.getElementById('dash-sidebar');
   const sidebarBackdrop = document.getElementById('dash-sidebar-backdrop');
@@ -10,14 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
   function openSidebar() {
     if (sidebar) sidebar.classList.add('sidebar-open');
     if (sidebarBackdrop) sidebarBackdrop.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden', 'lg:overflow-auto');
   }
 
   function closeSidebar() {
     if (sidebar) sidebar.classList.remove('sidebar-open');
     if (sidebarBackdrop) sidebarBackdrop.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden', 'lg:overflow-auto');
   }
 
   if (sidebarToggleBtn) sidebarToggleBtn.addEventListener('click', openSidebar);
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openSidebar();
+  });
   if (sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeSidebar);
   if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeSidebar);
 
